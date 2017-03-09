@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/featureflow/featureflow-node-sdk#readme",
   "dependencies": {
+    "big-integer": "^1.6.17",
     "sha1-hex": "^1.0.0"
   },
   "devDependencies": {

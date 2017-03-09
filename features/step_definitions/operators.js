@@ -7,8 +7,6 @@ cucumber.defineSupportCode(function(args){
   var When = args.When;
   var Then = args.Then;
 
-  var self = this;
-
   Given('the target is a {type:stringInQuotes} with the value of {target:stringInQuotes}', function (type, target) {
     this.result = undefined;
     this.target = target;
