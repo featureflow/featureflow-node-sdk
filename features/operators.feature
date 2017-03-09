@@ -32,6 +32,10 @@ Scenario Outline: Test the "<operator>" operator returns a "<result>" result for
     | matches         | my-test-value | ^[A-z\-]+$             | true   |
     | matches         | my-test-value | ^[A-z]+$               | false  |
 
+    | fakeOperator    | my-test-value | doesn't matter         | false  |
+
+
+
   Scenario Outline: Test the "<operator>" operator returns a "<result>" result for an array of strings (target: "<target>", values: "<values>", operator: "<operator>", result: "<result>")
     Given the target is a "string" with the value of "<target>"
     And the value is an array of values "<values>"
