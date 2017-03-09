@@ -1,5 +1,5 @@
 var cucumber = require('cucumber');
-var operators = require('../../src/operators');
+var conditions = require('../../src/conditions');
 var chai = require('chai');
 
 cucumber.defineSupportCode(function(args){
@@ -30,7 +30,7 @@ cucumber.defineSupportCode(function(args){
   });
 
   When('the operator test {op:stringInQuotes} is run', function (op) {
-    this.result = operators.test(op, this.target, this.value);
+    this.result = conditions.test(op, this.target, this.value);
   });
 
   Then('the output should equal {bool:stringInQuotes}', function (bool) {
