@@ -8,9 +8,9 @@ Scenario Outline: Testing that the key "<key>", salt "<salt>" and feature "<feat
 
   Examples:
     | salt  | feature   | key        | result | hash            |
-    | 1     | f1        | alice      | 20     | de5ce0fbc583fd8 |
-    | 1     | f1        | bob        | 19     | 8ecddc9f392dc35 |
-    | 2     | f1        | alice      | 89     | e31eff9e88214f2 |
-    | 2     | f1        | bob        | 9      | 591e96e46fc1dad |
-    | 3     | f1        | alice      | 44     | 05ad8a286f0b0bb |
-    | 3     | f1        | bob        | 80     | 9bc2af62801255d |
+    | 1     | f1        | alice      | 9      | de5ce0fbc583fd8 |
+    | 1     | f1        | bob        | 14     | 8ecddc9f392dc35 |
+    | 2     | f1        | alice      | 71     | e31eff9e88214f2 |
+    | 2     | f1        | bob        | 58     | 591e96e46fc1dad |
+    | 3     | f1        | alice      | 36     | 05ad8a286f0b0bb |
+    | 3     | f1        | bob        | 2      | 9bc2af62801255d |

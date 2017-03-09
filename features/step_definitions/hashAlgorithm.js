@@ -1,5 +1,5 @@
 var cucumber = require('cucumber');
-var hash = require('../../src/hash');
+var hash = require('../../src/hashAlgorithm');
 var chai = require('chai');
 
 cucumber.defineSupportCode(function(args){
@@ -14,8 +14,8 @@ cucumber.defineSupportCode(function(args){
   });
 
   When('the variant value is calculated', function () {
-    this.result = hash.getVariantValue(this.salt, this.feature, this.key);
-    this.hash = hash._calculateHash(this.salt, this.feature, this.key);
+    this.hash = hash.calculateHash(this.salt, this.feature, this.key);
+    this.result = hash.getVariantValue(this.hash);
   });
 
   Then('the hash value calculated should equal {hash:stringInDoubleQuotes}', function (hash) {

@@ -10,14 +10,11 @@ function calculateHash(salt, feature, key){
   return sha1Hex(hashValues).substr(0, 15);
 }
 
-function getVariantValue(salt, feature, key){
-  var hash = calculateHash(
-    calculateHash(salt, feature, key)
-  );
+function getVariantValue(hash){
   return bigInt(hash, 16).mod(100).plus(1).toJSNumber();
 }
 
 module.exports = {
   getVariantValue: getVariantValue,
-  _calculateHash: calculateHash
+  calculateHash: calculateHash
 };
