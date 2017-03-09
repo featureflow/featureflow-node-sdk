@@ -1,0 +1,26 @@
+{
+  "name": "featureflow-node-sdk",
+  "version": "1.0.0",
+  "description": "Featureflow sdk for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/featureflow/featureflow-node-sdk.git"
+  },
+  "author": "Henry Young <henry.r.t.young@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/featureflow/featureflow-node-sdk/issues"
+  },
+  "homepage": "https://github.com/featureflow/featureflow-node-sdk#readme",
+  "dependencies": {
+    "sha1-hex": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cucumber": "^2.0.0-rc.7"
+  }
+}
