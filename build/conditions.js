@@ -12,16 +12,13 @@ const operators = {
     return typeof a === 'string' && a.endsWith(b);
   },
   matches: (a, b) => {
-    return typeof a === 'string' && typeof b === 'string'
-      && (new RegExp(b)).test(a);
+    return typeof a === 'string' && typeof b === 'string' && new RegExp(b).test(a);
   },
   in: (a, b) => {
-    return typeof a === 'string' && Array.isArray(b)
-      && b.indexOf(a) > -1
+    return typeof a === 'string' && Array.isArray(b) && b.indexOf(a) > -1;
   },
   notIn: (a, b) => {
-    return typeof a === 'string' && Array.isArray(b)
-      && b.indexOf(a) < 0
+    return typeof a === 'string' && Array.isArray(b) && b.indexOf(a) < 0;
   },
   before: (a, b) => {
     return a < b;
@@ -48,7 +45,6 @@ const notFound = () => {
 };
 
 const test = (op, a, b) => {
-  b = ['in','notIn'].indexOf(op) >= 0 ? b : b[0];
   return (operators[op] || notFound)(a, b);
 };
 

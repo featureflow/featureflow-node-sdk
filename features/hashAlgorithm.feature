@@ -1,3 +1,4 @@
+@ignore
 Feature: Hashing Algorithm
 Scenario Outline: Testing that the key "<key>", salt "<salt>" and feature "<feature>" returns the result "<result>"
   Given the salt is "<salt>", the feature is "<feature>" and the key is "<key>"

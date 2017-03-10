@@ -1,19 +1,21 @@
-var cucumber = require('cucumber');
+const { defineSupportCode } = require('cucumber');
 
-cucumber.defineSupportCode(function(args){
-  args.addTransform({
+defineSupportCode(({ addTransform })=>{
+  addTransform({
     captureGroupRegexps: ['"[^"]*"'],
-    transformer: function(value){
-      return value.substr(1, value.length-2);
-    },
+    transformer: value => value.substr(1, value.length-2),
     typeName: 'stringInQuotes'
   });
 
-  args.addTransform({
+  addTransform({
     captureGroupRegexps: ['"[^"]*"'],
-    transformer: function(value){
-      return value.split(',').map(function(val){return val.trim()});
-    },
+    transformer: value => value.split(',').map(function(val){return val.trim()}),
     typeName: 'commaDelimitedArray'
-  })
-})
+  });
+
+  addTransform({
+    captureGroupRegexps: ['true', 'false'],
+    transformer: value => JSON.parse(value),
+    typeName: 'trueOrFalse'
+  });
+});

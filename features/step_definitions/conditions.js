@@ -1,12 +1,8 @@
-var cucumber = require('cucumber');
-var conditions = require('../../src/conditions');
-var chai = require('chai');
+const { defineSupportCode } = require('cucumber');
+const conditions = require('../../src/conditions');
+const { expect } = require('chai');
 
-cucumber.defineSupportCode(function(args){
-  var Given = args.Given;
-  var When = args.When;
-  var Then = args.Then;
-
+defineSupportCode(({ Given, When, Then }) => {
   Given('the target is a {type:stringInQuotes} with the value of {target:stringInQuotes}', function (type, target) {
     this.result = undefined;
     this.target = target;
@@ -30,12 +26,11 @@ cucumber.defineSupportCode(function(args){
   });
 
   When('the operator test {op:stringInQuotes} is run', function (op) {
-    this.result = conditions.test(op, this.target, this.value);
+    this.result = conditions.test(op, this.target, [].concat(this.value));
   });
 
   Then('the output should equal {bool:stringInQuotes}', function (bool) {
-    // Write code here that turns the phrase above into concrete actions
-    chai.expect(this.result).to.equal(bool === 'true');
+    expect(this.result).to.equal(bool === 'true');
   });
 
 })
