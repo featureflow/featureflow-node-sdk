@@ -14,15 +14,18 @@ Feature: Rules
     When the rule is matched against the context
     Then the result from the match should be <result>
   Examples:
-    | contextKey      | contextValue | operator | target   | values            | result |
-    | role            | beta         | equals   | role     | ["beta"]          | true   |
-    | role            | alpha        | equals   | role     | ["beta"]          | false  |
+    | contextKey      | contextValue      | operator | target   | values            | result |
+    | role            | "beta"            | equals   | role     | ["beta"]          | true   |
+    | role            | "alpha"           | equals   | role     | ["beta"]          | false  |
+    | role            | ["beta", "alpha"] | equals   | role     | ["beta"]          | true   |
+    | role            | ["beta", "alpha"] | equals   | role     | ["alpha"]         | true   |
+    | role            | ["beta", "alpha"] | equals   | role     | ["nope"]          | false  |
 
   Scenario: Test multiple conditions all passing will return true
     Given the context values are
-      | key             | value          |
-      | role            | beta           |
-      | account         | premium        |
+      | key             | value            |
+      | role            | "beta"           |
+      | account         | "premium"        |
     And the rule's audience conditions are
       | operator        | target            | values          |
       | equals          | role              | ["beta"]        |
@@ -30,11 +33,11 @@ Feature: Rules
     When the rule is matched against the context
     Then the result from the match should be true
 
-  Scenario: Test multiple conditions, but one failing, will return false
+  Scenario: Test one conditions, but one failing, will return false
     Given the context values are
-      | key             | value          |
-      | role            | beta           |
-      | account         | premium        |
+      | key             | value            |
+      | role            | "beta"           |
+      | account         | "premium"        |
     And the rule's audience conditions are
       | operator        | target            | values          |
       | equals          | role              | ["beta"]        |

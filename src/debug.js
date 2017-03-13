@@ -1,0 +1,1 @@
+module.exports = require('debug')('featureflow-node-sdk');

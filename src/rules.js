@@ -4,12 +4,15 @@ function ruleMatches(rule, context){
   return rule.defaultRule ||
     rule.audience.conditions
       .filter(condition=>{
-          return !test(
+        return [].concat(context.values[condition.target]).filter(value=>{
+          //Return if it matches
+          return test(
             condition.operator,
-            context.values[condition.target],
+            value,
             condition.values)
+          }).length === 0; // If one condition matches in the array, don't count it
         }
-      ).length === 0;
+      ).length === 0; // The resulting array is populated by conditions that haven't matched
 }
 
 function getVariantSplitKey(rule, variantValue){

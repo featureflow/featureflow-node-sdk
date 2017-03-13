@@ -1,6 +1,16 @@
 const FeatureflowClient = require('./src/featureflowClient');
+const debug = require('./src/debug');
 module.exports = {
-  init: (apiKey, config) => {
-    return new FeatureflowClient(apiKey, config);
+  init: (apiKey, config, callback) => {
+    debug('initializing client');
+    const client = new FeatureflowClient(apiKey, config, (err)=>{
+      if (err){
+        debug('init error: %O', err);
+      }
+      else{
+        debug('client initialized');
+      }
+      callback(err, client);
+    });
   }
 }

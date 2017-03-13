@@ -27,7 +27,7 @@ defineSupportCode(({ Given, When, Then, Before }) => {
 
   Given('the context values are', function (contextValues) {
     this.context.values = contextValues.hashes().reduce((values, next)=>{
-      values[next.key] = next.value;
+      values[next.key] = JSON.parse(next.value);
       return values;
     }, this.context.values);
   });

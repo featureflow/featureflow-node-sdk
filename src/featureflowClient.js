@@ -1,47 +1,69 @@
-const features = require('./featureControls.json');
 const _ = require('lodash');
-const { ruleMatches, getVariantSplitKey } = require('./rules');
-const { getVariantValue, calculateHash } = require('./hashAlgorithm');
+const Emitter = require('tiny-emitter');
+
+const debug = require('./debug');
 
 const Evaluate = require('./evaluate');
+const Events = require('./events');
+
+const FeatureStreamClient = require('./featureStreamClient');
+
+const DEFAULT_CONTROL_STREAM_PATH = '/api/sdk/v1/controls/stream';
 
 const defaultConfig = {
   hashSalt: 1,
-  defaultFeatures: {}
+  defaultFeatures: {},
+  rtmUrl: 'https://rtm.featureflow.io',
+  url: 'https://app.featureflow.io'
 };
 
 class FeatureflowClient {
-  apiKey = "";
-  config = {};
-
-  features = features;
-
-  constructor(apiKey, config){
+  constructor(apiKey, config, callback){
     this.apiKey = apiKey;
-    this.config = _.merge(defaultConfig, config);
+    debug('set apiKey to %s', apiKey);
+    this.config = _.merge(defaultConfig, config || {});
+    debug('set config to %o', this.config);
+    this.features = {};
+
+
+    this.events = new Events(this.apiKey, this.config.url);
+
+    const emitter = new Emitter();
+
+    this.on = emitter.on.bind(this);
+    this.off = emitter.off.bind(this);
+
+    const streamClient = FeatureStreamClient.connect(
+      this.config.rtmUrl + DEFAULT_CONTROL_STREAM_PATH,
+      this.apiKey
+    );
+
+    streamClient.on('features.updated', (features)=>{
+      this.features = _.merge(this.features, features);
+      const featureKeys = Object.keys(features);
+      debug('updated features %o', featureKeys);
+      emitter.emit('updated', featureKeys);
+    });
+
+    streamClient.on('init', callback);
+    streamClient.on('error', callback);
+  }
+
+  getFeature(key){
+    debug('get feature "%s"', key);
+    return this.features[key];
   }
 
   evaluate(key, context){
-    const feature = this.features[key];
-    if (!feature){
-      const defaultFeature = _.get(this.config, 'defaultFeatures.'+key);
-      return new Evaluate(defaultFeature || 'off');
-    }
-
-    if (!feature.enabled){
-      return new Evaluate(feature.offVariantKey);
-    }
-
-    const variant = feature.rules.reduce((variant, nextRule) => {
-      if (variant !== undefined) return variant;
-
-      if (ruleMatches(nextRule, context)){
-        const variantValue = getVariantValue(calculateHash(config.hashSalt, key, context.key));
-        return getVariantSplitKey(nextRule, variantValue);
-      }
-    }, undefined);
-
-    return new Evaluate(variant);
+    debug('evaluate feature "%s", context=%o', key, context);
+    return new Evaluate(
+      key,
+      context,
+      this.getFeature.bind(this),
+      _.get(this.config,'defaultFeatures.'+key),
+      this.config.hashSalt,
+      this.events
+    );
   }
 }
 
