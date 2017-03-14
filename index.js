@@ -6,11 +6,12 @@ module.exports = {
     const client = new FeatureflowClient(apiKey, config, (err)=>{
       if (err){
         debug('init error: %O', err);
+        callback(err);
       }
       else{
         debug('client initialized');
+        callback(undefined, client);
       }
-      callback(err, client);
     });
   }
 }

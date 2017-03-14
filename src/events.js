@@ -7,10 +7,10 @@ module.exports = class Events{
     this.hostname = hostname;
   }
 
-  _post(path, json){
-    debug('post "%s"', this.hostname+path);
+  _event(method, path, json){
+    debug('post "%s" with json=%o', this.hostname+path, json);
     request({
-      method: 'POST',
+      method,
       uri: this.hostname + path,
       json,
       headers: {
@@ -19,23 +19,23 @@ module.exports = class Events{
     }, (errors, response, body)=>{
       if (response.statusCode < 200 || response.statusCode > 299){
         debug('error posting, uri="%s", json=%o, apiKey=%s', this.hostname+path, json, this.apiKey);
+        debug('error response, %O', response.body);
       }
     })
   }
 
   send(featureKey, expectedVariant, evaluatedVariant, context){
     debug('sending evaluate event for feature "%s"', featureKey);
-    this._post('/api/sdk/v1/events', {
+    this._event('POST', '/api/sdk/v1/events', [{
       featureKey,
       evaluatedVariant,
       expectedVariant,
       context
-    });
+    }]);
   }
 
   register(features){
     debug('sending registration event for features="%o"', features);
-    debug('sending registration event not implemented');
-    console.log('REGISTER', features);
+    this._event('PUT', '/api/sdk/v1/register', features);
   }
 }

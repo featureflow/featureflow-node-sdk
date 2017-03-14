@@ -6,15 +6,23 @@ const debug = require('./debug');
 const Evaluate = require('./evaluate');
 const Events = require('./events');
 
+const { testFeatures } = require('./featureRegistrations');
+
 const FeatureStreamClient = require('./featureStreamClient');
 
 const DEFAULT_CONTROL_STREAM_PATH = '/api/sdk/v1/controls/stream';
+
+const DEFAULT_CONTEXT = {
+  key: 'anonymous',
+  values: {}
+};
 
 const defaultConfig = {
   hashSalt: 1,
   defaultFeatures: {},
   rtmUrl: 'https://rtm.featureflow.io',
-  url: 'https://app.featureflow.io'
+  url: 'https://app.featureflow.io',
+  withFeatures: undefined
 };
 
 class FeatureflowClient {
@@ -25,8 +33,19 @@ class FeatureflowClient {
     debug('set config to %o', this.config);
     this.features = {};
 
-
     this.events = new Events(this.apiKey, this.config.url);
+
+    if (this.config.withFeatures){
+      try{
+        testFeatures(this.config.withFeatures);
+        debug('registered features %o', this.config.withFeatures);
+        this.events.register(this.config.withFeatures);
+      }
+      catch(err){
+        debug('error registering features %s', err.message);
+        return callback(err);
+      }
+    }
 
     const emitter = new Emitter();
 
@@ -54,7 +73,8 @@ class FeatureflowClient {
     return this.features[key];
   }
 
-  evaluate(key, context){
+  evaluate(key, _context){
+    let context = _.pick(_.merge({}, DEFAULT_CONTEXT, _context), ['key','values']);
     debug('evaluate feature "%s", context=%o', key, context);
     return new Evaluate(
       key,
