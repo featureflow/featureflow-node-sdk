@@ -19,27 +19,32 @@ const DEFAULT_CONTEXT = {
 
 const defaultConfig = {
   hashSalt: 1,
-  defaultFeatures: {},
   rtmUrl: 'https://rtm.featureflow.io',
   url: 'https://app.featureflow.io',
   withFeatures: undefined
 };
 
 class FeatureflowClient {
-  constructor(apiKey, config, callback){
+  constructor(apiKey, config){
     this.apiKey = apiKey;
     debug('set apiKey to %s', apiKey);
     this.config = _.merge(defaultConfig, config || {});
     debug('set config to %o', this.config);
     this.features = {};
+    this.defaultFeatures = {};
 
     this.events = new Events(this.apiKey, this.config.url);
 
     if (this.config.withFeatures){
       try{
         testFeatures(this.config.withFeatures);
-        debug('registered features %o', this.config.withFeatures);
+        this.defaultFeatures = this.config.withFeatures.reduce((features, feature)=>{
+          features[feature.key] = feature.failoverVariant;
+          return features;
+        },{});
+        debug('set default feature variants %o', this.defaultFeatures);
         this.events.register(this.config.withFeatures);
+        debug('registered features %o', this.config.withFeatures);
       }
       catch(err){
         debug('error registering features %s', err.message);
@@ -64,8 +69,8 @@ class FeatureflowClient {
       emitter.emit('updated', featureKeys);
     });
 
-    streamClient.on('init', callback);
-    streamClient.on('error', callback);
+    streamClient.on('init', emitter.emit.bind('init'));
+    streamClient.on('error', emitter.emit.bind('error'));
   }
 
   getFeature(key){
@@ -80,7 +85,7 @@ class FeatureflowClient {
       key,
       context,
       this.getFeature.bind(this),
-      _.get(this.config,'defaultFeatures.'+key),
+      this.defaultFeatures[key],
       this.config.hashSalt,
       this.events
     );
