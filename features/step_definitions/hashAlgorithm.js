@@ -1,5 +1,5 @@
 const { defineSupportCode } = require('cucumber');
-const hash = require('../../src/hashAlgorithm');
+const hash = require('../../src/EvaluateHelpers');
 const { expect } = require('chai');
 
 defineSupportCode(({ Given, When, Then }) => {

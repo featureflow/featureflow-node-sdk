@@ -1,5 +1,5 @@
 const { defineSupportCode } = require('cucumber');
-const { getVariantSplitKey, ruleMatches } = require('../../src/rules');
+const { getVariantSplitKey, ruleMatches } = require('../../src/EvaluateHelpers');
 const { expect } = require('chai');
 
 const _ = require('lodash');
@@ -62,7 +62,7 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   When('the variant split key is calculated', function () {
-    this.result = getVariantSplitKey(this.rule, this.variantValue);
+    this.result = getVariantSplitKey(this.rule.variantSplits, this.variantValue);
   });
 
   Then('the result from the match should be {result:trueOrFalse}', function (result) {

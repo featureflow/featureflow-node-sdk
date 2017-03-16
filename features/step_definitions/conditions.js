@@ -1,5 +1,5 @@
 const { defineSupportCode } = require('cucumber');
-const conditions = require('../../src/conditions');
+const conditions = require('../../src/Conditions');
 const { expect } = require('chai');
 
 defineSupportCode(({ Given, When, Then }) => {

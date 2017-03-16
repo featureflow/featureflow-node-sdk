@@ -1,4 +1,3 @@
-@ignore
 Feature: Conditions
 Scenario Outline: Test the "<operator>" operator returns a "<result>" result for a string (target: "<target>", value: "<value>", operator: "<operator>", result: "<result>")
   Given the target is a "string" with the value of "<target>"
