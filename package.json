@@ -7,7 +7,8 @@
     "node": ">4.0.0"
   },
   "scripts": {
-    "test": "cucumber.js --tags \"not @ignore\""
+    "test": "cucumber.js --tags \"not @ignore and not @integration\"",
+    "test:integration": "cucumber.js --tags \"@integration\""
   },
   "repository": {
     "type": "git",

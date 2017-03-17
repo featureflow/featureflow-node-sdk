@@ -4,7 +4,6 @@ module.exports = {
   init: (apiKey, config, callback) => {
     debug('initializing client');
     const client = new FeatureflowClient(apiKey, config);
-    client.on('updated', console.log)
     client.on('error', callback);
     client.on('init', ()=>{
       debug('client initialized');
