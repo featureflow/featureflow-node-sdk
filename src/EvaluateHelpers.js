@@ -1,8 +1,8 @@
-const bigInt = require('big-integer');
-const sha1Hex = require('sha1-hex');
-const { test } = require('./Conditions');
+import bigInt from 'big-integer';
+import sha1Hex from 'sha1-hex';
+import { test } from './Conditions';
 
-function ruleMatches(rule, context){
+export function ruleMatches(rule, context){
   return rule.defaultRule ||
     rule.audience.conditions
       .filter(condition=>{
@@ -17,7 +17,7 @@ function ruleMatches(rule, context){
       ).length === 0; // The resulting array is populated by conditions that haven't matched
 }
 
-function getVariantSplitKey(variantSplits, variantValue){
+export function getVariantSplitKey(variantSplits, variantValue){
   let percent = 0;
   for (let i in variantSplits){
     const variantSplit = variantSplits[i];
@@ -29,7 +29,7 @@ function getVariantSplitKey(variantSplits, variantValue){
   }
 }
 
-function calculateHash(salt, feature, key){
+export function calculateHash(salt, feature, key){
   const hashValues = [
     (salt || 1).toString(),
     feature || 'feature',
@@ -38,13 +38,6 @@ function calculateHash(salt, feature, key){
   return sha1Hex(hashValues).substr(0, 15);
 }
 
-function getVariantValue(hash){
+export function getVariantValue(hash){
   return bigInt(hash, 16).mod(100).toJSNumber() + 1;
 }
-
-module.exports = {
-  getVariantValue,
-  calculateHash,
-  ruleMatches,
-  getVariantSplitKey
-};

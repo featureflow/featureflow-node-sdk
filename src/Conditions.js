@@ -47,11 +47,7 @@ const notFound = () => {
   return false;
 };
 
-const test = (op, a, b) => {
+export function test(op, a, b){
   b = ['in','notIn'].indexOf(op) >= 0 ? b : b[0];
   return (operators[op] || notFound)(a, b);
-};
-
-module.exports = {
-  test: test
-};
+}

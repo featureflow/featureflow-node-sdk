@@ -1,7 +1,7 @@
-const request = require('request');
-const debug = require('./debug');
+import request from 'request';
+import debug from './debug';
 
-module.exports = class Events{
+export default class Events{
   constructor(apiKey, hostname){
     this.apiKey = apiKey;
     this.hostname = hostname;

@@ -1,26 +1,28 @@
-const { defineSupportCode } = require('cucumber');
-const Featureflow = require('../../index');
-const { expect } = require('chai');
-
-const _ = require('lodash');
+import { defineSupportCode } from 'cucumber';
+import Featureflow from '../../src/Featureflow';
+import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then, setDefaultTimeout }) => {
 
   setDefaultTimeout(60 * 1000);
-
-  this.featureflow;
-  this.error;
 
   Given('there is access to the Featureflow library', function () {
     expect(Featureflow).to.exist;
   });
 
   When('the FeatureflowClient is initialized with the apiKey {apiKey:stringInDoubleQuotes}', function (apiKey, callback) {
-    Featureflow.init(apiKey, undefined, (error, featureflow)=>{
-      this.featureflow = featureflow;
-      this.error = error;
-      callback();
-    });
+    try{
+      Featureflow.init({apiKey}, (error, featureflow)=>{
+        console.log(error);
+        this.featureflow = featureflow;
+        this.error = error;
+        callback();
+      });
+    }
+    catch(err){
+      console.log(err);
+    }
+
   });
 
   Then('it should return a featureflow client', function () {

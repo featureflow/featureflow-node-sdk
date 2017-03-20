@@ -1,24 +1,18 @@
-const { defineSupportCode } = require('cucumber');
-const { getVariantSplitKey, ruleMatches } = require('../../src/EvaluateHelpers');
-const { expect } = require('chai');
-
-const _ = require('lodash');
-
-const baseRule = {
-  "priority": 0,
-  "defaultRule": false,
-  "variantSplits": []
-};
-
-const baseContext = {
-  key: 'anonymous',
-  values: {}
-};
+import { defineSupportCode } from 'cucumber';
+import { getVariantSplitKey, ruleMatches } from '../../src/EvaluateHelpers';
+import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then, Before }) => {
   Before(function(){
-    this.rule = _.cloneDeep(baseRule);
-    this.context = _.cloneDeep(baseContext);
+    this.rule = {
+      "priority": 0,
+      "defaultRule": false,
+      "variantSplits": []
+    };
+    this.context = {
+      key: 'anonymous',
+      values: {}
+    };
   });
 
   Given('the rule is a default rule', function() {

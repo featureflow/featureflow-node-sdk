@@ -4,7 +4,7 @@ const NOT_OBJECT = `${START_OF_ERROR} ${CONFIG_OBJECT_NAME} must be an array of 
 
 const REGEX = /^[a-z0-9\-].+$/;
 
-function testFeatures(features){
+export function testFeatures(features){
   let error;
   try{
     error = parseFeatures(features);
@@ -47,12 +47,3 @@ function parseFeatures(payload){
     }
   }
 }
-
-module.exports = {
-  testFeatures: testFeatures
-};
-
-
-
-
-

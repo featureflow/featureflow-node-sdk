@@ -1,7 +1,6 @@
-const _ = require('lodash');
-const debug = require('./debug');
+import debug from './debug';
 
-const { ruleMatches, getVariantSplitKey, getVariantValue, calculateHash } = require('./EvaluateHelpers');
+import { ruleMatches, getVariantSplitKey, getVariantValue, calculateHash } from './EvaluateHelpers';
 
 function calculateVariant(featureKey, feature, defaultFeatureVariant = 'off', context){
   if (!feature){
@@ -27,7 +26,7 @@ function calculateVariant(featureKey, feature, defaultFeatureVariant = 'off', co
   return variant;
 }
 
-module.exports = class Evaluate{
+export default class Evaluate{
   constructor(featureKey, feature, defaultFeatureVariant, context,  events){
     this.evaluatedVariant = calculateVariant(featureKey, feature, defaultFeatureVariant, context);
     this.context = context;

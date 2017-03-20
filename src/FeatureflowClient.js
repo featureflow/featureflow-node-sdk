@@ -1,14 +1,13 @@
-const _ = require('lodash');
-const Emitter = require('tiny-emitter');
+import Emitter from 'tiny-emitter';
 
-const debug = require('./debug');
+import debug from './debug';
 
-const Evaluate = require('./Evaluate');
-const FeatureflowEvents = require('./FeatureflowEvents');
+import Evaluate from './Evaluate';
+import FeatureflowEvents from './FeatureflowEvents';
 
-const { testFeatures } = require('./FeatureRegistrations');
+import { testFeatures } from './FeatureRegistrations';
 
-const StreamingClient = require('./StreamingClient');
+import { connect } from './StreamingClient';
 
 const DEFAULT_CONTROL_STREAM_PATH = '/api/sdk/v1/controls/stream';
 
@@ -23,7 +22,7 @@ const defaultConfig = {
   withFeatures: undefined
 };
 
-class FeatureflowClient {
+export default class FeatureflowClient {
   constructor(apiKey, config){
     const emitter = new Emitter();
 
@@ -31,7 +30,10 @@ class FeatureflowClient {
 
     this.apiKey = apiKey;
     debug('set apiKey to %s', apiKey);
-    this.config = _.merge(defaultConfig, config || {});
+    this.config = {
+      ...defaultConfig,
+      ...config
+    };
     debug('set config to %o', this.config);
     this.features = {};
     this.defaultFeatures = {};
@@ -58,13 +60,16 @@ class FeatureflowClient {
     this.on = emitter.on.bind(this);
     this.off = emitter.off.bind(this);
 
-    const streamingClient = StreamingClient.connect(
+    const streamingClient = connect(
       this.config.rtmUrl + DEFAULT_CONTROL_STREAM_PATH,
       this.apiKey
     );
 
     streamingClient.on('features.updated', (features)=>{
-      this.features = _.merge(this.features, features);
+      this.features = {
+        ...this.features,
+        features
+      };
       const featureKeys = Object.keys(features);
       debug('updated features %o', featureKeys);
       _emit('updated', featureKeys);
@@ -83,15 +88,19 @@ class FeatureflowClient {
     return this.features[key];
   }
 
-  evaluate(key, _context){
-    let context = _.pick(_.merge({}, DEFAULT_CONTEXT, _context), ['key','values']);
-
-    context = _.merge(context, {
+  evaluate(key, _context = {values:{}}){
+    let contextKey = _context.key || DEFAULT_CONTEXT.key;
+    let context = {
+      key: contextKey,
       values: {
-        'featureflow.key': context.key,
-        'featureflow.date': new Date().toISOString()
+        ...DEFAULT_CONTEXT.values,
+        ..._context.values,
+        ...{
+          'featureflow.key': contextKey,
+          'featureflow.date': new Date().toISOString()
+        }
       }
-    })
+    }
 
     debug('evaluate feature "%s", context=%o', key, context);
     return new Evaluate(
@@ -103,5 +112,3 @@ class FeatureflowClient {
     );
   }
 }
-
-module.exports = FeatureflowClient;

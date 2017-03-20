@@ -1,6 +1,6 @@
-const { defineSupportCode } = require('cucumber');
-const hash = require('../../src/EvaluateHelpers');
-const { expect } = require('chai');
+import { defineSupportCode } from 'cucumber';
+import { calculateHash, getVariantValue } from '../../src/EvaluateHelpers';
+import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then }) => {
 
@@ -11,8 +11,8 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   When('the variant value is calculated', function () {
-    this.hash = hash.calculateHash(this.salt, this.feature, this.key);
-    this.result = hash.getVariantValue(this.hash);
+    this.hash = calculateHash(this.salt, this.feature, this.key);
+    this.result = getVariantValue(this.hash);
   });
 
   Then('the hash value calculated should equal {hash:stringInDoubleQuotes}', function (hash) {

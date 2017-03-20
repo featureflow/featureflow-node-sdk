@@ -1,8 +1,8 @@
-const EventSource = require('eventsource');
-const Emitter = require('tiny-emitter');
-const debug = require('./debug');
+import EventSource from 'eventsource';
+import Emitter from 'tiny-emitter';
+import debug from './debug';
 
-function connect(url, apiKey){
+export function connect(url, apiKey){
   debug('connecting to event-source');
   const emitter = new Emitter();
   const eventSourceInitDict = {
@@ -27,6 +27,3 @@ function connect(url, apiKey){
   };
   return emitter;
 }
-module.exports = {
-  connect: connect
-};
