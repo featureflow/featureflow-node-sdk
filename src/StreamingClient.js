@@ -4,6 +4,7 @@ import debug from './debug';
 
 export function connect(url, apiKey){
   let hasAttempted = false;
+  let attempts = 0;
   debug('connecting to event-source');
   const emitter = new Emitter();
   const eventSourceInitDict = {
@@ -14,6 +15,7 @@ export function connect(url, apiKey){
   let es = new EventSource(url, eventSourceInitDict);
   es.addEventListener('message', (e) => {
     hasAttempted = true;
+    attempts = 0;
     debug('connected to event-source');
     emitter.emit('features.updated', JSON.parse(e.data));
     emitter.emit('connected', true);
@@ -24,11 +26,16 @@ export function connect(url, apiKey){
     emitter.emit('features.updated', JSON.parse(e.data));
   });
 
-  es.onerror = (e) => {
+  es.onerror = () => {
     if (!hasAttempted){
       hasAttempted = true;
       debug('error connecting to event-source, starting in offline mode');
       emitter.emit('connected', false);
+      emitter.emit('init');
+    }
+    else{
+      attempts++;
+      debug('error connecting, retry attempt %d', attempts);
     }
   };
   return emitter;
