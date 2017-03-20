@@ -69,7 +69,7 @@ export default class FeatureflowClient {
     streamingClient.on('features.updated', (features)=>{
       this.features = {
         ...this.features,
-        features
+        ...features
       };
       const featureKeys = Object.keys(features);
       debug('updated features %o', featureKeys);

@@ -8,7 +8,7 @@ export default class Events{
   }
 
   _event(method, path, json){
-    debug('post "%s" with json=%o', this.hostname+path, json);
+    debug('%s to "%s" with json=%o', method, this.hostname+path, json);
     request({
       method,
       uri: this.hostname + path,
@@ -16,7 +16,12 @@ export default class Events{
       headers: {
         'Authorization': 'Bearer '+this.apiKey,
       }
-    }, (errors, response, body)=>{
+    }, (error, response, body)=>{
+      if (error){
+        //TODO Batch up messages in a queue and send them when the server comes back online.
+        debug('error %s to "%s". message:', method, this.hostname+path, error.message);
+        return;
+      }
       if (response.statusCode < 200 || response.statusCode > 299){
         debug('error posting, uri="%s", json=%o, apiKey=%s', this.hostname+path, json, this.apiKey);
         debug('error response, %O', response.body);
