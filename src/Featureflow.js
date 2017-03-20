@@ -3,18 +3,22 @@ import debug from './debug';
 
 
 export function init(config, callback) {
-  if (!config.apiKey){
-    throw new Error('config.apiKey not defined');
-  }
+  let hasCallback = false;
   if (!callback || typeof callback !== 'function'){
     throw new Error('callback must be a function');
   }
+
+  if (!config.apiKey){
+    return callback(new Error('config.apiKey not defined'));
+  }
   debug('initializing client');
   const client = new FeatureflowClient(config.apiKey, config);
-  client.on('error', callback);
   client.on('init', ()=>{
-    debug('client initialized');
-    callback(undefined, client);
+    if (!hasCallback){
+      hasCallback = true;
+      debug('client initialized');
+      callback(undefined, client);
+    }
   })
 }
 

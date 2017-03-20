@@ -37,6 +37,7 @@ export default class FeatureflowClient {
     debug('set config to %o', this.config);
     this.features = {};
     this.defaultFeatures = {};
+    this.connected = false;
 
     this.events = new FeatureflowEvents(this.apiKey, this.config.url);
 
@@ -78,6 +79,9 @@ export default class FeatureflowClient {
     streamingClient.on('init', ()=>{
       _emit('init');
     });
+    streamingClient.on('connected', (connected)=>{
+      this.connected = connected;
+    });
     streamingClient.on('error', (err)=>{
       _emit('error', err);
     });
@@ -86,6 +90,10 @@ export default class FeatureflowClient {
   getFeature(key){
     debug('get feature "%s"', key);
     return this.features[key];
+  }
+
+  isConnected(){
+    return this.connected;
   }
 
   evaluate(key, _context = {values:{}}){

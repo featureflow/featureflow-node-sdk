@@ -3,6 +3,7 @@ import Emitter from 'tiny-emitter';
 import debug from './debug';
 
 export function connect(url, apiKey){
+  let hasAttempted = false;
   debug('connecting to event-source');
   const emitter = new Emitter();
   const eventSourceInitDict = {
@@ -12,8 +13,10 @@ export function connect(url, apiKey){
     }};
   let es = new EventSource(url, eventSourceInitDict);
   es.addEventListener('message', (e) => {
+    hasAttempted = true;
     debug('connected to event-source');
     emitter.emit('features.updated', JSON.parse(e.data));
+    emitter.emit('connected', true);
     emitter.emit('init');
   });
 
@@ -22,8 +25,11 @@ export function connect(url, apiKey){
   });
 
   es.onerror = (e) => {
-    debug('error connecting to event-source');
-    emitter.emit('error', e);
+    if (!hasAttempted){
+      hasAttempted = true;
+      debug('error connecting to event-source, starting in offline mode');
+      emitter.emit('connected', false);
+    }
   };
   return emitter;
 }
