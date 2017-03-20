@@ -1,4 +1,4 @@
-# featureflow-client
+# featureflow-node-sdk
 
 [![][npm-img]][npm-url]
 
