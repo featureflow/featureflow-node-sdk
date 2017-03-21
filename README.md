@@ -205,6 +205,15 @@ Listen to events when the `featureflow` instance is updated
 ####`featureflow.close()`
 Closes the featureflow connection.
 
+#### Events
+#### `Featureflow.events.UPDATED`
+Fired when a feature has been changed. 
+
+Callback is fired with one parameter with the values of the updated `features` returned by the stream. In the majority of cases, this object will only contain one property.
+
+#### `Featureflow.events.ERROR`
+Fired when an error has occurred evaluating the feature features for the given context.
+
 
 #### Object Types
 ####`context`

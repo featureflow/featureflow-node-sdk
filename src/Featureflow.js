@@ -22,6 +22,12 @@ export function init(config, callback) {
   })
 }
 
+export const events = {
+  UPDATED: 'updated',
+  ERROR: 'error'
+}
+
 export default {
-  init
+  init,
+  events
 }
