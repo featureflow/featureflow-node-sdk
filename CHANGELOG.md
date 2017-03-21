@@ -1,4 +1,7 @@
 # Change log
+## [0.1.2] - 2017-03-21
+### Changed
+- `featureflow.close()` added to close connection with **featureflow.io**.
 ## [0.1.1] - 2017-03-21
 ### Changed
 - `Featureflow.init(config, callback)` now starts up with the feautre values passed in with `config.withFeatures` 

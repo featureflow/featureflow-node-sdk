@@ -66,7 +66,7 @@ export default class FeatureflowClient {
       this.apiKey
     );
 
-    streamingClient.on('features.updated', (features)=>{
+    streamingClient.emitter.on('features.updated', (features)=>{
       this.features = {
         ...this.features,
         ...features
@@ -76,15 +76,19 @@ export default class FeatureflowClient {
       _emit('updated', featureKeys);
     });
 
-    streamingClient.on('init', ()=>{
+    streamingClient.emitter.on('init', ()=>{
       _emit('init');
     });
-    streamingClient.on('connected', (connected)=>{
+    streamingClient.emitter.on('connected', (connected)=>{
       this.connected = connected;
     });
-    streamingClient.on('error', (err)=>{
+    streamingClient.emitter.on('error', (err)=>{
       _emit('error', err);
     });
+
+    this.close = () =>{
+      streamingClient.close();
+    };
   }
 
   getFeature(key){

@@ -38,5 +38,8 @@ export function connect(url, apiKey){
       debug('error connecting, retry attempt %d', attempts);
     }
   };
-  return emitter;
+  return {
+    emitter,
+    close: es.close.bind(this)
+  };
 }

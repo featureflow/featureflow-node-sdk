@@ -202,6 +202,10 @@ Listen to events when the `featureflow` instance is updated
 | `event*`  | `string` | **`Required`** | The name of the event to unsubscribe from. |
 | `callback`  | `function` | **`Required`** | The callback used when binding the object  |
 
+####`featureflow.close()`
+Closes the featureflow connection.
+
+
 #### Object Types
 ####`context`
 | Property | Type | Default | Description |
