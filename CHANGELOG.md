@@ -1,9 +1,8 @@
 # Change log
-## [0.2.0] - 2017-04-12
+## [0.3.0] - 2017-04-13
 ### Changed
 - `Featureflow.init()` now returns the client, and the callback is optional. You can listen to `Featureflow.events.INIT` and `Featureflow.events.UPDATED` separately using `featureflow.on(event, callback)`.
 - Added new events `Featureflow.events.INIT` and `Featureflow.events.UPDATED_VERBOSE`.
-- Added substring `16` instead of `15` for hash algorithm.
 ### Fixed
 - `Featureflow.events.INIT` now fires before `Featureflow.events.UPDATED`
 ## [0.1.3] - 2017-03-21

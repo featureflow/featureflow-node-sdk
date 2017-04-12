@@ -7,10 +7,10 @@ Feature: Hashing Algorithm
 
 
     Examples:
-      | salt  | feature   | key        | result | hash             |
-      | 1     | f1        | alice      | 41     | de5ce0fbc583fd8c |
-      | 1     | f1        | bob        | 10     | 8ecddc9f392dc351 |
-      | 2     | f1        | alice      | 32     | e31eff9e88214f2b |
-      | 2     | f1        | bob        | 16     | 591e96e46fc1dad3 |
-      | 3     | f1        | alice      | 76     | 05ad8a286f0b0bbf |
-      | 3     | f1        | bob        | 26     | 9bc2af62801255d9 |
+      | salt  | feature   | key        | result | hash            |
+      | 1     | f1        | alice      | 9      | de5ce0fbc583fd8 |
+      | 1     | f1        | bob        | 14     | 8ecddc9f392dc35 |
+      | 2     | f1        | alice      | 71     | e31eff9e88214f2 |
+      | 2     | f1        | bob        | 58     | 591e96e46fc1dad |
+      | 3     | f1        | alice      | 36     | 05ad8a286f0b0bb |
+      | 3     | f1        | bob        | 2      | 9bc2af62801255d |

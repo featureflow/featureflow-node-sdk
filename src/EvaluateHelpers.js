@@ -35,7 +35,7 @@ export function calculateHash(salt, feature, key){
     feature || 'feature',
     key || 'anonymous'
   ].join(':');
-  return sha1Hex(hashValues).substr(0, 16);
+  return sha1Hex(hashValues).substr(0, 15);
 }
 
 export function getVariantValue(hash){
