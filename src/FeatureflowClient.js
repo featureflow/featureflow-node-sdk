@@ -74,10 +74,12 @@ export default class FeatureflowClient {
       const featureKeys = Object.keys(features);
       debug('updated features %o', featureKeys);
       _emit('updated', featureKeys);
+      _emit('updated_verbose', features);
     });
 
-    streamingClient.emitter.on('init', ()=>{
+    streamingClient.emitter.on('init', (features)=>{
       _emit('init');
+      _emit('init_verbose', features);
     });
     streamingClient.emitter.on('connected', (connected)=>{
       this.connected = connected;

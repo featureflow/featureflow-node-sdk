@@ -4,9 +4,6 @@ import debug from './debug';
 
 export function init(config, callback) {
   let hasCallback = false;
-  if (!callback || typeof callback !== 'function'){
-    throw new Error('callback must be a function');
-  }
 
   if (!config.apiKey){
     return callback(new Error('config.apiKey not defined'));
@@ -17,15 +14,22 @@ export function init(config, callback) {
     if (!hasCallback){
       hasCallback = true;
       debug('client initialized');
-      callback(undefined, client);
+      if (callback){
+        callback(undefined, client);
+      }
     }
-  })
+  });
+
+  return client;
 }
 
 export const events = {
+  INIT: 'init',
+  INIT_VERBOSE: 'init_verbose',
   UPDATED: 'updated',
+  UPDATED_VERBOSE: 'updated_verbose',
   ERROR: 'error'
-}
+};
 
 export default {
   init,

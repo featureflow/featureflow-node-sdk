@@ -31,11 +31,11 @@ export function getVariantSplitKey(variantSplits, variantValue){
 
 export function calculateHash(salt, feature, key){
   const hashValues = [
-    (salt || 1).toString(),
+    salt || '1',
     feature || 'feature',
     key || 'anonymous'
   ].join(':');
-  return sha1Hex(hashValues).substr(0, 15);
+  return sha1Hex(hashValues).substr(0, 16);
 }
 
 export function getVariantValue(hash){

@@ -109,14 +109,15 @@ Further documentation can be found [here](http://docs.featureflow.io/docs)
 
 ### API and Configuration
 #### Globals
-####`Featureflow.init(config, callback)`
+####`Featureflow.init(config, [callback])`
 Returns a `featureflow` instance, see below
 
 | Params | Type | Default | Description |
 |---------------|----------|--------------|----------------------------------------------------------------|
 | `config.apiKey*` | `string` | **`Required`** | The Featureflow Server API key for the current environment |
 | `config.withFeatures` | `WithFeature[]` | | Pre-register features with **featureflow.io** in code. See below for an example |
-| **`return`** | `callback` |  | Callback with the signature `function(error, featureflow){}`. If error is `undefined`, then the `featureflow` instance has been initialised |
+| `callback` | `function` |  | Callback with the signature `function(error, featureflow){}`. If error is `undefined`, then the `featureflow` instance has been initialised |
+| `return` | `featureflow` |  | The `featureflow` instance or undefined if an error has occurred. |
 
 ```js
 //With Features example

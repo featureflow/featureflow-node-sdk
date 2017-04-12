@@ -11,15 +11,15 @@ export function connect(url, apiKey){
     headers: {
       Authorization: "Bearer "+apiKey,
       Accept: 'application/json'
-    }};
+    }
+  };
   let es = new EventSource(url, eventSourceInitDict);
   es.addEventListener('message', (e) => {
     hasAttempted = true;
     attempts = 0;
     debug('connected to event-source');
-    emitter.emit('features.updated', JSON.parse(e.data));
     emitter.emit('connected', true);
-    emitter.emit('init');
+    emitter.emit('init', JSON.parse(e.data));
   });
 
   es.addEventListener('features.updated', (e)=>{

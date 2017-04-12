@@ -2,7 +2,7 @@ import debug from './debug';
 
 import { ruleMatches, getVariantSplitKey, getVariantValue, calculateHash } from './EvaluateHelpers';
 
-function calculateVariant(featureKey, feature, defaultFeatureVariant = 'off', context){
+function calculateVariant(featureKey, feature, defaultFeatureVariant = 'off', context, salt = '1'){
   if (!feature){
     debug('feature "%s" was not found, variant set to "%s"', featureKey, defaultFeatureVariant);
     return defaultFeatureVariant;
@@ -17,7 +17,7 @@ function calculateVariant(featureKey, feature, defaultFeatureVariant = 'off', co
     if (variant !== undefined) return variant;
 
     if (ruleMatches(nextRule, context)){
-      const variantValue = getVariantValue(calculateHash(feature.variationSalt, feature.key, context.key));
+      const variantValue = getVariantValue(calculateHash(salt, feature.key, context.key));
       return getVariantSplitKey(nextRule.variantSplits, variantValue);
     }
   }, undefined);
