@@ -1,5 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
+
 ### Node template
+#intellij
+*.iml
+
 # Logs
 logs
 *.log
