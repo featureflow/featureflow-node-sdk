@@ -29,7 +29,9 @@
   "dependencies": {
     "big-integer": "^1.6.17",
     "debug": "^2.6.2",
+    "event-source": "^0.1.1",
     "eventsource": "^0.2.2",
+    "redis": "^2.7.1",
     "request": "^2.81.0",
     "sha1-hex": "^1.0.0",
     "tiny-emitter": "^1.1.0"

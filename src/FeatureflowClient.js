@@ -5,9 +5,12 @@ import debug from './debug';
 import Evaluate from './Evaluate';
 import FeatureflowEvents from './FeatureflowEvents';
 
+import FeatureStore from './FeatureStore';
+import RedisAdaptor from './RedisAdaptor';
+
 import { testFeatures } from './FeatureRegistrations';
 
-import { connect } from './StreamingClient';
+import StreamingClient from './StreamingClient';
 
 const DEFAULT_CONTROL_STREAM_PATH = '/api/sdk/v1/controls/stream';
 
@@ -18,28 +21,42 @@ const DEFAULT_CONTEXT = {
 
 const defaultConfig = {
   rtmUrl: 'https://rtm.featureflow.io',
-  url: 'https://app.featureflow.io',
+  url: 'https://featureflow.featureflow.io',
   withFeatures: undefined
 };
 
 export default class FeatureflowClient {
+  apiKey = undefined;
+  defaultFeatures = {};
+  config = { ...defaultConfig };
+
   constructor(apiKey, config){
     const emitter = new Emitter();
-
-    const _emit = emitter.emit.bind(this);
 
     this.apiKey = apiKey;
     debug('set apiKey to %s', apiKey);
     this.config = {
-      ...defaultConfig,
+      ...this.config,
       ...config
     };
     debug('set config to %o', this.config);
-    this.features = {};
-    this.defaultFeatures = {};
-    this.connected = false;
 
     this.events = new FeatureflowEvents(this.apiKey, this.config.url);
+    let adaptor;
+    if (config.cacheAdaptor){
+      switch(config.cacheAdaptor.type){
+        case 'redis':
+          adaptor = new RedisAdaptor({
+            url: config.cacheAdaptor.url,
+            host: config.cacheAdaptor.host,
+            port: config.cacheAdaptor.port,
+            path: config.cacheAdaptor.path,
+            prefix: config.cacheAdaptor.prefix
+          });
+        break;
+      }
+    }
+    this.featureStore = new FeatureStore(adaptor);
 
     if (this.config.withFeatures){
       try{
@@ -61,32 +78,12 @@ export default class FeatureflowClient {
     this.on = emitter.on.bind(this);
     this.off = emitter.off.bind(this);
 
-    const streamingClient = connect(
+    let streamingClient = new StreamingClient(
       this.config.rtmUrl + DEFAULT_CONTROL_STREAM_PATH,
-      this.apiKey
+      this.apiKey,
+      this.featureStore,
+      emitter.emit.bind(this)
     );
-
-    streamingClient.emitter.on('features.updated', (features)=>{
-      this.features = {
-        ...this.features,
-        ...features
-      };
-      const featureKeys = Object.keys(features);
-      debug('updated features %o', featureKeys);
-      _emit('updated', featureKeys);
-      _emit('updated_verbose', features);
-    });
-
-    streamingClient.emitter.on('init', (features)=>{
-      _emit('init');
-      _emit('init_verbose', features);
-    });
-    streamingClient.emitter.on('connected', (connected)=>{
-      this.connected = connected;
-    });
-    streamingClient.emitter.on('error', (err)=>{
-      _emit('error', err);
-    });
 
     this.close = () =>{
       streamingClient.close();
@@ -95,11 +92,7 @@ export default class FeatureflowClient {
 
   getFeature(key){
     debug('get feature "%s"', key);
-    return this.features[key];
-  }
-
-  isConnected(){
-    return this.connected;
+    return this.featureStore.get(key);
   }
 
   evaluate(key, _context = {values:{}}){

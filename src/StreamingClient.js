@@ -1,45 +1,45 @@
-import EventSource from 'eventsource';
-import Emitter from 'tiny-emitter';
+import EventSource from './eventsource';
 import debug from './debug';
 
-export function connect(url, apiKey){
-  let hasAttempted = false;
-  let attempts = 0;
-  debug('connecting to event-source');
-  const emitter = new Emitter();
-  const eventSourceInitDict = {
-    headers: {
-      Authorization: "Bearer "+apiKey,
-      Accept: 'application/json'
-    }
-  };
-  let es = new EventSource(url, eventSourceInitDict);
-  es.addEventListener('message', (e) => {
-    hasAttempted = true;
-    attempts = 0;
-    debug('connected to event-source');
-    emitter.emit('connected', true);
-    emitter.emit('init', JSON.parse(e.data));
-  });
+export default class StreamingClient{
+  hasInitialised = false;
 
-  es.addEventListener('features.updated', (e)=>{
-    emitter.emit('features.updated', JSON.parse(e.data));
-  });
+  constructor(url, apiKey, featureStore, emit){
+    this.es = new EventSource(url, {
+      headers: {
+        Authorization: "Bearer "+apiKey,
+        Accept: 'application/json'
+      }
+    });
 
-  es.onerror = () => {
-    if (!hasAttempted){
-      hasAttempted = true;
-      debug('error connecting to event-source, starting in offline mode');
-      emitter.emit('connected', false);
-      emitter.emit('init');
+    debug('connecting to EventSource');
+    this.es.addEventListener('message', (e) =>{
+      featureStore.reset(JSON.parse(e.data));
+      if (!this.hasInitialised){
+        emit('init');
+        this.hasInitialised = true;
+        debug('connected to EventSource');
+      }
+    });
+
+    this.es.addEventListener('features.updated', (e) => {
+      featureStore.set(JSON.parse(e.data));
+      emit('updated', Object.keys(e));
+    });
+
+    this.es.onerror = (e)=>{
+      debug('error connecting to EventSource');
+      if (!this.hasInitialised){
+        emit('init');
+        this.hasInitialised = true;
+        debug('starting in offline mode');
+      }
     }
-    else{
-      attempts++;
-      debug('error connecting, retry attempt %d', attempts);
-    }
-  };
-  return {
-    emitter,
-    close: es.close.bind(this)
-  };
+  }
+
+  close(){
+    this.es.close();
+  }
+
 }
+
