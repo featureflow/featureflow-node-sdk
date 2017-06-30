@@ -1,5 +1,6 @@
 import { defineSupportCode } from 'cucumber';
 import { getVariantSplitKey, ruleMatches } from '../../src/EvaluateHelpers';
+import { ContextBuilder } from '../../src/Context';
 import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then, Before }) => {
@@ -9,10 +10,7 @@ defineSupportCode(({ Given, When, Then, Before }) => {
       "defaultRule": false,
       "variantSplits": []
     };
-    this.context = {
-      key: 'anonymous',
-      values: {}
-    };
+    this.contextBuilder = new ContextBuilder('anonymous');
   });
 
   Given('the rule is a default rule', function() {
@@ -20,10 +18,9 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   Given('the context values are', function (contextValues) {
-    this.context.values = contextValues.hashes().reduce((values, next)=>{
-      values[next.key] = JSON.parse(next.value);
-      return values;
-    }, this.context.values);
+    contextValues.hashes().forEach((contextValue)=>{
+      this.contextBuilder = this.contextBuilder.withValue(contextValue.key, JSON.parse(contextValue.value));
+    });
   });
 
   Given('the rule\'s audience conditions are', function (conditions) {
@@ -52,7 +49,7 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   When('the rule is matched against the context', function () {
-    this.result = ruleMatches(this.rule, this.context)
+    this.result = ruleMatches(this.rule, this.contextBuilder.build())
   });
 
   When('the variant split key is calculated', function () {

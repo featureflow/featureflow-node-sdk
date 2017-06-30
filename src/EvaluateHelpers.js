@@ -3,22 +3,33 @@ import sha1Hex from 'sha1-hex';
 import { test } from './Conditions';
 
 export function ruleMatches(rule, context){
-  return rule.defaultRule ||
-    rule.audience.conditions
-      .filter(condition=>{
-        return [].concat(context.values[condition.target]).filter(value=>{
-          //Return if it matches
-          return test(
-            condition.operator,
-            value,
-            condition.values)
-          }).length === 0; // If one condition matches in the array, don't count it
+  if (rule.defaultRule){
+    return true;
+  }
+  else{
+    for (let cKey in rule.audience.conditions){
+      let condition = rule.audience.conditions[cKey];
+      let pass = false;
+      let values = context.getValuesForKey(condition.target);
+      for (let vKey in values){
+        let value = values[vKey];
+        // console.log(condition.operator, value, condition.values);
+        // console.log(test(condition.operator, value, condition.values));
+        if (test(condition.operator, value, condition.values)){
+          pass = true;
+          break;
         }
-      ).length === 0; // The resulting array is populated by conditions that haven't matched
+      }
+      if (!pass){
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 export function getVariantSplitKey(variantSplits, variantValue){
-  let percent = 0;
+  let percent = 0.0;
   for (let i in variantSplits){
     const variantSplit = variantSplits[i];
     percent += variantSplit.split;
@@ -27,6 +38,7 @@ export function getVariantSplitKey(variantSplits, variantValue){
       return variantSplit.variantKey;
     }
   }
+  return "off";
 }
 
 export function calculateHash(salt, feature, key){

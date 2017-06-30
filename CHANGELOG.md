@@ -1,4 +1,7 @@
 # Change log
+## [0.5.0] - 2017-06-30
+### Breaking Changes
+- Entire api rewritten to follow closer to other SDK implementations.
 ## [0.3.0] - 2017-04-13
 ### Changed
 - `Featureflow.init()` now returns the client, and the callback is optional. You can listen to `Featureflow.events.INIT` and `Featureflow.events.UPDATED` separately using `featureflow.on(event, callback)`.

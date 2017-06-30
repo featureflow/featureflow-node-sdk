@@ -57,21 +57,42 @@ Scenario Outline: Test the "<operator>" operator returns a "<result>" result for
 
     Examples:
       | operator           | target        | value                  | result |
+      | equals             | 9000          | 9000                   | true   |
+      | equals             | 9000          | 8999                   | false  |
+      | equals             | 9000.1        | 9000.1                 | true   |
+      | equals             | 9000.2        | 9000.1                 | false  |
+
       | greaterThan        | 9000          | 8999                   | true   |
       | greaterThan        | 9000          | 9001                   | false  |
       | greaterThan        | 9000          | 9000                   | false  |
+
+      | greaterThan        | 9000.2        | 9000.1                 | true   |
+      | greaterThan        | 9000.5        | 9001                   | false  |
+      | greaterThan        | 9000.5        | 9000.5                 | false  |
 
       | greaterThanOrEqual | 9000          | 8999                   | true   |
       | greaterThanOrEqual | 9000          | 9001                   | false  |
       | greaterThanOrEqual | 9000          | 9000                   | true   |
 
+      | greaterThanOrEqual | 9000.2        | 9000.1                 | true   |
+      | greaterThanOrEqual | 9000.5        | 9001                   | false  |
+      | greaterThanOrEqual | 9000.5        | 9000.5                 | true   |
+
       | lessThan           | 9000          | 8999                   | false  |
       | lessThan           | 9000          | 9001                   | true   |
       | lessThan           | 9000          | 9000                   | false  |
 
+      | lessThan           | 9000.2        | 9000.1                 | false  |
+      | lessThan           | 9000.5        | 9001                   | true   |
+      | lessThan           | 9000.5        | 9000.5                 | false  |
+
       | lessThanOrEqual    | 9000          | 8999                   | false  |
       | lessThanOrEqual    | 9000          | 9001                   | true   |
       | lessThanOrEqual    | 9000          | 9000                   | true   |
+
+      | lessThanOrEqual    | 9000.2        | 9000.1                 | false  |
+      | lessThanOrEqual    | 9000.5        | 9001                   | true   |
+      | lessThanOrEqual    | 9000.5        | 9000.5                 | true   |
 
   Scenario Outline: Test the "<operator>" operator returns a "<result>" result for a date (target: "<target>", value: "<value>", operator: "<operator>", result: "<result>")
     Given the target is a "string" with the value of "<target>"

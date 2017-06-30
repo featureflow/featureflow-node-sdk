@@ -2,47 +2,48 @@ import { defineSupportCode } from 'cucumber';
 import Featureflow from '../../src/Featureflow';
 import { expect } from 'chai';
 
-defineSupportCode(({ Given, When, Then, setDefaultTimeout }) => {
+defineSupportCode(({ Given, When, Then, setDefaultTimeout, Before }) => {
 
   setDefaultTimeout(60 * 1000);
+
+  Before(function(){
+    this.featureflow = undefined;
+    this.error = undefined;
+    this.evaluatedResult = undefined;
+
+  })
 
   Given('there is access to the Featureflow library', function () {
     expect(Featureflow).to.exist;
   });
 
   When('the FeatureflowClient is initialized with the apiKey {apiKey:stringInDoubleQuotes}', function (apiKey, callback) {
-    try{
-      Featureflow.init({apiKey}, (error, featureflow)=>{
-        console.log(error);
-        this.featureflow = featureflow;
-        this.error = error;
-        callback();
-      });
-    }
-    catch(err){
-      console.log(err);
-    }
-
+    new Featureflow.Client({apiKey}, (error, featureflow)=>{
+      this.featureflow = featureflow;
+      this.error = error;
+      callback();
+    });
   });
 
-  Then('it should return a featureflow client', function () {
-    expect(this.featureflow).to.exist;
+  When('the feature {key:stringInDoubleQuotes} with context key {contextKey:stringInDoubleQuotes} is evaluated with the value {value:stringInDoubleQuotes}', function (key, contextKey, value) {
+    this.evaluatedResult = this.featureflow.evaluate(key, contextKey).is(value);
   });
 
-  Then('it should not return a featureflow client', function () {
+  Then('the result of the evaluation should equal {arg1:trueOrFalse}', function (result) {
     // Write code here that turns the phrase above into concrete actions
-    expect(this.featureflow).to.not.exist;
+    expect(this.evaluatedResult).to.equal(result);
   });
 
-  Then('it should be able to evaluate a rule', function () {
-    expect(this.featureflow.evaluate('test').is('on')).to.be.a('boolean');
+  When('the FeatureflowClient is initialized with no apiKey', function (callback) {
+    new Featureflow.Client({}, (error, featureflow)=>{
+      this.featureflow = featureflow;
+      this.error = error;
+      callback();
+    });
   });
 
-  Then('there should be an error', function () {
+  Then('the featureflow client should throw an error', function () {
     expect(this.error).to.exist;
   });
 
-  Then('there should not be an error', function () {
-    expect(this.error).to.not.exist;
-  });
 });
