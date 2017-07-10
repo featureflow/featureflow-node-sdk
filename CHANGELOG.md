@@ -1,4 +1,6 @@
 # Change log
+## [0.5.3] - 2017-07-11
+- Added baseURL config option, added `featureflow.ready(function(){})` callback
 ## [0.5.2] - 2017-07-10
 ### Changed
 - Fix support for `var Featureflow = require('featureflow-node-sdk')`, previously was on `Featureflow.default`

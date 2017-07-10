@@ -69,6 +69,16 @@ new Featureflow.Client({apiKey: '<Your server api key goes here>'}, function(err
 ```
 If no response has been received in 5 seconds, the callback will be fired.
 
+You can also register a callback to `featureflow.ready` like this
+
+```javascript
+let featureflow = new Featureflow.Client({apiKey: '<Your server api key goes here>'});
+
+featureflow.ready(function(){
+  //featureflow is now initialized in this block
+})
+```
+
 When creating a `featureflow` client you must have at least an `apiKey` in the config object, 
 alternatively you can write you can set the environment variable `FEATUREFLOW_SERVER_KEY` and just write:
 
