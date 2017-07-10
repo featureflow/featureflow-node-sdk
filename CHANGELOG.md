@@ -1,4 +1,7 @@
 # Change log
+## [0.5.1] - 2017-07-10
+### Changed
+- Fix support for `var Featureflow = require('featureflow-node-sdk')`, previously was on `Featureflow.default`
 ## [0.5.0] - 2017-06-30
 ### Breaking Changes
 - Entire api rewritten to follow closer to other SDK implementations.

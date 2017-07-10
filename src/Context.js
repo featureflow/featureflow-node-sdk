@@ -11,6 +11,10 @@ class Context{
   getValuesForKey(key){
     return this.values[key];
   }
+
+  addValue(key, value){
+    this.values[key] = [].concat(value);
+  }
 }
 
 export class ContextBuilder{
