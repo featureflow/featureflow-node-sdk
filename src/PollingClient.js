@@ -17,7 +17,9 @@ export default class PollingClient{
 
     this.getFeatures(callback);
 
-    setInterval(this.getFeatures.bind(this), this.interval);
+    const interval = setInterval(this.getFeatures.bind(this), this.interval);
+
+    return clearInterval.bind(this, interval);
   }
   getFeatures(callback = ()=>{}){
     request({

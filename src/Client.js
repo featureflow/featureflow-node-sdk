@@ -1,5 +1,6 @@
 import PollingClient from './PollingClient';
 import EventsClient from './EventsClient';
+const EventEmitter = require('events');
 import { InMemoryFeatureStore } from './FeatureStore';
 import { ContextBuilder } from './Context';
 import Evaluate from './Evaluate';
@@ -7,16 +8,18 @@ import debug from './debug';
 
 import {ruleMatches, getVariantValue, getVariantSplitKey, calculateHash} from './EvaluateHelpers';
 
-export default class Featureflow{
+export default class Featureflow extends EventEmitter{
   failoverVariants = {};
+  isReady = false;
 
-  constructor(config, callback){
+  constructor(config, callback = ()=>{}){
+    super();
     debug("initializing client");
     if (!callback && typeof config === "function"){
       callback = config;
       config = undefined;
     }
-    this.config = {...config}
+    this.config = {...config};
 
     this.config.apiKey = this.config.apiKey || process.env.FEATUREFLOW_SERVER_KEY || "";
     if (!this.config.apiKey.length){
@@ -36,10 +39,23 @@ export default class Featureflow{
       this.eventsClient.registerFeaturesEvent(this.config.withFeatures);
     }
 
-    new PollingClient("https://app.featureflow.io/api/sdk/v1/features", this.config, ()=>{
+    this.close = new PollingClient("https://app.featureflow.io/api/sdk/v1/features", this.config, ()=>{
       debug("client initialized");
+      this.isReady = true;
+      this.emit('ready');
       callback(null, this);
     });
+  }
+
+  ready(callback=()=>{}){
+    if (this.isReady){
+      callback(null, this);
+    }
+    else{
+      return this.once('ready', ()=>{
+        callback(null, this);
+      })
+    }
   }
 
   evaluate(key, context){

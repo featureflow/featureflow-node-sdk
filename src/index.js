@@ -10,7 +10,7 @@ export default {
   ExpressClient
 }
 
-modules.exports = {
+module.exports = {
   Client,
   ContextBuilder,
   Feature,
