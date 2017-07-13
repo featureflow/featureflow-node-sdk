@@ -1,5 +1,5 @@
 import { defineSupportCode } from 'cucumber';
-import Featureflow from '../../src/Featureflow';
+import Featureflow from '../../src';
 import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then, setDefaultTimeout, Before }) => {

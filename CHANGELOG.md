@@ -1,5 +1,8 @@
 # Change log
-## [0.5.3] - 2017-07-11
+## [0.5.5] - 2017-07-14
+### Changed
+- Updated tests
+## [0.5.4] - 2017-07-14
 ### Changed
 - Added baseURL config option, added `featureflow.ready(function(){})` callback
 ### Fixed

@@ -6,7 +6,7 @@ import { ContextBuilder } from './Context';
 import Evaluate from './Evaluate';
 import debug from './debug';
 
-import {ruleMatches, getVariantValue, getVariantSplitKey, calculateHash} from './EvaluateHelpers';
+import {ruleMatches, getVariantValue, getVariantSplitKey, calculateHash, featureEvaluation} from './EvaluateHelpers';
 
 export default class Featureflow extends EventEmitter{
   failoverVariants = {};
@@ -62,10 +62,6 @@ export default class Featureflow extends EventEmitter{
   }
 
   evaluate(key, context){
-    if (typeof context === "string"){
-      context = new ContextBuilder(context).build();
-    }
-
     let evaluatedVariant;
     let feature = this.config.featureStore.get(key);
 
@@ -79,18 +75,8 @@ export default class Featureflow extends EventEmitter{
       }
       debug(`Evaluating undefined feature '${key}' using the ${failover ? 'provided' : 'default'} failover '${evaluatedVariant}'`);
     }
-    else if (!feature.enabled){
-      evaluatedVariant = feature.offVariantKey;
-    }
-    else{
-      for (let i in feature.rules){
-        let rule = feature.rules[i];
-        if (ruleMatches(feature.rules[i], context)){
-          let variantValue = getVariantValue(calculateHash("1", key, context.getKey()));
-          evaluatedVariant = getVariantSplitKey(rule.variantSplits, variantValue);
-          break;
-        }
-      }
+    else {
+      evaluatedVariant = featureEvaluation(feature, context);
     }
 
     return new Evaluate(

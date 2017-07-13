@@ -19,4 +19,10 @@ defineSupportCode(({ addTransform })=>{
     transformer: value => JSON.parse(value),
     typeName: 'trueOrFalse'
   });
+
+  addTransform({
+    captureGroupRegexps: ['enabled', 'disabled'],
+    transformer: value => value === "enabled",
+    typeName: 'enabledOrDisabled'
+  });
 });

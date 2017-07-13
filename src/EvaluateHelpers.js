@@ -1,6 +1,25 @@
 import bigInt from 'big-integer';
 import sha1Hex from 'sha1-hex';
 import { test } from './Conditions';
+import { ContextBuilder } from './Context';
+
+export function featureEvaluation(feature, context){
+  if (typeof context === "string"){
+    context = new ContextBuilder(context).build();
+  }
+
+  if (feature.enabled){
+    for (let i in feature.rules){
+      let rule = feature.rules[i];
+      if (ruleMatches(feature.rules[i], context)){
+        let variantValue = getVariantValue(calculateHash("1", feature.key, context.getKey()));
+        return getVariantSplitKey(rule.variantSplits, variantValue);
+      }
+    }
+  }
+
+  return feature.offVariantKey;
+}
 
 export function ruleMatches(rule, context){
   if (rule.defaultRule){
@@ -13,8 +32,6 @@ export function ruleMatches(rule, context){
       let values = context.getValuesForKey(condition.target);
       for (let vKey in values){
         let value = values[vKey];
-        // console.log(condition.operator, value, condition.values);
-        // console.log(test(condition.operator, value, condition.values));
         if (test(condition.operator, value, condition.values)){
           pass = true;
           break;
