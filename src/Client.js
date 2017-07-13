@@ -79,6 +79,9 @@ export default class Featureflow extends EventEmitter{
       }
       debug(`Evaluating undefined feature '${key}' using the ${failover ? 'provided' : 'default'} failover '${evaluatedVariant}'`);
     }
+    else if (!feature.enabled){
+      evaluatedVariant = feature.offVariantKey;
+    }
     else{
       for (let i in feature.rules){
         let rule = feature.rules[i];

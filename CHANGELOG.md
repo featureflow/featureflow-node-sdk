@@ -1,6 +1,9 @@
 # Change log
 ## [0.5.3] - 2017-07-11
+### Changed
 - Added baseURL config option, added `featureflow.ready(function(){})` callback
+### Fixed
+- Issue with offVariantKey
 ## [0.5.2] - 2017-07-10
 ### Changed
 - Fix support for `var Featureflow = require('featureflow-node-sdk')`, previously was on `Featureflow.default`
