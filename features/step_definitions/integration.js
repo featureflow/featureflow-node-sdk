@@ -25,8 +25,8 @@ defineSupportCode(({ Given, When, Then, setDefaultTimeout, Before }) => {
     });
   });
 
-  When('the feature {key:stringInDoubleQuotes} with context key {contextKey:stringInDoubleQuotes} is evaluated with the value {value:stringInDoubleQuotes}', function (key, contextKey, value) {
-    this.evaluatedResult = this.featureflow.evaluate(key, contextKey).is(value);
+  When('the feature {key:stringInDoubleQuotes} with user id {userId:stringInDoubleQuotes} is evaluated with the value {value:stringInDoubleQuotes}', function (key, userId, value) {
+    this.evaluatedResult = this.featureflow.evaluate(key, userId).is(value);
   });
 
   Then('the result of the evaluation should equal {arg1:trueOrFalse}', function (result) {

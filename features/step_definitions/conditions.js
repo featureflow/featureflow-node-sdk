@@ -11,22 +11,22 @@ defineSupportCode(({ Given, When, Then }) => {
     }
   });
 
-  Given('the value is a {type:stringInQuotes} with the value of {value:stringInQuotes}', function (type, value) {
+  Given('the attribute is a {type:stringInQuotes} with the value of {value:stringInQuotes}', function (type, value) {
     this.result = undefined;
-    this.value = value;
+    this.attribute = attribute;
 
     if (type === 'number'){
-      this.value = parseFloat(value);
+      this.attribute = parseFloat(attribute);
     }
   });
 
-  Given('the value is an array of values {array:commaDelimitedArray}', function (array) {
+  Given('the attribute is an array of values {array:commaDelimitedArray}', function (array) {
     this.result = undefined;
-    this.value = array;
+    this.attribute = array;
   });
 
   When('the operator test {op:stringInQuotes} is run', function (op) {
-    this.result = test(op, this.target, [].concat(this.value));
+    this.result = test(op, this.target, [].concat(this.attribute));
   });
 
   Then('the output should equal {bool:stringInQuotes}', function (bool) {

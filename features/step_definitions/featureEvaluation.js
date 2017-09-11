@@ -17,8 +17,8 @@ defineSupportCode(({ Given, When, Then }) => {
       };
   });
 
-  When('the feature is evaluated with a context {context:stringInDoubleQuotes}', function (context) {
-    this.result = featureEvaluation(this.feature, context);
+  When('the feature is evaluated with a user {user:stringInDoubleQuotes}', function (user) {
+    this.result = featureEvaluation(this.feature, user);
   });
 
   Then('the evaluated variant should be {variant:stringInDoubleQuotes}', function (variant) {

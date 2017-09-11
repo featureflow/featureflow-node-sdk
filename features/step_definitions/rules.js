@@ -1,6 +1,6 @@
 import { defineSupportCode } from 'cucumber';
 import { getVariantSplitKey, ruleMatches } from '../../src/EvaluateHelpers';
-import { ContextBuilder } from '../../src/Context';
+import { UserBuilder } from '../../src/User';
 import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then, Before }) => {
@@ -10,16 +10,18 @@ defineSupportCode(({ Given, When, Then, Before }) => {
       "defaultRule": false,
       "variantSplits": []
     };
-    this.contextBuilder = new ContextBuilder('anonymous');
+    console.log("Creating builder")
+    this.userBuilder = new UserBuilder('anonymous');
   });
 
   Given('the rule is a default rule', function() {
     this.rule.defaultRule = true;
   });
 
-  Given('the context values are', function (contextValues) {
-    contextValues.hashes().forEach((contextValue)=>{
-      this.contextBuilder = this.contextBuilder.withValue(contextValue.key, JSON.parse(contextValue.value));
+  Given('the user attributes are', function (userAttributes) {
+      this.userBuilder = new UserBuilder('anonymous');
+    userAttributes.hashes().forEach((userAttribute)=>{
+      this.userBuilder = this.userBuilder.withAttribute(userAttribute.key, JSON.parse(userAttribute.value));
     });
   });
 
@@ -48,8 +50,9 @@ defineSupportCode(({ Given, When, Then, Before }) => {
     });
   });
 
-  When('the rule is matched against the context', function () {
-    this.result = ruleMatches(this.rule, this.contextBuilder.build())
+  When('the rule is matched against the user', function () {
+    this.userBuilder = new UserBuilder('anonymous');
+    this.result = ruleMatches(this.rule, this.userBuilder.build())
   });
 
   When('the variant split key is calculated', function () {

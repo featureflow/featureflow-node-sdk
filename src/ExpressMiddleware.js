@@ -1,5 +1,5 @@
 import Client from './Client';
-import { ContextBuilder }from './Context';
+import { UserBuilder }from './User';
 
 export default function(options){
   let _featureflow;
@@ -7,12 +7,12 @@ export default function(options){
   function respondWithFeatureflow(req, res, next){
     req.featureflow = {
       ..._featureflow,
-      evaluate: function(key, context){
-        if (typeof context === 'string'){
-          context = new ContextBuilder(context).build();
+      evaluate: function(key, user){
+        if (typeof user === 'string'){
+            user = new UserBuilder(user).build();
         }
-        context.addValue('featureflow.ip', req.ip);
-        return _featurelfow.evaluate(key, context);
+        user.addAttribute('featureflow.ip', req.ip);
+        return _featurelfow.evaluate(key, user);
       }
     }
   }

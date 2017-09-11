@@ -1,18 +1,18 @@
 import bigInt from 'big-integer';
 import sha1Hex from 'sha1-hex';
 import { test } from './Conditions';
-import { ContextBuilder } from './Context';
+import { UserBuilder } from './User';
 
-export function featureEvaluation(feature, context){
-  if (typeof context === "string"){
-    context = new ContextBuilder(context).build();
+export function featureEvaluation(feature, user){
+  if (typeof user === "string"){
+    user = new UserBuilder(user).build();
   }
 
   if (feature.enabled){
     for (let i in feature.rules){
       let rule = feature.rules[i];
-      if (ruleMatches(feature.rules[i], context)){
-        let variantValue = getVariantValue(calculateHash("1", feature.key, context.getKey()));
+      if (ruleMatches(feature.rules[i], user)){
+        let variantValue = getVariantValue(calculateHash("1", feature.key, user.getId()));
         return getVariantSplitKey(rule.variantSplits, variantValue);
       }
     }
@@ -21,7 +21,7 @@ export function featureEvaluation(feature, context){
   return feature.offVariantKey;
 }
 
-export function ruleMatches(rule, context){
+export function ruleMatches(rule, user){
   if (rule.defaultRule){
     return true;
   }
@@ -29,7 +29,7 @@ export function ruleMatches(rule, context){
     for (let cKey in rule.audience.conditions){
       let condition = rule.audience.conditions[cKey];
       let pass = false;
-      let values = context.getValuesForKey(condition.target);
+      let values = user.getAttributesForKey(condition.target);
       for (let vKey in values){
         let value = values[vKey];
         if (test(condition.operator, value, condition.values)){
@@ -58,11 +58,11 @@ export function getVariantSplitKey(variantSplits, variantValue){
   return "off";
 }
 
-export function calculateHash(salt, feature, key){
+export function calculateHash(salt, feature, id){
   const hashValues = [
     salt || '1',
     feature || 'feature',
-    key || 'anonymous'
+    id || 'anonymous'
   ].join(':');
   return sha1Hex(hashValues).substr(0, 15);
 }

@@ -18,7 +18,7 @@ export default class EventsClient{
       features
     )
   }
-  evaluateEvent(featureKey, evaluatedVariant, expectedVariant, context){
+  evaluateEvent(featureKey, evaluatedVariant, expectedVariant, user){
     this.sendEvent(
       'Evaluate',
       'POST',
@@ -27,7 +27,7 @@ export default class EventsClient{
         featureKey,
         evaluatedVariant,
         expectedVariant,
-        context
+        user
       }]);
   }
 

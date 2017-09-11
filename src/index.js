@@ -1,18 +1,18 @@
 import Client from './Client';
-import { ContextBuilder } from './Context'
+import { UserBuilder } from './User'
 import Feature from './Feature'
 import ExpressClient from './ExpressMiddleware'
 
 export default {
   Client,
-  ContextBuilder,
+  UserBuilder,
   Feature,
   ExpressClient
 }
 
 module.exports = {
   Client,
-  ContextBuilder,
+  UserBuilder,
   Feature,
   ExpressClient
 }

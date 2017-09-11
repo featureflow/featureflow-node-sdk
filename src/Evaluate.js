@@ -1,13 +1,13 @@
 export default class Evaluate{
-  constructor(featureKey, evaluatedVariant, context,  eventsClient){
+  constructor(featureKey, evaluatedVariant, user,  eventsClient){
     this.featureKey = featureKey;
     this.evaluatedVariant = evaluatedVariant;
-    this.context = context;
+    this.user = user;
     this.eventsClient = eventsClient;
   }
 
   is(value){
-    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, value, this.context);
+    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, value, this.user);
     return value === this.evaluatedVariant;
   }
 

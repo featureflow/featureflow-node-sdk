@@ -39,7 +39,7 @@ import Featureflow from 'featureflow-node-sdk';
 ```
 
 The `Featureflow` object exposes
- `Featureflow.Client`, `Featuerflow.ContextBuilder` and `Featureflow.Feature`.
+ `Featureflow.Client`, `Featuerflow.UserBuilder` and `Featureflow.Feature`.
 
 The usage of each of these is documented below.
 
@@ -91,46 +91,46 @@ You are responsible for sharing it with the rest of your application**
 ##### Express Quick Start
 Coming soon
 
-#### Defining Context
+#### Defining User
 
-Before evaluating a feature you must define a context for the current user.  
-Featureflow uses context to target different user groups to specific feature variants. 
-A featureflow context has a `key`, which should uniquely identify the current user, and optionally additional `values`. 
-Featureflow requires the context `key` to be unique per user for gradual rollout of features.
+Before evaluating a feature you must define a user for the current user.  
+Featureflow uses users to target different user groups to specific feature variants. 
+A featureflow user has an `id`, which should uniquely identify the current user, and optionally additional `attributes`. 
+Featureflow requires the user `id` to be unique per user for gradual rollout of features.
 
-There are two ways to define context:
+There are two ways to define a user:
 ```javascript
 import Featureflow from 'featureflow-node-sdk';
-let contextKey = '<unique_user_identifier>';
+let userId = '<unique_user_identifier>';
 
-// option 1, use the context builder
-let context = new Featureflow.ContextBuilder(contextKey)
-                                     .withValue({country: 'US'})
-                                     .withValues({roles: ['USER_ADMIN', 'BETA_CUSTOMER']})
+// option 1, use the user builder
+let user = new Featureflow.UserBuilder(userId)
+                                     .withAttribute({country: 'US'})
+                                     .withAttributes({roles: ['USER_ADMIN', 'BETA_CUSTOMER']})
                                      .build();
 
 // option 2, use just a string
-let context = contextKey;
+let user = userId;
 ```
 
 #### Evaluating Features
 
 In your code, you can test the value of your feature using something similar to below
-For these examples below, assume the feature `my-feature-key` is equal to `'on'` for the current `context`
+For these examples below, assume the feature `my-feature-key` is equal to `'on'` for the current `user`
 ```javascript
-if (featureflow.evaluate('my-feature-key', context).is('on')){
-  // this code will be run because 'my-feature-key' is set to 'on' for the given context
+if (featureflow.evaluate('my-feature-key', user).is('on')){
+  // this code will be run because 'my-feature-key' is set to 'on' for the given user
 }
 ```
 Because the most common variants for a feature are `'on'` and `'off'`, we have provided two helper methods `.isOn()` and `.isOff()`
 
 ```javascript
 
-if (featureflow.evaluate('my-feature-key', context).isOn()){
+if (featureflow.evaluate('my-feature-key', user).isOn()){
   // this feature code will be run because 'my-feature-key' is set to 'on'
 }
 
-if (featureflow.evaluate('my-feature-key', context).isOff()){
+if (featureflow.evaluate('my-feature-key', user).isOff()){
   // this feature code won't be run because 'my-feature-key' is not set to 'off'
 }
 ```
@@ -160,11 +160,11 @@ new Featureflow.Client({
     new Featureflow.Feature('key-three', 'custom').build(),
   ]
 }, function(err, featureflow){
-  const context = "user1";
+  const user = "user1";
   //these features don't exist so we it will use the defaults provided
-  featureflow.evaluate('key-one', context).isOn(); // == true
-  featureflow.evaluate('key-two', context).isOff(); // == true
-  featureflow.evaluate('key-three', context).is('custom'); // == true
+  featureflow.evaluate('key-one', user).isOn(); // == true
+  featureflow.evaluate('key-two', user).isOff(); // == true
+  featureflow.evaluate('key-three', user).is('custom'); // == true
 
 });
 

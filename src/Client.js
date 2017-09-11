@@ -2,7 +2,7 @@ import PollingClient from './PollingClient';
 import EventsClient from './EventsClient';
 const EventEmitter = require('events');
 import { InMemoryFeatureStore } from './FeatureStore';
-import { ContextBuilder } from './Context';
+import { UserBuilder } from './User';
 import Evaluate from './Evaluate';
 import debug from './debug';
 
@@ -61,7 +61,7 @@ export default class Featureflow extends EventEmitter{
     }
   }
 
-  evaluate(key, context){
+  evaluate(key, user){
     let evaluatedVariant;
     let feature = this.config.featureStore.get(key);
 
@@ -76,13 +76,13 @@ export default class Featureflow extends EventEmitter{
       debug(`Evaluating undefined feature '${key}' using the ${failover ? 'provided' : 'default'} failover '${evaluatedVariant}'`);
     }
     else {
-      evaluatedVariant = featureEvaluation(feature, context);
+      evaluatedVariant = featureEvaluation(feature, user);
     }
 
     return new Evaluate(
       key,
       evaluatedVariant,
-      context,
+      user,
       this.eventsClient
     );
   }
