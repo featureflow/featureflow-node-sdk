@@ -31,15 +31,22 @@ export default class PollingClient{
         'If-None-Match': this.etag
       }
     }, (error, response, body)=>{
-      if (response.statusCode === 200){
-        this.etag = response.headers['etag'];
-        debug("updating features");
-        this.featureStore.setAll(JSON.parse(body));
+      if (response){
+          if (response.statusCode === 200){
+              this.etag = response.headers['etag'];
+              debug("updating features");
+              this.featureStore.setAll(JSON.parse(body));
+          }
+          else if (response.statusCode >= 400 || error){
+              debug("request for features failed with response status %d", response.statusCode);
+          }
+          callback()
+      }else{
+        if(error.code != null){
+          debug(error.code);
+        }
       }
-      else if (response.statusCode >= 400 || error){
-        debug("request for features failed with response status %d", response.statusCode);
-      }
-      callback()
+
     })
   }
 }
