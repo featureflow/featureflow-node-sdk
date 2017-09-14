@@ -20,7 +20,7 @@ export default class EventsClient{
   }
   evaluateEvent(featureKey, evaluatedVariant, expectedVariant, user){
     this.sendEvent(
-      'Evaluate',
+      'evaluate',
       'POST',
       this.baseURL+'/api/sdk/v1/events',
       [{
@@ -31,7 +31,7 @@ export default class EventsClient{
       }]);
   }
 
-  sendEvent(eventName, method, url, json){
+  sendEvent(eventType, method, url, json){
     if (this.disabled){
       return;
     }
@@ -48,7 +48,7 @@ export default class EventsClient{
         return;
       }
       if (response.statusCode >= 400){
-        debug("unable to send event %s to %s. Failed with response status %d", eventName, url, response.statusCode);
+        debug("unable to send event %s to %s. Failed with response status %d", eventType, url, response.statusCode);
       }
     })
   }

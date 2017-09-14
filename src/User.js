@@ -24,7 +24,7 @@ export class UserBuilder{
     }
     this.id = id;
     this.attributes = {
-      'featureflow.id': [id],
+      'featureflow.user.id': [id],
       'featureflow.date': [new Date().toISOString()]
     }
   }
