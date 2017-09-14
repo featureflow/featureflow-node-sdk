@@ -105,8 +105,8 @@ let userId = '<unique_user_identifier>';
 
 // option 1, use the user builder
 let user = new Featureflow.UserBuilder(userId)
-                                     .withAttribute({country: 'US'})
-                                     .withAttributes({roles: ['USER_ADMIN', 'BETA_CUSTOMER']})
+                                     .withAttribute('country', 'US')
+                                     .withAttributes('roles', ['USER_ADMIN', 'BETA_CUSTOMER'])
                                      .build();
 
 // option 2, use just a string
