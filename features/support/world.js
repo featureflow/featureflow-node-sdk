@@ -9,7 +9,7 @@ defineSupportCode(({ addTransform })=>{
   });
 
   addTransform({
-    captureGroupRegexps: ['"[^"]*"'],
+    captureGroupRegexps: ['.*,.*'],
     transformer: value => value.split(',').map(function(val){return val.trim()}),
     typeName: 'commaDelimitedArray'
   });

@@ -10,8 +10,9 @@ defineSupportCode(({ Given, When, Then, Before }) => {
       "defaultRule": false,
       "variantSplits": []
     };
+    this.builder = new UserBuilder('anonymous');
     console.log("Creating builder")
-    this.userBuilder = new UserBuilder('anonymous');
+    //this.userBuilder = "cock"; //new UserBuilder('anonymous');
   });
 
   Given('the rule is a default rule', function() {
@@ -19,9 +20,8 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   Given('the user attributes are', function (userAttributes) {
-      this.userBuilder = new UserBuilder('anonymous');
     userAttributes.hashes().forEach((userAttribute)=>{
-      this.userBuilder = this.userBuilder.withAttribute(userAttribute.key, JSON.parse(userAttribute.value));
+      this.builder = this.builder.withAttribute(userAttribute.key, JSON.parse(userAttribute.value));
     });
   });
 
@@ -37,7 +37,7 @@ defineSupportCode(({ Given, When, Then, Before }) => {
     }
   });
 
-  Given('the variant value of {variantValue:int}', function (variantValue) {
+  Given('the variant value of {int}', function (variantValue) {
     this.variantValue = variantValue;
   });
 
@@ -51,19 +51,19 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   When('the rule is matched against the user', function () {
-    this.userBuilder = new UserBuilder('anonymous');
-    this.result = ruleMatches(this.rule, this.userBuilder.build())
+    console.log(this.builder);
+    this.result = ruleMatches(this.rule, this.builder.build())
   });
 
   When('the variant split key is calculated', function () {
     this.result = getVariantSplitKey(this.rule.variantSplits, this.variantValue);
   });
 
-  Then('the result from the match should be {result:trueOrFalse}', function (result) {
+  Then('the result from the match should be {trueOrFalse}', function (result) {
     expect(this.result).to.equal(result);
   });
 
-  Then('the resulting variant should be {result:stringInDoubleQuotes}', function (result) {
+  Then('the resulting variant should be {stringInDoubleQuotes}', function (result) {
     expect(this.result).to.equal(result);
   });
 });

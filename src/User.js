@@ -12,8 +12,8 @@ class User{
     return this.attributes[key];
   }
 
-  addAttribute(key, attribute){
-    this.attributes[key] = [].concat(attribute);
+  addAttribute(key, value){
+    this.attributes[key] = [].concat(value);
   }
 }
 
@@ -29,13 +29,13 @@ export class UserBuilder{
     }
   }
 
-  withAttribute(key, attribute){
-    this.attributes[key] = [].concat(attribute);
+  withAttribute(key, value){
+    this.attributes[key] = [].concat(value);
     return this;
   }
 
-  withAttributes(key, attributes){
-    this.withAttribute(key, attributes);
+  withAttributes(key, values){
+    this.withAttribute(key, values);
     return this;
   }
 

@@ -3,7 +3,7 @@ import { featureEvaluation } from '../../src/EvaluateHelpers';
 import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then }) => {
-  Given('the feature {key:stringInDoubleQuotes} with an offVariantKey {offVariantKey:stringInDoubleQuotes}, a default key of {defaultKey:stringInDoubleQuotes} is {enabled:enabledOrDisabled}',
+  Given('the feature {stringInDoubleQuotes} with an offVariantKey {stringInDoubleQuotes}, a default key of {stringInDoubleQuotes} is {enabledOrDisabled}',
     function (key, offVariantKey, defaultKey, enabled) {
       this.feature = {
         key,
@@ -17,11 +17,11 @@ defineSupportCode(({ Given, When, Then }) => {
       };
   });
 
-  When('the feature is evaluated with a user {user:stringInDoubleQuotes}', function (user) {
+  When('the feature is evaluated with a user {stringInDoubleQuotes}', function (user) {
     this.result = featureEvaluation(this.feature, user);
   });
 
-  Then('the evaluated variant should be {variant:stringInDoubleQuotes}', function (variant) {
+  Then('the evaluated variant should be {stringInDoubleQuotes}', function (variant) {
     expect(this.result).to.equal(variant);
   });
 });

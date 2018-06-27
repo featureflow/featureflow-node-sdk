@@ -4,17 +4,17 @@ Feature: Rules
     When the rule is matched against the user
     Then the result from the match should be true
 
-  Scenario Outline: Test that the rule user matching works (User {<attribute>: <attributeValue>} with operator: <operator>, target: <target>, values: <values>, result: <result>)
+  Scenario Outline: Test that the rule user matching works (User {<key>: <value>} with operator: <operator>, target: <target>, values: <values>, result: <result>)
     Given the user attributes are
-      | attribute                   | value                 |
-      | <attribute>    | <attributeValue>  |
+      | key             | value             |
+      | <key>           | <value>           |
     And the rule's audience conditions are
       | operator        | target            | values          |
       | <operator>      | <target>          | <values>        |
-    When the rule is matched against the context
+    When the rule is matched against the user
     Then the result from the match should be <result>
   Examples:
-    | attribute      | attributeValue      | operator | target   | values            | result |
+    | key                   | value                   | operator | target   | values            | result |
     | role                  | "beta"                  | equals   | role     | ["beta"]          | true   |
     | role                  | "alpha"                 | equals   | role     | ["beta"]          | false  |
     | role                  | ["beta", "alpha"]       | equals   | role     | ["beta"]          | true   |
@@ -30,7 +30,7 @@ Feature: Rules
       | operator        | target            | values          |
       | equals          | role              | ["beta"]        |
       | equals          | account           | ["premium"]     |
-    When the rule is matched against the context
+    When the rule is matched against the user
     Then the result from the match should be true
 
   Scenario: Test one conditions, but one failing, will return false
@@ -43,7 +43,7 @@ Feature: Rules
       | equals          | role              | ["beta"]        |
       | equals          | account           | ["premium"]     |
       | equals          | notInContext      | ["not here"]    |
-    When the rule is matched against the context
+    When the rule is matched against the user
     Then the result from the match should be false
 
   Scenario Outline: Get the variant split key works for a default case (value: <value>, on: <on>, off: <off>, result: <result>)

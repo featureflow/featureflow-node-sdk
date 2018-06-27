@@ -17,7 +17,7 @@ defineSupportCode(({ Given, When, Then, setDefaultTimeout, Before }) => {
     expect(Featureflow).to.exist;
   });
 
-  When('the FeatureflowClient is initialized with the apiKey {apiKey:stringInDoubleQuotes}', function (apiKey, callback) {
+  When('the FeatureflowClient is initialized with the apiKey {stringInDoubleQuotes}', function (apiKey, callback) {
     new Featureflow.Client({apiKey}, (error, featureflow)=>{
       this.featureflow = featureflow;
       this.error = error;
@@ -25,11 +25,11 @@ defineSupportCode(({ Given, When, Then, setDefaultTimeout, Before }) => {
     });
   });
 
-  When('the feature {key:stringInDoubleQuotes} with user id {userId:stringInDoubleQuotes} is evaluated with the value {value:stringInDoubleQuotes}', function (key, userId, value) {
+  When('the feature {stringInDoubleQuotes} with user id {stringInDoubleQuotes} is evaluated with the value {stringInDoubleQuotes}', function (key, userId, value) {
     this.evaluatedResult = this.featureflow.evaluate(key, userId).is(value);
   });
 
-  Then('the result of the evaluation should equal {arg1:trueOrFalse}', function (result) {
+  Then('the result of the evaluation should equal {trueOrFalse}', function (result) {
     // Write code here that turns the phrase above into concrete actions
     expect(this.evaluatedResult).to.equal(result);
   });

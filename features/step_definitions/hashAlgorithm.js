@@ -4,22 +4,24 @@ import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then }) => {
 
-  Given('the salt is {salt:stringInDoubleQuotes}, the feature is {feature:stringInDoubleQuotes} and the key is {key:stringInDoubleQuotes}', function (salt, feature, key) {
+  Given('the salt is {stringInDoubleQuotes}, the feature is {stringInDoubleQuotes} and the id is {stringInDoubleQuotes}', function (salt, feature, id) {
+  //Given('{commaDelimitedArray}', function (commaDelimitedArray, callback) {
+    //[this.salt, this.feature, this.id] = commaDelimitedArray;
     this.salt = salt;
     this.feature = feature;
-    this.key = key;
+    this.id = id;
   });
 
   When('the variant value is calculated', function () {
-    this.hash = calculateHash(this.salt, this.feature, this.key);
+    this.hash = calculateHash(this.salt, this.feature, this.id);
     this.result = getVariantValue(this.hash);
   });
 
-  Then('the hash value calculated should equal {hash:stringInDoubleQuotes}', function (hash) {
+  Then('the hash value calculated should equal {stringInDoubleQuotes}', function (hash) {
     expect(this.hash).to.equal(hash);
   });
 
-  Then('the result from the variant calculation should be {result:int}', function (result) {
+  Then('the result from the variant calculation should be {int}', function (result) {
     expect(this.result).to.equal(result);
   });
 

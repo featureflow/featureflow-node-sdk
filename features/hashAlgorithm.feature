@@ -1,5 +1,5 @@
 Feature: Hashing Algorithm
-  Scenario Outline: Testing that the id "<id>", salt "<salt>" and feature "<feature>" returns the result "<result>"
+  Scenario Outline: Testing that the "<id>" id, "<salt>" salt and "<feature>" feature returns the "<result>" result
     Given the salt is "<salt>", the feature is "<feature>" and the id is "<id>"
     When the variant value is calculated
     Then the hash value calculated should equal "<hash>"
