@@ -39,7 +39,7 @@ import Featureflow from 'featureflow-node-sdk';
 ```
 
 The `Featureflow` object exposes
- `Featureflow.Client`, `Featuerflow.UserBuilder` and `Featureflow.Feature`.
+ `Featureflow.Client`, `Featureflow.UserBuilder` and `Featureflow.Feature`.
 
 The usage of each of these is documented below.
 
