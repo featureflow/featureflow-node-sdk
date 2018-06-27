@@ -4,7 +4,9 @@ import { test } from './Conditions';
 import { UserBuilder } from './User';
 
 export function featureEvaluation(feature, user){
-  if (typeof user === "string"){
+  if (user === null || typeof user === 'undefined'){
+      user = new UserBuilder('anonymous').build();
+  } else if (typeof user === "string") {
     user = new UserBuilder(user).build();
   }
 
