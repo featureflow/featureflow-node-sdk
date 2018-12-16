@@ -41,6 +41,7 @@ export default class EventsClient{
       json,
       headers: {
         'Authorization': 'Bearer '+this.apiKey,
+        'X-Featureflow-Client': 'NodeJsClient/0.6.4'
       }
     }, (error, response, body)=>{
       if (error){

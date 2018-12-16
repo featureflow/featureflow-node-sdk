@@ -28,7 +28,8 @@ export default class PollingClient{
       timeout: this.timeout,
       headers: {
         'Authorization': 'Bearer '+this.apiKey,
-        'If-None-Match': this.etag
+        'If-None-Match': this.etag,
+        'X-Featureflow-Client': 'NodeJsClient/0.6.4'
       }
     }, (error, response, body)=>{
       if (response){
