@@ -22,7 +22,8 @@ export default class Featureflow extends EventEmitter {
             config = undefined;
         }
         this.config = {
-            baseURL: 'https://app.featureflow.io',
+            baseUrl: 'https://app.featureflow.io',
+            eventsUrl: 'https://events.featureflow.io',
             ...config
         };
 
@@ -34,7 +35,7 @@ export default class Featureflow extends EventEmitter {
         this.config.featureStore = new InMemoryFeatureStore();
         this.config.disableEvents = this.config.disableEvents || false;
 
-        this.eventsClient = new EventsClient(this.config.apiKey, this.config.baseURL, this.config.disableEvents)
+        this.eventsClient = new EventsClient(this.config.apiKey, this.config.eventsBaseURL, this.config.disableEvents)
 
         if (this.config.withFeatures) {
             this.config.withFeatures.forEach(feature => {
@@ -44,7 +45,7 @@ export default class Featureflow extends EventEmitter {
             this.eventsClient.registerFeaturesEvent(this.config.withFeatures);
         }
 
-        this.close = new PollingClient(this.config.baseURL + '/api/sdk/v1/features', this.config, () => {
+        this.close = new PollingClient(this.config.baseUrl + '/api/sdk/v1/features', this.config, () => {
             debug("client initialized");
             this.isReady = true;
             this.emit('ready');

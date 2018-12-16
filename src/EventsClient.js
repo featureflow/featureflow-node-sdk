@@ -4,9 +4,9 @@ import debug from './debug';
 export default class EventsClient{
   DEFAULT_TIMEOUT = 5 * 1000;
 
-  constructor(apiKey, baseURL="https://app.featureflow.io", disabled = false){
+  constructor(apiKey, eventsUrl="https://events.featureflow.io", disabled = false){
     this.apiKey = apiKey;
-    this.baseURL = baseURL;
+    this.eventsURL = eventsUrl;
     this.disabled = disabled;
     this.timeout = this.DEFAULT_TIMEOUT;
   }
@@ -14,7 +14,7 @@ export default class EventsClient{
     this.sendEvent(
       'Register Features',
       'PUT',
-      this.baseURL+'/api/sdk/v1/register',
+      this.eventsUrl+'/api/sdk/v1/register',
       features
     )
   }
@@ -22,7 +22,7 @@ export default class EventsClient{
     this.sendEvent(
       'evaluate',
       'POST',
-      this.baseURL+'/api/sdk/v1/events',
+      this.eventsUrl+'/api/sdk/v1/events',
       [{
         featureKey,
         evaluatedVariant,

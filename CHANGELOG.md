@@ -4,7 +4,7 @@
 - Updated tests
 ## [0.5.4] - 2017-07-14
 ### Changed
-- Added baseURL config option, added `featureflow.ready(function(){})` callback
+- Added baseUrl config option, added `featureflow.ready(function(){})` callback
 ### Fixed
 - Issue with offVariantKey
 ## [0.5.2] - 2017-07-10
