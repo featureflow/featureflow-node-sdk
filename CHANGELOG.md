@@ -1,4 +1,10 @@
 # Change log
+## [0.6.4] - 2018-012-18
+### Changed
+- Simplify express middleware
+- Update url to events.featureflow.io for events
+- Improve polling time
+- Update readme
 ## [0.5.5] - 2017-07-14
 ### Changed
 - Updated tests
