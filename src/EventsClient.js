@@ -3,10 +3,11 @@ import debug from './debug';
 
 export default class EventsClient{
   DEFAULT_TIMEOUT = 5 * 1000;
+  clientVersion = 'NodeJsClient/0.6.4';
 
   constructor(apiKey, eventsUrl="https://events.featureflow.io", disabled = false){
     this.apiKey = apiKey;
-    this.eventsURL = eventsUrl;
+    this.eventsUrl = eventsUrl;
     this.disabled = disabled;
     this.timeout = this.DEFAULT_TIMEOUT;
   }
@@ -32,6 +33,7 @@ export default class EventsClient{
   }
 
   sendEvent(eventType, method, url, json){
+
     if (this.disabled){
       return;
     }
@@ -41,7 +43,7 @@ export default class EventsClient{
       json,
       headers: {
         'Authorization': 'Bearer '+this.apiKey,
-        'X-Featureflow-Client': 'NodeJsClient/0.6.4'
+        'X-Featureflow-Client': this.clientVersion
       }
     }, (error, response, body)=>{
       if (error){

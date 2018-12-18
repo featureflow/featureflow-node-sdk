@@ -89,9 +89,9 @@ let featureflow = new Featureflow.Client();
 You are responsible for sharing it with the rest of your application**
 
 ##### Express Quick Start
-Coming soon
+Please see the example at https://github.com/featureflow/featureflow-node-example
 
-#### Defining User
+#### Defining a User
 
 Before evaluating a feature you must define a user for the current user.  
 Featureflow uses users to target different user groups to specific feature variants. 

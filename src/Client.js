@@ -35,7 +35,7 @@ export default class Featureflow extends EventEmitter {
         this.config.featureStore = new InMemoryFeatureStore();
         this.config.disableEvents = this.config.disableEvents || false;
 
-        this.eventsClient = new EventsClient(this.config.apiKey, this.config.eventsBaseURL, this.config.disableEvents)
+        this.eventsClient = new EventsClient(this.config.apiKey, this.config.eventsUrl, this.config.disableEvents)
 
         if (this.config.withFeatures) {
             this.config.withFeatures.forEach(feature => {

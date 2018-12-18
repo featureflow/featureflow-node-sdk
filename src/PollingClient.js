@@ -3,7 +3,8 @@ import debug from './debug';
 
 export default class PollingClient{
   DEFAULT_TIMEOUT = 5 * 1000;
-  DEFAULT_INTERVAL = 30 * 1000;
+  DEFAULT_INTERVAL = 10 * 1000;
+  clientVersion = 'NodeJsClient/0.6.4';
 
   constructor(url, config, callback){
     this.url = url;
@@ -19,6 +20,7 @@ export default class PollingClient{
 
     const interval = setInterval(this.getFeatures.bind(this), this.interval);
 
+
     return clearInterval.bind(this, interval);
   }
   getFeatures(callback = ()=>{}){
@@ -29,7 +31,7 @@ export default class PollingClient{
       headers: {
         'Authorization': 'Bearer '+this.apiKey,
         'If-None-Match': this.etag,
-        'X-Featureflow-Client': 'NodeJsClient/0.6.4'
+        'X-Featureflow-Client': this.clientVersion
       }
     }, (error, response, body)=>{
       if (response){
