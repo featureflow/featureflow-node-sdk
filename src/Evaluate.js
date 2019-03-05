@@ -15,7 +15,7 @@ export default class Evaluate{
     return this.is('on');
   }
 
-  ifOff(){
+  isOff(){
     return this.is('off');
   }
 
