@@ -14,12 +14,13 @@ Feature: Rules
     When the rule is matched against the user
     Then the result from the match should be <result>
   Examples:
-    | key                   | value                   | operator | target   | values            | result |
-    | role                  | "beta"                  | equals   | role     | ["beta"]          | true   |
-    | role                  | "alpha"                 | equals   | role     | ["beta"]          | false  |
-    | role                  | ["beta", "alpha"]       | equals   | role     | ["beta"]          | true   |
-    | role                  | ["beta", "alpha"]       | equals   | role     | ["alpha"]         | true   |
-    | role                  | ["beta", "alpha"]       | equals   | role     | ["nope"]          | false  |
+    | key                   | value                               | operator      | target               | values                       | result |
+    | role                  | "beta"                              | equals        | role                 | ["beta"]                     | true   |
+    | role                  | "alpha"                             | equals        | role                 | ["beta"]                     | false  |
+    | role                  | ["beta", "alpha"]                   | equals        | role                 | ["beta"]                     | true   |
+    | role                  | ["beta", "alpha"]                   | equals        | role                 | ["alpha"]                    | true   |
+    | role                  | ["beta", "alpha"]                   | equals        | role                 | ["nope"]                     | false  |
+    | featureflow.date      | ["2019-02-26T13:00:00.000Z"]        | after         | featureflow.date     | ["2019-02-25T13:00:00.000Z"] | true   |
 
   Scenario: Test multiple conditions all passing will return true
     Given the user attributes are

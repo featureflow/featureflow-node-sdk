@@ -24,10 +24,20 @@ const operators = {
       && b.indexOf(a) < 0
   },
   before: (a, b) => {
-    return a < b;
+    a = dateParse(a);
+    b = dateParse(b);
+    if (typeof a === 'number' && typeof b === 'number') {
+      return a < b;
+    }
+    return false;
   },
   after: (a, b) => {
-    return a > b;
+    a = dateParse(a);
+    b = dateParse(b);
+    if (typeof a === 'number' && typeof b === 'number') {
+      return a > b;
+    }
+    return false;
   },
   greaterThan: (a, b) => {
     return a > b;
@@ -42,6 +52,16 @@ const operators = {
     return a <= b;
   }
 };
+
+function dateParse(date){
+  if( typeof date === 'string'){
+    return Date.parse(date);
+  }
+  if(date instanceof Date){
+    return date.getTime();
+  }
+  return date;
+}
 
 const notFound = () => {
   return false;
