@@ -74,7 +74,6 @@ export default class Featureflow extends EventEmitter {
         for (let p in features) {
             if(  features.hasOwnProperty(p) ) {
                 let value = this.evaluate(p, user).value();
-                console.log(p + " : " + value);
                 evaluatedFeatures[p] = value;
             }
         }
