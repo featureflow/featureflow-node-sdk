@@ -11,6 +11,14 @@ export function featureEvaluation(feature, user){
   }
 
   if (feature.enabled){
+    let now = new Date();
+    let hourOfDay = now.getHours();
+    let hArray = new Array(1);
+    hArray[0] = hourOfDay;
+    user.attributes['featureflow.user.id'] = [user.id];
+    user.attributes['featureflow.date'] = [new Date().toISOString()];
+    user.attributes['featureflow.hourofday'] = hArray;
+
     for (let i in feature.rules){
       let rule = feature.rules[i];
       if (ruleMatches(feature.rules[i], user)){
