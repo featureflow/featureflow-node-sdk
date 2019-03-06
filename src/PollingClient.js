@@ -4,7 +4,7 @@ import debug from './debug';
 export default class PollingClient{
   DEFAULT_TIMEOUT = 5 * 1000;
   DEFAULT_INTERVAL = 10 * 1000;
-  clientVersion = 'NodeJsClient/0.6.5';
+  clientVersion = 'NodeJsClient/0.6.6';
 
   constructor(url, config, callback){
     this.url = url;
