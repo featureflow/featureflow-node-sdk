@@ -20,6 +20,7 @@ export default class Evaluate{
   }
 
   value(){
+    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, null, this.user);
     return this.evaluatedVariant;
   }
 }
