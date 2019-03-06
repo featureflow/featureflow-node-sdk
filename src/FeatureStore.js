@@ -19,4 +19,7 @@ export class InMemoryFeatureStore{
       this.features[key] = {...features[key]};
     }
   }
+  getAll(){
+    return this.features;
+  }
 }

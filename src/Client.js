@@ -65,6 +65,22 @@ export default class Featureflow extends EventEmitter {
         }
     }
 
+    evaluateAll() {
+        return evaluateAll('anonymous');
+    }
+    evaluateAll(user) {
+        let evaluatedFeatures = {};
+        let features = this.config.featureStore.getAll();
+        for (let p in features) {
+            if(  features.hasOwnProperty(p) ) {
+                let value = this.evaluate(p, user).value();
+                console.log(p + " : " + value);
+                evaluatedFeatures[p] = value;
+            }
+        }
+        return evaluatedFeatures;
+    }
+
     evaluate(key) {
         return evaluate(key, 'anonymous');
     }
