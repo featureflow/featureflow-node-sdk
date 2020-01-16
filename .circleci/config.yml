@@ -13,12 +13,12 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
-      - run: mkdir -p ~/cucumber
+      - run: mkdir -p ./cucumber
       - run: yarn ci-test
       - store_test_results:
-          path: ~/cucumber
+          path: ./cucumber
       - store_artifacts:
-          path: ~/cucumber
+          path: ./cucumber
 workflows:
   version: 2
   main:
