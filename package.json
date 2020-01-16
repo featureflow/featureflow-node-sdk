@@ -14,7 +14,7 @@
     "watch": "babel --watch src -d dist",
     "prepublish": "npm run build",
     "test": "cucumber.js --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
-    "ci-test": "cucumber.js --output json:~./cucumber/test.cucumber --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
+    "ci-test": "cucumber.js --format json:~./cucumber/test.cucumber --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
     "test:integration": "cucumber.js --compiler js:babel-core/register --tags \"@integration\""
   },
   "repository": {
