@@ -2,6 +2,8 @@
 
 [![][npm-img]][npm-url]
 
+[![Featureflow](https://circleci.com/gh/featureflow/featureflow-node-sdk.svg?style=svg)](https://circleci.com/gh/featureflow/featureflow-node-sdk)
+
 [![][dependency-img]][dependency-url]
 
 > Featureflow Node SDK
