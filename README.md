@@ -14,7 +14,13 @@ Get your Featureflow account at [featureflow.io](http://www.featureflow.io)
 
 The easiest way to get started is to follow the [Featureflow quick start guides](http://docs.featureflow.io/docs)
 
-To see a running nodejs example please see [here](https://github.com/featureflow/featureflow-node-example)
+## Examples
+
+Express: [here](https://github.com/featureflow/featureflow-node-example)
+
+NextJS: [here](https://github.com/featureflow/featureflow-example-nextjs)
+
+5 Minute: [here](https://github.com/featureflow/featureflow-fiveminute-node) [(docs)](https://docs.featureflow.io/docs/nodejs-5-minute-test)
 
 ## Change Log
 
