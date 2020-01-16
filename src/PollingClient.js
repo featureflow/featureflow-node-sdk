@@ -10,18 +10,21 @@ export default class PollingClient{
     this.url = url;
     this.apiKey = config.apiKey;
     this.featureStore = config.featureStore;
-
+    this.interval = this.DEFAULT_INTERVAL;
+    if (config.interval && config.interval > 5 || config.interval == 0){
+        this.interval = config.interval * 1000
+    }
+    this.timeout = this.DEFAULT_TIMEOUT;
     this.etag = "";
 
-    this.timeout = this.DEFAULT_TIMEOUT;
-    this.interval = this.DEFAULT_INTERVAL;
-
     this.getFeatures(callback);
+    if(this.interval > 0){
+        const interval = setInterval(this.getFeatures.bind(this), this.interval);
+        return clearInterval.bind(this, interval);
+    } else {
+        debug("Polling interval set to 0. Featureflow will NOT poll for feature changes.");
+    }
 
-    const interval = setInterval(this.getFeatures.bind(this), this.interval);
-
-
-    return clearInterval.bind(this, interval);
   }
   getFeatures(callback = ()=>{}){
     request({
