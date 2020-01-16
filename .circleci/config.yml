@@ -13,6 +13,10 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - run:
+        name: Make result dir
+        command: |
+          mkdir -p ~/cucumber
       - run: # run tests
           name: test
           command: yarn ci-test
