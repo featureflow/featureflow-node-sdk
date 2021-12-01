@@ -32,10 +32,9 @@ export function featureEvaluation(feature, user){
 }
 
 export function ruleMatches(rule, user){
-  if (rule.defaultRule){
+  if (!rule.audience) {
     return true;
-  }
-  else{
+  } else {
     for (let cKey in rule.audience.conditions){
       let condition = rule.audience.conditions[cKey];
       let pass = false;
