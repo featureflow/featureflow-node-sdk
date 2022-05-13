@@ -13,7 +13,7 @@ export default class Featureflow extends EventEmitter {
     failoverVariants = {};
     isReady = false;
 
-    constructor(config, callback = () => {
+    constructor(config, callback = (_err, self) => {
     }) {
         super();
         debug("initializing client");

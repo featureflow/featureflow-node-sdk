@@ -3,6 +3,7 @@
   "version": "0.6.8",
   "description": "Featureflow sdk for Node",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">4.0.0"
   },
@@ -10,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d dist && tsc",
     "watch": "babel --watch src -d dist",
     "prepublish": "npm run build",
     "test": "cucumber.js --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
