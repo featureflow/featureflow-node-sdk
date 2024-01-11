@@ -50,7 +50,7 @@ export default class EventsClient {
     }
 
     sendQueue() {
-        if(this.queue.length === 0) return;
+        if (this.queue.length === 0) return;
         let sendQueue = this.queue;
         this.queue = [];
 
@@ -62,7 +62,6 @@ export default class EventsClient {
     }
 
     sendEvent(eventType, method, url, json) {
-
         if (this.disabled) {
             return;
         }
@@ -84,9 +83,6 @@ export default class EventsClient {
             }
         })
     }
-
-
-
 
     close() {
         clearInterval(this.interval);

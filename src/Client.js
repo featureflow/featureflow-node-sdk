@@ -2,12 +2,12 @@ import PollingClient from './PollingClient';
 import EventsClient from './EventsClient';
 
 const EventEmitter = require('events');
-import {InMemoryFeatureStore} from './FeatureStore';
-import {UserBuilder} from './User';
+import { InMemoryFeatureStore } from './FeatureStore';
+import { UserBuilder } from './User';
 import Evaluate from './Evaluate';
 import debug from './debug';
 
-import {ruleMatches, getVariantValue, getVariantSplitKey, calculateHash, featureEvaluation} from './EvaluateHelpers';
+import { ruleMatches, getVariantValue, getVariantSplitKey, calculateHash, featureEvaluation } from './EvaluateHelpers';
 
 export default class Featureflow extends EventEmitter {
     failoverVariants = {};
@@ -45,7 +45,7 @@ export default class Featureflow extends EventEmitter {
             this.eventsClient.registerFeaturesEvent(this.config.withFeatures);
         }
 
-        this.close = new PollingClient(this.config.baseUrl + '/api/sdk/v1/features', this.config, () => {
+        this.pollingClient = new PollingClient(this.config.baseUrl + '/api/sdk/v1/features', this.config, () => {
             debug("client initialized");
             this.isReady = true;
             this.emit('ready');
@@ -72,7 +72,7 @@ export default class Featureflow extends EventEmitter {
         let evaluatedFeatures = {};
         let features = this.config.featureStore.getAll();
         for (let p in features) {
-            if(  features.hasOwnProperty(p) ) {
+            if (features.hasOwnProperty(p)) {
                 let value = this.evaluate(p, user).value();
                 evaluatedFeatures[p] = value;
             }
@@ -108,5 +108,10 @@ export default class Featureflow extends EventEmitter {
             user,
             this.eventsClient
         );
+    }
+
+    close() {
+        this.pollingClient.close();
+        this.eventsClient.close();
     }
 }
