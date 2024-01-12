@@ -18,9 +18,12 @@ Featureflow SDKs are open source and we welcome contributions from all developer
 ## Building
 
 ```
-yarn install # install dependencies
-yarn build # build the SDK
-yarn test # run tests including cucumber
+# install dependencies
+yarn install 
+# build the SDK
+yarn build 
+# run tests including cucumber
+yarn test 
 ```
 ## License
 
