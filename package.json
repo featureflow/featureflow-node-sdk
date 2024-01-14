@@ -1,6 +1,6 @@
 {
   "name": "featureflow-node-sdk",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "Featureflow sdk for Node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "build": "babel src -d dist && tsc",
     "watch": "babel --watch src -d dist",
     "prepublish": "npm run build",
-    "test": "cucumber.js --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
-    "ci-test": "cucumber.js --format json:./cucumber/tests.cucumber --compiler js:babel-core/register --tags \"not @ignore and not @integration\"",
+    "test": "node_modules/.bin/cucumber-js --compiler js:babel-core/register --format=json | node_modules/.bin/cucumber-junit > output_JUnit.xml --tags \"not @ignore and not @integration\"",
+    "ci-test": "node_modules/.bin/cucumber-js --compiler js:babel-core/register --format=json | node_modules/.bin/cucumber-junit > ~/junit.xml --tags \"not @ignore and not @integration\"",
     "test:integration": "cucumber.js --compiler js:babel-core/register --tags \"@integration\""
   },
   "repository": {
@@ -43,7 +43,7 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-2": "^6.22.0",
     "chai": "^3.5.0",
-    "cucumber": "^2.3.1",
+    "cucumber-junit": "^1.7.1",
     "moment": "^2.18.1"
   }
 }
