@@ -1,4 +1,13 @@
 # Change log
+## [0.6.10] - 2018-012-18
+### Close Events Client
+## [0.6.8] - 2018-012-18
+### Minor Fixes
+## [0.6.6] - 2018-012-18
+### Bug Fixes
+### Polling optimisation
+## [0.6.5] - 2018-012-18
+### Bug Fixes
 ## [0.6.4] - 2018-012-18
 ### Changed
 - Simplify express middleware
