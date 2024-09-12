@@ -3,8 +3,8 @@ import debug from './debug';
 
 export default class PollingClient {
     DEFAULT_TIMEOUT = 5 * 1000;
-    DEFAULT_INTERVAL = 10 * 1000;
-    clientVersion = 'NodeJsClient/0.6.11';
+    DEFAULT_INTERVAL = 20 * 1000;
+    clientVersion = 'NodeJsClient/0.6.12';
 
     constructor(url, config, callback) {
         this.url = url;
@@ -16,12 +16,15 @@ export default class PollingClient {
         }
         this.timeout = this.DEFAULT_TIMEOUT;
         this.etag = "";
-
-        this.getFeatures(callback);
-        if (this.pollingInterval > 0) {
-            this.interval = setInterval(this.getFeatures.bind(this), this.pollingInterval);
+        if (this.apiKey && this.apiKey.length > 10) {
+            this.getFeatures(callback);
+            if (this.pollingInterval > 0) {
+                this.interval = setInterval(this.getFeatures.bind(this), this.pollingInterval);
+            } else {
+                debug("Polling interval set to 0. Featureflow will NOT poll for feature changes.");
+            }
         } else {
-            debug("Polling interval set to 0. Featureflow will NOT poll for feature changes.");
+            debug("API key is missing or too short. Features will not be fetched.");
         }
 
     }
