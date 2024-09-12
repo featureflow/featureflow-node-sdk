@@ -1,4 +1,6 @@
 # Change log
+## [0.6.12] - 2024-09-12
+### Do not poll with invalid API Key
 ## [0.6.11] - 2024-01-14
 ### Close Events Client
 ## [0.6.10] - 2024-01-13
