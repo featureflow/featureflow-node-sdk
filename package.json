@@ -1,6 +1,6 @@
 {
   "name": "featureflow-node-sdk",
-  "version": "0.6.13",
+  "version": "0.6.14",
   "description": "Featureflow sdk for Node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
