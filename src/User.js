@@ -15,6 +15,10 @@ class User{
   addAttribute(key, value){
     this.attributes[key] = [].concat(value);
   }
+
+  getAttributes(){
+    return this.attributes;
+  }
 }
 
 export class UserBuilder{
