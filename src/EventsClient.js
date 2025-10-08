@@ -4,7 +4,7 @@ import debug from './debug';
 export default class EventsClient {
     SEND_INTERVAL = 60;
     QUEUE_SIZE = 10000;
-    clientVersion = 'NodeJsClient/0.6.15';
+    clientVersion = 'NodeJsClient/0.6.16';
     queue = [];
     overLimit = false;
 
