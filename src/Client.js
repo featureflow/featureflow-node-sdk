@@ -69,6 +69,7 @@ export default class Featureflow extends EventEmitter {
         return evaluateAll('anonymous');
     }
     evaluateAll(user) {
+        this.pollingClient.maybeRefresh();
         let evaluatedFeatures = {};
         let features = this.config.featureStore.getAll();
         for (let p in features) {
@@ -85,6 +86,7 @@ export default class Featureflow extends EventEmitter {
     }
 
     evaluate(key, user) {
+        this.pollingClient.maybeRefresh();
         let evaluatedVariant;
         let feature = this.config.featureStore.get(key);
 

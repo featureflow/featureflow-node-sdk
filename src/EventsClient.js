@@ -1,10 +1,11 @@
 import request from 'request';
 import debug from './debug';
+import pkg from '../package.json';
 
 export default class EventsClient {
     SEND_INTERVAL = 60;
     QUEUE_SIZE = 10000;
-    clientVersion = 'NodeJsClient/0.6.16';
+    clientVersion = `NodeJsClient/${pkg.version}`;
     queue = [];
     overLimit = false;
 

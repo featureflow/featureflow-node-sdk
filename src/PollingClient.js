@@ -1,10 +1,13 @@
 import request from 'request';
 import debug from './debug';
+import pkg from '../package.json';
 
 export default class PollingClient {
     DEFAULT_TIMEOUT = 5 * 1000;
     DEFAULT_INTERVAL = 20 * 1000;
-    clientVersion = 'NodeJsClient/0.6.16';
+    clientVersion = `NodeJsClient/${pkg.version}`;
+    lastRefreshTime = 0;
+    refreshInProgress = false;
 
     constructor(url, config, callback) {
         this.url = url;
@@ -29,6 +32,8 @@ export default class PollingClient {
 
     }
     getFeatures(callback = () => { }) {
+        this.refreshInProgress = true;
+        this.lastRefreshTime = Date.now();
         request({
             method: 'get',
             uri: this.url,
@@ -39,6 +44,7 @@ export default class PollingClient {
                 'X-Featureflow-Client': this.clientVersion
             }
         }, (error, response, body) => {
+            this.refreshInProgress = false;
             if (response) {
                 if (response.statusCode === 200) {
                     this.etag = response.headers['etag'];
@@ -56,6 +62,15 @@ export default class PollingClient {
             }
 
         })
+    }
+
+    maybeRefresh() {
+        const now = Date.now();
+        const elapsed = now - this.lastRefreshTime;
+
+        if (elapsed >= this.pollingInterval && !this.refreshInProgress) {
+            this.getFeatures();
+        }
     }
 
     close() {
