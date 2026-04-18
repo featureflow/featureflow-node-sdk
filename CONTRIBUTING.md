@@ -17,6 +17,8 @@ Featureflow SDKs are open source and we welcome contributions from all developer
 
 ## Building
 
+This project uses [Yarn](https://yarnpkg.com/) and **`yarn.lock`** for dependency resolution. Use Yarn for installs; do not add or commit `package-lock.json`.
+
 ```
 # install dependencies
 yarn install 

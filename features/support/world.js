@@ -1,28 +1,37 @@
 require('babel-core/register');
 const { defineSupportCode } = require('cucumber');
 
-defineSupportCode(({ addTransform })=>{
-  addTransform({
-    captureGroupRegexps: ['"[^"]*"'],
-    transformer: value => value.substr(1, value.length-2),
-    typeName: 'stringInQuotes'
+defineSupportCode(({ defineParameterType }) => {
+  const stringInQuotesRegexp = /"([^"]*)"/;
+  const stripQuotes = (s) => s;
+
+  defineParameterType({
+    name: 'stringInQuotes',
+    regexp: stringInQuotesRegexp,
+    transformer: stripQuotes
   });
 
-  addTransform({
-    captureGroupRegexps: ['.*,.*'],
-    transformer: value => value.split(',').map(function(val){return val.trim()}),
-    typeName: 'commaDelimitedArray'
+  defineParameterType({
+    name: 'stringInDoubleQuotes',
+    regexp: stringInQuotesRegexp,
+    transformer: stripQuotes
   });
 
-  addTransform({
-    captureGroupRegexps: ['true', 'false'],
-    transformer: value => JSON.parse(value),
-    typeName: 'trueOrFalse'
+  defineParameterType({
+    name: 'commaDelimitedArray',
+    regexp: /(.*,.*)/,
+    transformer: (value) => value.split(',').map((val) => val.trim())
   });
 
-  addTransform({
-    captureGroupRegexps: ['enabled', 'disabled'],
-    transformer: value => value === "enabled",
-    typeName: 'enabledOrDisabled'
+  defineParameterType({
+    name: 'trueOrFalse',
+    regexp: /(true|false)/,
+    transformer: (value) => JSON.parse(value)
+  });
+
+  defineParameterType({
+    name: 'enabledOrDisabled',
+    regexp: /(enabled|disabled)/,
+    transformer: (value) => value === 'enabled'
   });
 });

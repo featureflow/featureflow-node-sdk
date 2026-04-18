@@ -183,6 +183,10 @@ new Featureflow.Client({
 #### Further documentation
 Further documentation can be found [here](http://docs.featureflow.io/docs)
 
+## Contributing
+
+Clone the repo, then use Yarn to install and run scripts (see [CONTRIBUTING.md](CONTRIBUTING.md)). CI uses `yarn install --frozen-lockfile`.
+
 ## Roadmap
 - [x] Write documentation
 - [x] Release to npm

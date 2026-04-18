@@ -11,8 +11,6 @@ defineSupportCode(({ Given, When, Then, Before }) => {
       "variantSplits": []
     };
     this.builder = new UserBuilder('anonymous');
-    console.log("Creating builder")
-    //this.userBuilder = "cock"; //new UserBuilder('anonymous');
   });
 
   Given('the rule is a default rule', function() {
@@ -51,7 +49,6 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   });
 
   When('the rule is matched against the user', function () {
-    console.log(this.builder);
     this.result = ruleMatches(this.rule, this.builder.build())
   });
 

@@ -23,6 +23,7 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 cucumber
+cucumber-report.json
 
 
 # nyc test coverage
@@ -62,6 +63,9 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# This repo standardises on Yarn; do not commit npm's lockfile
+package-lock.json
 
 # dotenv environment variables file
 .env
