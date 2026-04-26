@@ -97,7 +97,6 @@ let featureflow = new Featureflow.Client();
 ```
 **Note: `featureflow`, as instantiated above, should be treated as a singleton and should not be instantiated before every use. 
 You are responsible for sharing it with the rest of your application**
-
 ##### Express Quick Start
 Please see the example at https://github.com/featureflow/featureflow-node-example
 
@@ -185,7 +184,7 @@ Further documentation can be found [here](http://docs.featureflow.io/docs)
 
 ## Contributing
 
-Clone the repo, then use Yarn to install and run scripts (see [CONTRIBUTING.md](CONTRIBUTING.md)). CI uses `yarn install --frozen-lockfile`.
+Clone the repo, then use Yarn to install and run scripts (see [CONTRIBUTING.md](CONTRIBUTING.md)). CI uses `yarn install --frozen-lockfile`. To run a local Express harness against the built SDK, use `FEATUREFLOW_SERVER_KEY=… yarn example:server` (see **Manual test harness** in [CONTRIBUTING.md](CONTRIBUTING.md)).
 
 ## Roadmap
 - [x] Write documentation

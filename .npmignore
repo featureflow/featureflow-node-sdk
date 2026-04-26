@@ -1,0 +1,2 @@
+# Source maps are for local / repo debugging; omit from the published tarball
+**/*.map

@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Harness: example server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/examples/harness/server.js",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "preLaunchTask": "yarn: build (SDK)",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
+    },
+    {
+      "name": "Harness: example server (no pre-build)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/examples/harness/server.js",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
+    }
+  ]
+}

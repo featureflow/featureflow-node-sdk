@@ -1,4 +1,8 @@
 # Change log
+## [Unreleased]
+### Added
+- Optional `FEATUREFLOW_BASE_URL` and `FEATUREFLOW_EVENTS_URL` when `baseUrl` / `eventsUrl` are not set in the client config; values are normalized (trailing slashes removed).
+
 ## [0.6.12] - 2024-09-12
 ### Do not poll with invalid API Key
 ## [0.6.11] - 2024-01-14

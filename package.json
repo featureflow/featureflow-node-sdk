@@ -11,12 +11,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "babel src -d dist && tsc",
-    "watch": "babel --watch src -d dist",
+    "build": "babel src -d dist --source-maps && tsc",
+    "watch": "babel --watch src -d dist --source-maps",
     "prepublish": "yarn build",
     "test": "node_modules/.bin/cucumber-js --require-module babel-core/register --format=json:cucumber-report.json -t \"not @ignore and not @integration\" && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
     "ci-test": "node_modules/.bin/cucumber-js --require-module babel-core/register --format=json:cucumber-report.json -t \"not @ignore and not @integration\" && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
-    "test:integration": "node_modules/.bin/cucumber-js --require-module babel-core/register -t \"@integration\""
+    "test:integration": "node_modules/.bin/cucumber-js --require-module babel-core/register -t \"@integration\"",
+    "preexample:server": "yarn build",
+    "example:server": "node examples/harness/server.js"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "chai": "^3.5.0",
     "cucumber": "^4.2.1",
     "cucumber-junit": "^1.7.1",
+    "express": "^4.21.0",
     "moment": "^2.18.1"
   }
 }

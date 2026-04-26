@@ -9,6 +9,13 @@ import debug from './debug';
 
 import { ruleMatches, getVariantValue, getVariantSplitKey, calculateHash, featureEvaluation } from './EvaluateHelpers';
 
+function trimTrailingSlashes(url) {
+    if (typeof url !== 'string' || !url.length) {
+        return url;
+    }
+    return url.replace(/\/+$/, '');
+}
+
 export default class Featureflow extends EventEmitter {
     failoverVariants = {};
     isReady = false;
@@ -26,6 +33,20 @@ export default class Featureflow extends EventEmitter {
             eventsUrl: 'https://events.featureflow.io',
             ...config
         };
+
+        if (config == null || typeof config.baseUrl === 'undefined') {
+            if (process.env.FEATUREFLOW_BASE_URL) {
+                this.config.baseUrl = process.env.FEATUREFLOW_BASE_URL;
+            }
+        }
+        if (config == null || typeof config.eventsUrl === 'undefined') {
+            if (process.env.FEATUREFLOW_EVENTS_URL) {
+                this.config.eventsUrl = process.env.FEATUREFLOW_EVENTS_URL;
+            }
+        }
+
+        this.config.baseUrl = trimTrailingSlashes(this.config.baseUrl);
+        this.config.eventsUrl = trimTrailingSlashes(this.config.eventsUrl);
 
         this.config.apiKey = this.config.apiKey || process.env.FEATUREFLOW_SERVER_KEY || "";
         if (!this.config.apiKey.length) {
