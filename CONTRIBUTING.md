@@ -2,7 +2,7 @@
 
 [![][npm-img]][npm-url]
 
-[![Featureflow](https://circleci.com/gh/featureflow/featureflow-node-sdk.svg?style=svg)](https://circleci.com/gh/featureflow/featureflow-node-sdk)
+[![CI](https://github.com/featureflow/featureflow-node-sdk/workflows/CI/badge.svg)](https://github.com/featureflow/featureflow-node-sdk/actions)
 
 [![][dependency-img]][dependency-url]
 
