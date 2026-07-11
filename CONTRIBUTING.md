@@ -36,7 +36,7 @@ After `yarn build`, you can run a small Express app that loads the SDK from `dis
 FEATUREFLOW_SERVER_KEY=ff.srv.<your_key> yarn example:server
 ```
 
-- Defaults to `http://127.0.0.1:3456/` (override with `PORT`). The home page can trigger evaluations in the browser; JSON endpoints: `GET /health`, `GET /api/config`, `GET /api/ready`, `GET /api/evaluate?feature=<key>&userId=<id>`.
+- Defaults to `http://127.0.0.1:3456/` (override with `PORT`). The home page can trigger evaluations in the browser; JSON endpoints: `GET /health`, `GET /api/config`, `GET /api/ready`, `GET /api/evaluate?feature=<key>&userId=<id>`, `GET /api/evaluate-all?userId=<id>` (evaluates every feature in the store for that user).
 - The harness turns off the events client by default (no calls to the events API). Set `FEATUREFLOW_DISABLE_EVENTS=false` to send evaluation events like a full production client.
 - **Staging / custom app host:** the SDK reads `FEATUREFLOW_BASE_URL` (and optionally `FEATUREFLOW_EVENTS_URL`) when those values are not passed in code. Example:
   `FEATUREFLOW_BASE_URL=https://beta.featureflow-staging.com FEATUREFLOW_SERVER_KEY=ff.srv.<key> yarn example:server`

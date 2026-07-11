@@ -75,6 +75,15 @@ app.get('/api/ready', function (req, res) {
   res.json({ ready: !!ff.isReady });
 });
 
+app.get('/api/evaluate-all', function (req, res) {
+  const userId = (req.query.userId && String(req.query.userId)) || 'anonymous';
+  const ff = req.featureflow;
+  if (!ff) {
+    return res.status(503).json({ error: 'Featureflow client not attached' });
+  }
+  res.json({ userId: userId, features: ff.evaluateAll(userId) });
+});
+
 app.get('/api/evaluate', function (req, res) {
   const feature = (req.query.feature && String(req.query.feature)) || '';
   if (!feature) {
@@ -109,7 +118,8 @@ app.listen(port, '127.0.0.1', function () {
     : 'https://events.featureflow.io (default)';
   console.log(
     'Featureflow SDK harness listening on http://127.0.0.1:' + port + '/\n' +
-      '  GET  /health  GET  /api/config  GET  /api/ready  GET  /api/evaluate?feature=<key>&userId=<id>\n' +
+      '  GET  /health  GET  /api/config  GET  /api/ready\n' +
+      '  GET  /api/evaluate?feature=<key>&userId=<id>  GET  /api/evaluate-all?userId=<id>\n' +
       '  effective baseUrl (from env or default): ' +
       baseLog +
       '\n' +
@@ -131,6 +141,9 @@ const INDEX_HTML = `<!DOCTYPE html>
     input { width: 100%; max-width: 24rem; padding: 0.25rem 0.5rem; }
     pre { background: #f4f4f4; padding: 0.75rem; overflow: auto; }
     .ok { color: #0a0; } .err { color: #c00; }
+    table { border-collapse: collapse; width: 100%; max-width: 32rem; }
+    th, td { text-align: left; padding: 0.25rem 0.75rem 0.25rem 0; border-bottom: 1px solid #ddd; font-family: ui-monospace, monospace; }
+    th { font-family: system-ui, sans-serif; }
   </style>
 </head>
 <body>
@@ -145,6 +158,12 @@ const INDEX_HTML = `<!DOCTYPE html>
   <pre id="out">—</pre>
   <h2>Raw JSON</h2>
   <pre id="raw">—</pre>
+  <h2>All features</h2>
+  <p><button type="button" id="refreshAll">Re-evaluate all</button> <span id="allStatus"></span></p>
+  <table>
+    <thead><tr><th>Feature key</th><th>Variant</th></tr></thead>
+    <tbody id="allRows"><tr><td colspan="2">—</td></tr></tbody>
+  </table>
   <script>
   (function () {
     var readyEl = document.getElementById('ready');
@@ -162,6 +181,33 @@ const INDEX_HTML = `<!DOCTYPE html>
       readyEl.textContent = d.ready ? 'yes' : 'not yet / polling';
       readyEl.className = d.ready ? 'ok' : '';
     }).catch(function (e) { readyEl.textContent = 'error'; readyEl.className = 'err'; });
+    var allRowsEl = document.getElementById('allRows');
+    var allStatusEl = document.getElementById('allStatus');
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function loadAll() {
+      var u = document.getElementById('userId').value.trim() || 'anonymous';
+      allStatusEl.textContent = 'loading…';
+      get('/api/evaluate-all?userId=' + encodeURIComponent(u)).then(function (d) {
+        var keys = Object.keys(d.features).sort();
+        if (!keys.length) {
+          allRowsEl.innerHTML = '<tr><td colspan="2">(no features in store yet)</td></tr>';
+        } else {
+          allRowsEl.innerHTML = keys.map(function (k) {
+            return '<tr><td>' + escapeHtml(k) + '</td><td>' + escapeHtml(d.features[k]) + '</td></tr>';
+          }).join('');
+        }
+        allStatusEl.textContent = keys.length + ' feature(s) for user "' + u + '"';
+      }).catch(function () {
+        allStatusEl.textContent = 'request failed';
+        allStatusEl.className = 'err';
+      });
+    }
+    document.getElementById('refreshAll').onclick = loadAll;
+    loadAll();
     document.getElementById('go').onclick = function () {
       var f = document.getElementById('feature').value.trim();
       var u = document.getElementById('userId').value.trim() || 'anonymous';
