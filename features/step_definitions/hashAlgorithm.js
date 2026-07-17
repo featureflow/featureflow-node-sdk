@@ -1,5 +1,5 @@
 import { defineSupportCode } from 'cucumber';
-import { calculateHash, getVariantValue } from '../../src/EvaluateHelpers';
+import { calculateHash, getVariantBucketValue } from '../../src/EvaluateHelpers';
 import { expect } from 'chai';
 
 defineSupportCode(({ Given, When, Then }) => {
@@ -14,7 +14,7 @@ defineSupportCode(({ Given, When, Then }) => {
 
   When('the variant value is calculated', function () {
     this.hash = calculateHash(this.salt, this.feature, this.id);
-    this.result = getVariantValue(this.hash);
+    this.result = getVariantBucketValue(this.hash);
   });
 
   Then('the hash value calculated should equal {stringInDoubleQuotes}', function (hash) {

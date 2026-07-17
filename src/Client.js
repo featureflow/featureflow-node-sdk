@@ -7,7 +7,7 @@ import { UserBuilder } from './User';
 import Evaluate from './Evaluate';
 import debug from './debug';
 
-import { ruleMatches, getVariantValue, getVariantSplitKey, calculateHash, featureEvaluation } from './EvaluateHelpers';
+import { ruleMatches, getVariantSplitKey, calculateHash, featureEvaluation } from './EvaluateHelpers';
 
 function trimTrailingSlashes(url) {
     if (typeof url !== 'string' || !url.length) {
@@ -129,7 +129,8 @@ export default class Featureflow extends EventEmitter {
             key,
             evaluatedVariant,
             user,
-            this.eventsClient
+            this.eventsClient,
+            feature ? feature.variants : undefined
         );
     }
 

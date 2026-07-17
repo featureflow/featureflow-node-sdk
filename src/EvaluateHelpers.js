@@ -22,8 +22,8 @@ export function featureEvaluation(feature, user){
     for (let i in feature.rules){
       let rule = feature.rules[i];
       if (ruleMatches(feature.rules[i], user)){
-        let variantValue = getVariantValue(calculateHash("1", feature.key, user.getId()));
-        return getVariantSplitKey(rule.variantSplits, variantValue);
+        let variantBucketValue = getVariantBucketValue(calculateHash("1", feature.key, user.getId()));
+        return getVariantSplitKey(rule.variantSplits, variantBucketValue);
       }
     }
   }
@@ -76,6 +76,6 @@ export function calculateHash(salt, feature, id){
   return sha1Hex(hashValues).substr(0, 15);
 }
 
-export function getVariantValue(hash){
+export function getVariantBucketValue(hash){
   return bigInt(hash, 16).mod(100).toJSNumber() + 1;
 }
