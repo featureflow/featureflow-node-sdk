@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;not-my-test-value&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;98&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;98&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;98&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;10&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;98&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;contains&quot; is run" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;nope&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;contains&quot; is run" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;contains&quot; is run" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value-two&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;contains&quot; is run" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;contains&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;contains&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value-two&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;endsWith&quot; is run" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;endsWith&quot; is run" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;endsWith&quot; is run" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;long-my-test-value&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;endsWith&quot; is run" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;endswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;endswith&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my.test.+&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;matches&quot; is run" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;wont-match&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;matches&quot; is run" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;^[A-z\-]+$&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;matches&quot; is run" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;^[A-z]+$&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;matches&quot; is run" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;matches&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;matches&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;doesn&apos;t matter&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;fakeOperator&quot; is run" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;two&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is an array of values &quot;one, two, three&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;in&quot; is run" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;four&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is an array of values &quot;one, two, three&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;in&quot; is run" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;in&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;in&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;four&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is an array of values &quot;one, two, three&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;notIn&quot; is run" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;true&quot;-result-for-an-array-of-strings-(target:-&quot;four&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;two&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is an array of values &quot;one, two, three&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;notIn&quot; is run" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;notin&quot;-operator-returns-a-&quot;false&quot;-result-for-an-array-of-strings-(target:-&quot;two&quot;,-values:-&quot;&lt;values&gt;&quot;,-operator:-&quot;notin&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;8999&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.1&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.1&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.1&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.1&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.1&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.2&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;equals&quot; is run" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;equals&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;equals&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;8999&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.2&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThan&quot; is run" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;8999&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.2&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;greaterThanOrEqual&quot; is run" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;greaterthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;greaterthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;8999&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.2&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThan&quot; is run" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthan&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthan&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;8999&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.2&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.1&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;false&quot;-result-for-a-number--(target:-&quot;9000.2&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9001&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000.5&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000.5&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-04-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;before&quot; is run" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-02-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;before&quot; is run" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;before&quot; is run" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-04-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;after&quot; is run" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;true&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;true&quot;)" time="0.001">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-02-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;after&quot; is run" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;true&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/conditions.feature">
+            </property>
+        </properties>
+        <testcase name="Given the target is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;2017-03-09T02:39:46.182Z&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="When the operator test &quot;after&quot; is run" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+        <testcase name="Then the output should equal &quot;false&quot;" classname="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;2017-03-09t02:39:46.182z&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)">
+        </testcase>
+    </testsuite>
+    <testsuite name="feature-evaluation;test-that-a-disabled-feature-returns-the-offvariantkey" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/featureEvaluation.feature">
+            </property>
+        </properties>
+        <testcase name="Given the feature &quot;my-feature&quot; with an offVariantKey &quot;off&quot;, a default key of &quot;on&quot; is disabled" classname="feature-evaluation;test-that-a-disabled-feature-returns-the-offvariantkey">
+        </testcase>
+        <testcase name="When the feature is evaluated with a user &quot;user&quot;" classname="feature-evaluation;test-that-a-disabled-feature-returns-the-offvariantkey">
+        </testcase>
+        <testcase name="Then the evaluated variant should be &quot;off&quot;" classname="feature-evaluation;test-that-a-disabled-feature-returns-the-offvariantkey">
+        </testcase>
+    </testsuite>
+    <testsuite name="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/featureEvaluation.feature">
+            </property>
+        </properties>
+        <testcase name="Given the feature &quot;my-feature&quot; with an offVariantKey &quot;off&quot;, a default key of &quot;on&quot; is enabled" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
+        </testcase>
+        <testcase name="When the feature is evaluated with a user &quot;user&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
+        </testcase>
+        <testcase name="Then the evaluated variant should be &quot;on&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;9&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;1&quot;, the feature is &quot;f1&quot; and the id is &quot;alice&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;9&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;9&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;de5ce0fbc583fd8&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;9&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 9" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;9&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;1&quot;, the feature is &quot;f1&quot; and the id is &quot;bob&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;8ecddc9f392dc35&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 14" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;2&quot;, the feature is &quot;f1&quot; and the id is &quot;alice&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;e31eff9e88214f2&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 71" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;2&quot;, the feature is &quot;f1&quot; and the id is &quot;bob&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;591e96e46fc1dad&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 58" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;36&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;3&quot;, the feature is &quot;f1&quot; and the id is &quot;alice&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;36&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;36&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;05ad8a286f0b0bb&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;36&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 36" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;36&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;2&quot;-result" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/hashAlgorithm.feature">
+            </property>
+        </properties>
+        <testcase name="Given the salt is &quot;3&quot;, the feature is &quot;f1&quot; and the id is &quot;bob&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;2&quot;-result">
+        </testcase>
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;2&quot;-result">
+        </testcase>
+        <testcase name="Then the hash value calculated should equal &quot;9bc2af62801255d&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;2&quot;-result">
+        </testcase>
+        <testcase name="And the result from the variant calculation should be 2" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;3&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;2&quot;-result">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-default-rule-returns-a-true-match" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the rule is a default rule" classname="rules;test-that-the-default-rule-returns-a-true-match">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-default-rule-returns-a-true-match">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-that-the-default-rule-returns-a-true-match" time="0.004">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;alpha&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-false)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;alpha&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-false)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;alpha&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-false)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;alpha&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-false)">
+        </testcase>
+        <testcase name="Then the result from the match should be false" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;alpha&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-false)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;alpha&quot;],-result:-true)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;alpha&quot;],-result:-true)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;alpha&quot;],-result:-true)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;alpha&quot;],-result:-true)">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;alpha&quot;],-result:-true)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;nope&quot;],-result:-false)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;nope&quot;],-result:-false)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;nope&quot;],-result:-false)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;nope&quot;],-result:-false)">
+        </testcase>
+        <testcase name="Then the result from the match should be false" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-[&quot;beta&quot;,-&quot;alpha&quot;]}-with-operator:-equals,-target:-role,-values:-[&quot;nope&quot;],-result:-false)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-that-the-rule-user-matching-works-(user-{featureflow.date:-[&quot;2019-02-26t13:00:00.000z&quot;]}-with-operator:-after,-target:-featureflow.date,-values:-[&quot;2019-02-25t13:00:00.000z&quot;],-result:-true)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{featureflow.date:-[&quot;2019-02-26t13:00:00.000z&quot;]}-with-operator:-after,-target:-featureflow.date,-values:-[&quot;2019-02-25t13:00:00.000z&quot;],-result:-true)">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{featureflow.date:-[&quot;2019-02-26t13:00:00.000z&quot;]}-with-operator:-after,-target:-featureflow.date,-values:-[&quot;2019-02-25t13:00:00.000z&quot;],-result:-true)">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{featureflow.date:-[&quot;2019-02-26t13:00:00.000z&quot;]}-with-operator:-after,-target:-featureflow.date,-values:-[&quot;2019-02-25t13:00:00.000z&quot;],-result:-true)">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-that-the-rule-user-matching-works-(user-{featureflow.date:-[&quot;2019-02-26t13:00:00.000z&quot;]}-with-operator:-after,-target:-featureflow.date,-values:-[&quot;2019-02-25t13:00:00.000z&quot;],-result:-true)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-multiple-conditions-all-passing-will-return-true" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-multiple-conditions-all-passing-will-return-true">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-multiple-conditions-all-passing-will-return-true">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-multiple-conditions-all-passing-will-return-true">
+        </testcase>
+        <testcase name="Then the result from the match should be true" classname="rules;test-multiple-conditions-all-passing-will-return-true">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;test-one-conditions,-but-one-failing,-will-return-false" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the user attributes are" classname="rules;test-one-conditions,-but-one-failing,-will-return-false">
+        </testcase>
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-one-conditions,-but-one-failing,-will-return-false">
+        </testcase>
+        <testcase name="When the rule is matched against the user" classname="rules;test-one-conditions,-but-one-failing,-will-return-false">
+        </testcase>
+        <testcase name="Then the result from the match should be false" classname="rules;test-one-conditions,-but-one-failing,-will-return-false">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;off&quot;" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-100,-off:-0,-result:-on)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-100,-off:-0,-result:-on)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-100,-off:-0,-result:-on)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-100,-off:-0,-result:-on)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-100,-off:-0,-result:-on)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 11" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;get-the-variant-split-key-works-for-a-default-case-(value:-9,-on:-90,-off:-10,-result:-off)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 9" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-9,-on:-90,-off:-10,-result:-off)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-9,-on:-90,-off:-10,-result:-off)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-9,-on:-90,-off:-10,-result:-off)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;off&quot;" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-9,-on:-90,-off:-10,-result:-off)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-1,-result:-on)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 1" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-1,-result:-on)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-1,-result:-on)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-1,-result:-on)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-1,-result:-on)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 30" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 50" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;alpha&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-61,-result:-beta)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 61" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-61,-result:-beta)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-61,-result:-beta)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-61,-result:-beta)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;beta&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-61,-result:-beta)">
+        </testcase>
+    </testsuite>
+    <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/rules.feature">
+            </property>
+        </properties>
+        <testcase name="Given the variant value of 100" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)">
+        </testcase>
+        <testcase name="And the variant splits are" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)">
+        </testcase>
+        <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)">
+        </testcase>
+        <testcase name="Then the resulting variant should be &quot;betav2&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)">
+        </testcase>
+    </testsuite>
+    <testsuite name="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/userBuilder.feature">
+            </property>
+        </properties>
+        <testcase name="Given there is access to the User Builder module" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="When the builder is initialised with the id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the user is built using the builder" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="Then the result user should have an id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the result user should have no attributes" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+    </testsuite>
+    <testsuite name="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" tests="9" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/userBuilder.feature">
+            </property>
+        </properties>
+        <testcase name="Given there is access to the User Builder module" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="When the builder is initialised with the id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the builder is given the following attributes" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the user is built using the builder" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="Then the result user should have an id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the result user should have a attribute with key &quot;age&quot; and value &quot;21&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the result user should have a attribute with key &quot;type&quot; and value &quot;beta&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the result user should have a attribute with key &quot;featureflow.user.id&quot; and value &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
+        </testcase>
+        <testcase name="And the result user should have a attribute with key &quot;featureflow.date&quot; and current datetime in iso8601" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features/userBuilder.feature">
+            </property>
+        </properties>
+        <testcase name="Given there is access to the User Builder module" classname="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided">
+        </testcase>
+        <testcase name="When the builder is initialised with the id &quot;&quot;" classname="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided">
+        </testcase>
+        <testcase name="Then the builder should throw an error" classname="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided">
+        </testcase>
+    </testsuite>
+</testsuites>

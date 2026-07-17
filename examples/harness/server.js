@@ -35,6 +35,14 @@ if (!apiKey) {
 const port = parseInt(process.env.PORT || '3456', 10);
 const disableEvents = process.env.FEATUREFLOW_DISABLE_EVENTS !== 'false';
 
+// Example user attributes, sent alongside the userId on every evaluate call below.
+function buildUser(userId, role, tier) {
+  return new Featureflow.UserBuilder(userId)
+    .withAttribute('role', role || 'pvt_tester')
+    .withAttribute('tier', tier || 'gold')
+    .build();
+}
+
 // baseUrl / eventsUrl: omitted here so the SDK applies FEATUREFLOW_BASE_URL / FEATUREFLOW_EVENTS_URL (see Client).
 const clientConfig = {
   apiKey,
@@ -77,11 +85,14 @@ app.get('/api/ready', function (req, res) {
 
 app.get('/api/evaluate-all', function (req, res) {
   const userId = (req.query.userId && String(req.query.userId)) || 'anonymous';
+  const role = req.query.role && String(req.query.role);
+  const tier = req.query.tier && String(req.query.tier);
   const ff = req.featureflow;
   if (!ff) {
     return res.status(503).json({ error: 'Featureflow client not attached' });
   }
-  res.json({ userId: userId, features: ff.evaluateAll(userId) });
+  const user = buildUser(userId, role, tier);
+  res.json({ user: user.getAttributes(), features: ff.evaluateAll(user) });
 });
 
 app.get('/api/evaluate', function (req, res) {
@@ -90,15 +101,18 @@ app.get('/api/evaluate', function (req, res) {
     return res.status(400).json({ error: 'Query parameter "feature" is required' });
   }
   const userId = (req.query.userId && String(req.query.userId)) || 'anonymous';
+  const role = req.query.role && String(req.query.role);
+  const tier = req.query.tier && String(req.query.tier);
   const ff = req.featureflow;
   if (!ff) {
     return res.status(503).json({ error: 'Featureflow client not attached' });
   }
 
-  const evaluated = ff.evaluate(feature, userId);
+  const user = buildUser(userId, role, tier);
+  const evaluated = ff.evaluate(feature, user);
   res.json({
     feature: feature,
-    userId: userId,
+    user: user.getAttributes(),
     value: evaluated.value(),
     isOn: evaluated.isOn(),
     isOff: evaluated.isOff()
@@ -153,9 +167,13 @@ const INDEX_HTML = `<!DOCTYPE html>
   <p>Ready: <strong id="ready">…</strong></p>
   <label>Feature key <input id="feature" type="text" value="harness-demo" placeholder="my-feature-key" /></label>
   <label>User id <input id="userId" type="text" value="harness-user" placeholder="user id" /></label>
+  <label>Role attribute <input id="role" type="text" value="pvt_tester" placeholder="role" /></label>
+  <label>Tier attribute <input id="tier" type="text" value="gold" placeholder="tier" /></label>
   <p><button type="button" id="go">Evaluate</button></p>
   <h2>Result</h2>
   <pre id="out">—</pre>
+  <h2>User</h2>
+  <pre id="userJson">—</pre>
   <h2>Raw JSON</h2>
   <pre id="raw">—</pre>
   <h2>All features</h2>
@@ -190,8 +208,10 @@ const INDEX_HTML = `<!DOCTYPE html>
     }
     function loadAll() {
       var u = document.getElementById('userId').value.trim() || 'anonymous';
+      var r = document.getElementById('role').value.trim();
+      var t = document.getElementById('tier').value.trim();
       allStatusEl.textContent = 'loading…';
-      get('/api/evaluate-all?userId=' + encodeURIComponent(u)).then(function (d) {
+      get('/api/evaluate-all?userId=' + encodeURIComponent(u) + '&role=' + encodeURIComponent(r) + '&tier=' + encodeURIComponent(t)).then(function (d) {
         var keys = Object.keys(d.features).sort();
         if (!keys.length) {
           allRowsEl.innerHTML = '<tr><td colspan="2">(no features in store yet)</td></tr>';
@@ -208,12 +228,17 @@ const INDEX_HTML = `<!DOCTYPE html>
     }
     document.getElementById('refreshAll').onclick = loadAll;
     loadAll();
+    var userJsonEl = document.getElementById('userJson');
     document.getElementById('go').onclick = function () {
       var f = document.getElementById('feature').value.trim();
       var u = document.getElementById('userId').value.trim() || 'anonymous';
-      var q = '/api/evaluate?feature=' + encodeURIComponent(f) + '&userId=' + encodeURIComponent(u);
+      var r = document.getElementById('role').value.trim();
+      var t = document.getElementById('tier').value.trim();
+      var q = '/api/evaluate?feature=' + encodeURIComponent(f) + '&userId=' + encodeURIComponent(u) +
+        '&role=' + encodeURIComponent(r) + '&tier=' + encodeURIComponent(t);
       get(q).then(function (d) {
         outEl.textContent = 'value: ' + d.value + '\\n' + 'isOn: ' + d.isOn + ', isOff: ' + d.isOff;
+        userJsonEl.textContent = JSON.stringify(d.user, null, 2);
         rawEl.textContent = JSON.stringify(d, null, 2);
       }).catch(function () {
         outEl.textContent = 'Request failed';

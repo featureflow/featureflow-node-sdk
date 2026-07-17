@@ -1,8 +1,11 @@
+# Requires FEATUREFLOW_TEST_API_KEY (and optionally FEATUREFLOW_TEST_BASE_URL) to
+# point at an environment with a "test-integration" feature matching the Examples
+# below. Run via `yarn test:integration`, not `yarn test`.
 @integration
 Feature: Integration
   Scenario Outline: Test that we can instantiate the client
     Given there is access to the Featureflow library
-    And the FeatureflowClient is initialized with the apiKey "srv-env-2e00afab61d14c33aba414e4c63bc07f"
+    And the FeatureflowClient is initialized with the configured apiKey
     When the feature "<feature>" with user id "<id>" is evaluated with the value "<value>"
     Then the result of the evaluation should equal <result>
     Examples:

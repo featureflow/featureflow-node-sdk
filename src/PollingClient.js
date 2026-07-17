@@ -59,6 +59,7 @@ export default class PollingClient {
                 if (error.code != null) {
                     debug(error.code);
                 }
+                callback()
             }
 
         })
