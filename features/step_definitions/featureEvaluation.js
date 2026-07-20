@@ -10,7 +10,6 @@ defineSupportCode(({ Given, When, Then }) => {
         offVariantKey,
         enabled,
         rules: [{
-          defaultRule: true,
           audience: null,
           variantSplits: [{variantKey: defaultKey, split: 100}]
         }]

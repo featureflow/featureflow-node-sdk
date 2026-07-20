@@ -7,14 +7,14 @@ defineSupportCode(({ Given, When, Then, Before }) => {
   Before(function(){
     this.rule = {
       "priority": 0,
-      "defaultRule": false,
       "variantSplits": []
     };
     this.builder = new UserBuilder('anonymous');
   });
 
   Given('the rule is a default rule', function() {
-    this.rule.defaultRule = true;
+    // A "default"/catch-all rule is just one with no audience — it always matches.
+    this.rule.audience = null;
   });
 
   Given('the user attributes are', function (userAttributes) {
