@@ -25,11 +25,14 @@ jobs:
     - name: Install dependencies
       run: yarn install --immutable
 
+    - name: Pack node_modules
+      run: tar -czf node_modules.tar.gz node_modules
+
     - name: Upload node_modules
       uses: actions/upload-artifact@v4
       with:
         name: node_modules
-        path: node_modules
+        path: node_modules.tar.gz
         retention-days: 1
 
   test:
@@ -47,7 +50,9 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: node_modules
-        path: node_modules
+
+    - name: Unpack node_modules
+      run: tar -xzf node_modules.tar.gz
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
