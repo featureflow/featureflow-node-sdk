@@ -1,4 +1,3 @@
-require('babel-core/register');
 const { defineSupportCode } = require('cucumber');
 
 defineSupportCode(({ defineParameterType }) => {

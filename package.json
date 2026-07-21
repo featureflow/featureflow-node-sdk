@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">4.0.0"
+    "node": ">=10.0.0"
   },
   "packageManager": "yarn@4.4.1",
   "files": [
@@ -15,9 +15,9 @@
     "build": "babel src -d dist --source-maps && tsc",
     "watch": "babel --watch src -d dist --source-maps",
     "prepublish": "yarn build",
-    "test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
-    "ci-test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
-    "test:integration": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support -t \"@integration\" features/integration.feature",
+    "test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
+    "ci-test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
+    "test:integration": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support -t \"@integration\" features/integration.feature",
     "preexample:server": "yarn build",
     "example:server": "node examples/harness/server.js"
   },
@@ -42,12 +42,10 @@
     "form-data": "^2.5.6"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-2": "^6.22.0",
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/register": "^7.29.7",
     "chai": "^3.5.0",
     "cucumber": "^4.2.1",
     "cucumber-junit": "^1.7.1",
