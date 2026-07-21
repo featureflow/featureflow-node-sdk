@@ -24,7 +24,7 @@ NextJS: [here](https://github.com/featureflow/featureflow-example-nextjs)
 
 ## Change Log
 
-Please see [CHANGELOG](https://github.com/featureflow/featureflow-node-sdk/blob/master/CHANGELOG.md).
+Please see [CHANGELOG](https://github.com/featureflow/featureflow-node-sdk/blob/main/CHANGELOG.md).
 
 ## Installation
 
