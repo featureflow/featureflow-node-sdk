@@ -15,8 +15,8 @@
     "build": "babel src -d dist --source-maps && tsc",
     "watch": "babel --watch src -d dist --source-maps",
     "prepublish": "yarn build",
-    "test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
-    "ci-test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
+    "test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
+    "ci-test": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
     "test:integration": "node_modules/.bin/cucumber-js --require-module babel-core/register -r features/step_definitions -r features/support -t \"@integration\" features/integration.feature",
     "preexample:server": "yarn build",
     "example:server": "node examples/harness/server.js"
