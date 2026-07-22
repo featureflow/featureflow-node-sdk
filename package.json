@@ -1,6 +1,6 @@
 {
   "name": "featureflow-node-sdk",
-  "version": "0.7.0",
+  "version": "0.7.0-beta.1",
   "description": "Featureflow sdk for Node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
   },
   "packageManager": "yarn@4.4.1",
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.map"
   ],
   "scripts": {
     "build": "babel src -d dist --source-maps && tsc",
