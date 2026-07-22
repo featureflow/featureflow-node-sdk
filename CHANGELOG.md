@@ -2,6 +2,14 @@
 ## [Unreleased]
 ### Added
 - Optional `FEATUREFLOW_BASE_URL` and `FEATUREFLOW_EVENTS_URL` when `baseUrl` / `eventsUrl` are not set in the client config; values are normalized (trailing slashes removed).
+- Event sending now responds to server signals: a `401`/`403` from the events endpoint permanently disables event sending for the client's lifetime, and a `429` requeues the batch and backs off for `Retry-After` seconds (default 60).
+
+### Changed
+- `evaluateAll()` no longer records an evaluation event per feature. Bulk snapshots (e.g. bootstrapping a client-side SDK) previously emitted one event per feature per call; impressions are now only recorded via `evaluate()` when `is()`/`isOn()`/`isOff()`/`value()`/`jsonValue()` is called.
+- `interval: 0` now fully disables feature refreshing: previously it disabled the polling timer but every `evaluate()`/`evaluateAll()` still triggered a lazy features request.
+
+### Fixed
+- Exceeding the event queue capacity threw a `ReferenceError` from the overflow log line instead of logging and dropping the event.
 
 ## [0.6.12] - 2024-09-12
 ### Do not poll with invalid API Key

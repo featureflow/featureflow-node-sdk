@@ -45,6 +45,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v7
+      with:
+        # The cucumber suite lives in the testbed submodule; without it cucumber
+        # finds no feature files and passes vacuously.
+        submodules: true
 
     - name: Download node_modules
       uses: actions/download-artifact@v8

@@ -86,28 +86,37 @@ export default class Featureflow extends EventEmitter {
         }
     }
 
-    evaluateAll() {
-        return evaluateAll('anonymous');
-    }
+    /**
+     * Evaluates every feature without recording evaluation events — bulk snapshots
+     * (e.g. bootstrapping a client-side SDK) would otherwise emit one event per
+     * feature per call. Impression tracking only happens through evaluate().
+     */
     evaluateAll(user) {
         this.pollingClient.maybeRefresh();
         let evaluatedFeatures = {};
         let features = this.config.featureStore.getAll();
         for (let p in features) {
             if (features.hasOwnProperty(p)) {
-                let value = this.evaluate(p, user).value();
-                evaluatedFeatures[p] = value;
+                evaluatedFeatures[p] = this._evaluateVariant(p, user).evaluatedVariant;
             }
         }
         return evaluatedFeatures;
     }
 
-    evaluate(key) {
-        return evaluate(key, 'anonymous');
-    }
-
     evaluate(key, user) {
         this.pollingClient.maybeRefresh();
+        const { evaluatedVariant, feature } = this._evaluateVariant(key, user);
+
+        return new Evaluate(
+            key,
+            evaluatedVariant,
+            user,
+            this.eventsClient,
+            feature ? feature.variants : undefined
+        );
+    }
+
+    _evaluateVariant(key, user) {
         let evaluatedVariant;
         let feature = this.config.featureStore.get(key);
 
@@ -125,13 +134,7 @@ export default class Featureflow extends EventEmitter {
             evaluatedVariant = featureEvaluation(feature, user);
         }
 
-        return new Evaluate(
-            key,
-            evaluatedVariant,
-            user,
-            this.eventsClient,
-            feature ? feature.variants : undefined
-        );
+        return { evaluatedVariant, feature };
     }
 
     close() {

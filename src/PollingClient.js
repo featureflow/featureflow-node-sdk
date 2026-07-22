@@ -66,6 +66,11 @@ export default class PollingClient {
     }
 
     maybeRefresh() {
+        // pollingInterval 0 means polling is disabled entirely — lazy refresh included,
+        // otherwise every evaluate() would trigger a features request.
+        if (this.pollingInterval <= 0) {
+            return;
+        }
         const now = Date.now();
         const elapsed = now - this.lastRefreshTime;
 
