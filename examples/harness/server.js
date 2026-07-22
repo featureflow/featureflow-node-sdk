@@ -92,7 +92,16 @@ app.get('/api/evaluate-all', function (req, res) {
     return res.status(503).json({ error: 'Featureflow client not attached' });
   }
   const user = buildUser(userId, role, tier);
-  res.json({ user: user.getAttributes(), features: ff.evaluateAll(user) });
+  const features = ff.evaluateAll(user);
+  // Variant JSON payloads, keyed by feature — only features whose evaluated variant has one.
+  const jsonValues = {};
+  Object.keys(features).forEach(function (key) {
+    const jsonValue = ff.evaluate(key, user).jsonValue();
+    if (typeof jsonValue !== 'undefined') {
+      jsonValues[key] = jsonValue;
+    }
+  });
+  res.json({ user: user.getAttributes(), features: features, jsonValues: jsonValues });
 });
 
 app.get('/api/evaluate', function (req, res) {
@@ -110,13 +119,18 @@ app.get('/api/evaluate', function (req, res) {
 
   const user = buildUser(userId, role, tier);
   const evaluated = ff.evaluate(feature, user);
-  res.json({
+  const body = {
     feature: feature,
     user: user.getAttributes(),
     value: evaluated.value(),
     isOn: evaluated.isOn(),
     isOff: evaluated.isOff()
-  });
+  };
+  const jsonValue = evaluated.jsonValue();
+  if (typeof jsonValue !== 'undefined') {
+    body.jsonValue = jsonValue;
+  }
+  res.json(body);
 });
 
 app.use(function (req, res) {
@@ -179,8 +193,8 @@ const INDEX_HTML = `<!DOCTYPE html>
   <h2>All features</h2>
   <p><button type="button" id="refreshAll">Re-evaluate all</button> <span id="allStatus"></span></p>
   <table>
-    <thead><tr><th>Feature key</th><th>Variant</th></tr></thead>
-    <tbody id="allRows"><tr><td colspan="2">—</td></tr></tbody>
+    <thead><tr><th>Feature key</th><th>Variant</th><th>JSON value</th></tr></thead>
+    <tbody id="allRows"><tr><td colspan="3">—</td></tr></tbody>
   </table>
   <script>
   (function () {
@@ -214,10 +228,13 @@ const INDEX_HTML = `<!DOCTYPE html>
       get('/api/evaluate-all?userId=' + encodeURIComponent(u) + '&role=' + encodeURIComponent(r) + '&tier=' + encodeURIComponent(t)).then(function (d) {
         var keys = Object.keys(d.features).sort();
         if (!keys.length) {
-          allRowsEl.innerHTML = '<tr><td colspan="2">(no features in store yet)</td></tr>';
+          allRowsEl.innerHTML = '<tr><td colspan="3">(no features in store yet)</td></tr>';
         } else {
           allRowsEl.innerHTML = keys.map(function (k) {
-            return '<tr><td>' + escapeHtml(k) + '</td><td>' + escapeHtml(d.features[k]) + '</td></tr>';
+            var jv = d.jsonValues && Object.prototype.hasOwnProperty.call(d.jsonValues, k)
+              ? escapeHtml(JSON.stringify(d.jsonValues[k]))
+              : '';
+            return '<tr><td>' + escapeHtml(k) + '</td><td>' + escapeHtml(d.features[k]) + '</td><td>' + jv + '</td></tr>';
           }).join('');
         }
         allStatusEl.textContent = keys.length + ' feature(s) for user "' + u + '"';
@@ -237,7 +254,8 @@ const INDEX_HTML = `<!DOCTYPE html>
       var q = '/api/evaluate?feature=' + encodeURIComponent(f) + '&userId=' + encodeURIComponent(u) +
         '&role=' + encodeURIComponent(r) + '&tier=' + encodeURIComponent(t);
       get(q).then(function (d) {
-        outEl.textContent = 'value: ' + d.value + '\\n' + 'isOn: ' + d.isOn + ', isOff: ' + d.isOff;
+        outEl.textContent = 'value: ' + d.value + '\\n' + 'isOn: ' + d.isOn + ', isOff: ' + d.isOff +
+          (typeof d.jsonValue !== 'undefined' ? '\\n' + 'jsonValue: ' + JSON.stringify(d.jsonValue, null, 2) : '');
         userJsonEl.textContent = JSON.stringify(d.user, null, 2);
         rawEl.textContent = JSON.stringify(d, null, 2);
       }).catch(function () {

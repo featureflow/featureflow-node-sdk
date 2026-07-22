@@ -5,7 +5,7 @@ Small Express app in `server.js` that uses `Featureflow.ExpressClient` and the b
 ```bash
 FEATUREFLOW_SERVER_KEY=srv-env-<your_key> yarn example:server
 # Staging (uses SDK env support for baseUrl)
-FEATUREFLOW_BASE_URL=https://beta.featureflow-staging.com FEATUREFLOW_SERVER_KEY=srv-env-<your_key> yarn example:server
+FEATUREFLOW_BASE_URL=https://api.featureflow.com FEATUREFLOW_SERVER_KEY=srv-env-<your_key> yarn example:server
 ```
 
 From the repo root, `yarn example:server` runs `yarn build` first, then starts the server. See [CONTRIBUTING.md](../../CONTRIBUTING.md) for environment variables and endpoints.
