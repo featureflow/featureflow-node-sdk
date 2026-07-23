@@ -107,4 +107,55 @@ defineSupportCode(({ Given, When, Then, After }) => {
     });
     this.eventsClient = this.featureflowClient.eventsClient;
   });
+
+  Given('a polling Featureflow client pointed at the local features endpoint', function () {
+    this.updatedEvents = 0;
+    this.featureflowClient = new Featureflow({
+      apiKey: 'test-api-key-12345',
+      baseUrl: this.featuresUrl,
+      eventsUrl: 'http://127.0.0.1:9',
+      interval: 20
+    });
+    this.featureflowClient.on('updated', () => { this.updatedEvents++; });
+    this.eventsClient = this.featureflowClient.eventsClient;
+  });
+
+  Given('a local features endpoint whose features change on every request', function () {
+    const world = this;
+    let version = 0;
+    world.featuresServer = http.createServer((req, res) => {
+      version++;
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('ETag', `"features-v${version}"`);
+      res.end('{}');
+      req.resume();
+    });
+    return new Promise((resolve) => {
+      world.featuresServer.listen(0, '127.0.0.1', () => {
+        world.featuresUrl = `http://127.0.0.1:${world.featuresServer.address().port}`;
+        resolve();
+      });
+    });
+  });
+
+  When('the features are refreshed', function () {
+    this.featureflowClient.pollingClient.getFeatures();
+  });
+
+  Then('the polling interval should become {int} seconds', function (seconds) {
+    const pollingClient = this.featureflowClient.pollingClient;
+    return eventually(() => expect(pollingClient.pollingInterval).to.equal(seconds * 1000));
+  });
+
+  Then('the polling interval should remain {int}', function (value) {
+    const client = this.featureflowClient;
+    return new Promise((resolve) => client.ready(resolve))
+      .then(() => expect(client.pollingClient.pollingInterval).to.equal(value));
+  });
+
+  Then('the client should have emitted {int} updated event', function (count) {
+    const world = this;
+    return eventually(() => expect(world.updatedEvents).to.equal(count));
+  });
 });

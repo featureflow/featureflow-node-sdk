@@ -11,14 +11,21 @@ export default class EventsClient {
     MIN_SEND_INTERVAL = 1;
     MAX_SEND_INTERVAL = 3600;
     SUMMARY_CAPACITY = 10000;
+    GOALS_CAPACITY = 10000;
     USER_CACHE_CAPACITY = 1000;
+    TRACKED_USER_CACHE_CAPACITY = 10000;
     DEFAULT_RETRY_AFTER = 60;
     clientVersion = `NodeJsClient/${pkg.version}`;
     // (featureKey, variant) -> { featureKey, evaluatedVariant, impressions, users }
     summaries = new Map();
+    // Pending goal (track) events, sent raw — experiment analysis joins them on user id.
+    goals = [];
     // User ids already attached to an entry this flush interval; insertion-ordered so the
     // oldest id can be evicted when the cache is full.
     seenUserIds = new Map();
+    // (featureKey, userId) pairs already attached this interval for trackEvents flags,
+    // which need per-flag exposure fidelity rather than the global one-per-user dedupe.
+    seenTrackedUserFlags = new Map();
     overLimit = false;
     backoffUntil = 0;
     // Server-driven state (X-Featureflow-Sdk-Config header / events response body).
@@ -66,7 +73,9 @@ export default class EventsClient {
         if (suspended && !this.suspended) {
             debug('Event sending suspended by server config.');
             this.summaries = new Map();
+            this.goals = [];
             this.seenUserIds.clear();
+            this.seenTrackedUserFlags.clear();
         }
         if (!suspended && this.suspended) {
             debug('Event sending re-enabled by server config.');
@@ -95,7 +104,49 @@ export default class EventsClient {
         )
     }
 
-    evaluateEvent(featureKey, evaluatedVariant, user) {
+    /**
+     * Record a goal (track) event: `{ type: 'goal', goalKey, user, value?, data?, timestamp }`.
+     * `details` may be a number (the metric value) or an object whose optional `value` is the
+     * metric value and whose remaining fields are sent as `data` — mirroring the OpenFeature
+     * tracking API so a provider can forward `track()` calls 1:1. Goals are sent raw (no
+     * summarisation): analysis joins them against exposures on the user id.
+     */
+    trackEvent(goalKey, user, details) {
+        if (this.disabled || this.suspended || this.mode === 'off' || !goalKey) {
+            return;
+        }
+        if (this.goals.length >= this.GOALS_CAPACITY) {
+            debug('Goal event capacity of %d exceeded. Goals will be dropped until the queue is flushed.', this.GOALS_CAPACITY);
+            return;
+        }
+        const event = {
+            type: 'goal',
+            goalKey,
+            timestamp: new Date().toISOString(),
+            user
+        };
+        if (typeof details === 'number') {
+            event.value = details;
+        } else if (details != null && typeof details === 'object') {
+            if (typeof details.value === 'number') {
+                event.value = details.value;
+            }
+            const data = {};
+            let hasData = false;
+            for (const key in details) {
+                if (key !== 'value' && Object.prototype.hasOwnProperty.call(details, key)) {
+                    data[key] = details[key];
+                    hasData = true;
+                }
+            }
+            if (hasData) {
+                event.data = data;
+            }
+        }
+        this.goals.push(event);
+    }
+
+    evaluateEvent(featureKey, evaluatedVariant, user, trackEvents) {
         if (this.disabled || this.suspended || this.mode === 'off') {
             return;
         }
@@ -116,17 +167,31 @@ export default class EventsClient {
             this.summaries.set(key, entry);
         }
         entry.impressions++;
-        this.attachUser(entry, user);
+        this.attachUser(entry, user, trackEvents);
     }
 
     // Attach each distinct user to at most one summary entry per flush interval, so the
     // server still sees every user's attributes without the payload repeating the user on
-    // every evaluation.
-    attachUser(entry, user) {
+    // every evaluation. Flags with `trackEvents` (experiment exposure fidelity) instead
+    // attach each distinct user once per flag per interval, so every (user, flag, variant)
+    // assignment reaches the server.
+    attachUser(entry, user, trackEvents) {
         if (!user || !user.id) {
             return;
         }
         if (this.mode === 'full') {
+            entry.users.push(user);
+            return;
+        }
+        if (trackEvents) {
+            const trackedKey = entry.featureKey + KEY_SEPARATOR + user.id;
+            if (this.seenTrackedUserFlags.has(trackedKey)) {
+                return;
+            }
+            if (this.seenTrackedUserFlags.size >= this.TRACKED_USER_CACHE_CAPACITY) {
+                this.seenTrackedUserFlags.delete(this.seenTrackedUserFlags.keys().next().value);
+            }
+            this.seenTrackedUserFlags.set(trackedKey, true);
             entry.users.push(user);
             return;
         }
@@ -141,24 +206,29 @@ export default class EventsClient {
     }
 
     sendQueue() {
-        if (this.disabled || this.suspended || this.mode === 'off' || this.summaries.size === 0) return;
+        if (this.disabled || this.suspended || this.mode === 'off') return;
+        if (this.summaries.size === 0 && this.goals.length === 0) return;
         if (Date.now() < this.backoffUntil) {
-            debug('Event sending is backing off after a 429 response. Retaining %d summarised events.', this.summaries.size);
+            debug('Event sending is backing off after a 429 response. Retaining %d summarised events and %d goals.', this.summaries.size, this.goals.length);
             return;
         }
         let sendSummaries = this.summaries;
+        let sendGoals = this.goals;
         this.summaries = new Map();
+        this.goals = [];
         this.seenUserIds.clear();
+        this.seenTrackedUserFlags.clear();
 
         this.sendEvent(
             'evaluate',
             'POST',
             this.eventsUrl + '/api/sdk/v1/events',
-            this.buildBatch(sendSummaries),
+            this.buildBatch(sendSummaries).concat(sendGoals),
             (statusCode, headers, body) => {
                 if (statusCode === 429) {
                     this.backoffUntil = Date.now() + this.parseRetryAfter(headers) * 1000;
                     this.requeue(sendSummaries);
+                    this.goals = sendGoals.concat(this.goals).slice(0, this.GOALS_CAPACITY);
                 }
                 if (statusCode === 200) {
                     // The events response body carries the server-driven SDK config.
@@ -253,7 +323,9 @@ export default class EventsClient {
     disable() {
         this.disabled = true;
         this.summaries = new Map();
+        this.goals = [];
         this.seenUserIds.clear();
+        this.seenTrackedUserFlags.clear();
         clearInterval(this.interval);
     }
 

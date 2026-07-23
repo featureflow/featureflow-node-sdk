@@ -1,6 +1,10 @@
 # Change log
 ## [Unreleased]
 ### Added
+- `client.track(goalKey, user, details?)` records goal (conversion/metric) events for experimentation and metric-gated rollouts. `details` is a number (the metric value) or an object with optional numeric `value` plus custom fields — the OpenFeature tracking API shape, so an OpenFeature provider can forward `track()` calls unchanged. Goals are sent raw in the same batch as evaluate events; servers without experimentation ignore them.
+- Per-flag exposure fidelity: a feature carrying `trackEvents: true` in the features payload has each distinct user attached once per (user, flag) per flush interval instead of the global once-per-user dedupe, so every (user, flag, variant) assignment reaches the server for experiment analysis. Dormant until the server starts sending the field.
+- Server-driven `pollIntervalSeconds` (5–3600): the features polling interval can now be retuned fleet-wide via SDK config; a local `interval: 0` (polling disabled) is never overridden.
+- The client now emits `updated` whenever a poll observes changed feature configuration (a 200 with a new ETag after the initial load).
 - Server-driven SDK config: the client now honours `{ eventsEnabled, mode, flushIntervalSeconds }` delivered via the `X-Featureflow-Sdk-Config` response header on `/features` (200 and 304) and via the `/events` POST response body. `eventsEnabled: false` suspends event recording (reversibly, unlike a 401/403); `mode` selects `summary` (default), `full` (one event per evaluation), or `off`; `flushIntervalSeconds` (1–3600) restarts the flush timer. Absent fields keep their current value, invalid fields are ignored, and server config can never re-enable locally disabled events. Contract: `featureflow-sdk-testbed/SDK-CONFIG.md`.
 
 ### Changed

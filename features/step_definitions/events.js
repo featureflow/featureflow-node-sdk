@@ -28,8 +28,8 @@ function eventually(check, timeoutMs = 2000, intervalMs = 20) {
 function fakeEventsClient() {
   return {
     queue: [],
-    evaluateEvent(featureKey, evaluatedVariant, user) {
-      this.queue.push({ featureKey, evaluatedVariant, user });
+    evaluateEvent(featureKey, evaluatedVariant, user, trackEvents) {
+      this.queue.push({ featureKey, evaluatedVariant, user, trackEvents: trackEvents === true });
     },
     close() {}
   };
@@ -120,6 +120,12 @@ defineSupportCode(({ Given, When, Then, After }) => {
     }
   });
 
+  When('{int} evaluate events are queued for tracked feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} user {stringInDoubleQuotes}', function (count, featureKey, variant, userId) {
+    for (let i = 0; i < count; i++) {
+      this.eventsClient.evaluateEvent(featureKey, variant, { id: userId }, true);
+    }
+  });
+
   When('the event queue is flushed', function () {
     this.eventsClient.sendQueue();
   });
@@ -151,6 +157,18 @@ defineSupportCode(({ Given, When, Then, After }) => {
     const entry = summaryEntry(this.eventsClient, featureKey, variant);
     expect(entry, `summary entry for ${featureKey}/${variant}`).to.not.equal(null);
     expect(entry.users).to.have.lengthOf(0);
+  });
+
+  Then('the pending summary entry for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} should include only user {stringInDoubleQuotes}', function (featureKey, variant, userId) {
+    const entry = summaryEntry(this.eventsClient, featureKey, variant);
+    expect(entry, `summary entry for ${featureKey}/${variant}`).to.not.equal(null);
+    expect(entry.users.map((u) => u.id)).to.deep.equal([userId]);
+  });
+
+  Then('the recorded evaluate event for {stringInDoubleQuotes} should have trackEvents {trueOrFalse}', function (featureKey, expected) {
+    const recorded = this.eventsClient.queue.find((e) => e.featureKey === featureKey);
+    expect(recorded, `recorded event for ${featureKey}`).to.not.equal(undefined);
+    expect(recorded.trackEvents).to.equal(expected);
   });
 
   Then('the events client should become disabled', function () {
@@ -219,6 +237,7 @@ defineSupportCode(({ Given, When, Then, After }) => {
         key: row.key,
         enabled: row.enabled === 'true',
         offVariantKey: row.offVariantKey,
+        trackEvents: row.trackEvents === 'true',
         rules: [{
           audience: null,
           variantSplits: [{ variantKey: row.defaultVariant, split: 100 }]

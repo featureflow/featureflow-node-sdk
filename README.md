@@ -144,6 +144,31 @@ if (featureflow.evaluate('my-feature-key', user).isOff()){
 }
 ```
 
+#### Tracking Goals
+
+Record goal (conversion / metric) events for experimentation and metric-gated rollouts.
+The optional third argument is a number — the metric value — or an object with an
+optional numeric `value` plus custom fields (the same shape as the OpenFeature tracking
+API):
+
+```javascript
+featureflow.track('signup', user);
+featureflow.track('checkout-value', user, 129.90);
+featureflow.track('purchase', user, { value: 129.90, plan: 'pro' });
+```
+
+Goal events are batched and flushed with evaluation events on the same interval.
+
+#### Reacting to Feature Changes
+
+The client emits `updated` whenever a poll observes changed feature configuration:
+
+```javascript
+featureflow.on('updated', function(){
+  // feature configuration changed — e.g. re-read any cached evaluations
+});
+```
+
 #### Pre-registering Features
 
 Featureflow allows you to pre-register features that may not be defined in your Featureflow project to ensure that those 

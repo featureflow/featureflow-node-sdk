@@ -21,7 +21,7 @@
         </properties>
         <testcase name="Given the salt is &quot;1&quot;, the feature is &quot;f1&quot; and the id is &quot;bob&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
         </testcase>
-        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result" time="0.001">
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
         </testcase>
         <testcase name="Then the hash value calculated should equal &quot;8ecddc9f392dc35&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
         </testcase>
@@ -39,7 +39,7 @@
         </testcase>
         <testcase name="Then the hash value calculated should equal &quot;e31eff9e88214f2&quot;" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
         </testcase>
-        <testcase name="And the result from the variant calculation should be 71" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result">
+        <testcase name="And the result from the variant calculation should be 71" classname="hashing-algorithm;testing-that-the-&quot;alice&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;71&quot;-result" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;2&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;58&quot;-result" tests="4" failures="0" skipped="0">
@@ -203,7 +203,7 @@
         </properties>
         <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" time="0.003">
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
         <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -217,7 +217,7 @@
         </properties>
         <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)" time="0.001">
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
         </testcase>
         <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
         </testcase>
@@ -233,7 +233,7 @@
         </testcase>
         <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" time="0.001">
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
         <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -777,7 +777,7 @@
         </properties>
         <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" time="0.001">
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
         </testcase>
         <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -935,7 +935,7 @@
         </testcase>
         <testcase name="When the operator test &quot;before&quot; is run" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)" time="0.001">
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
         </testcase>
     </testsuite>
     <testsuite name="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;not-a-date&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
@@ -971,11 +971,11 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given an events client" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry" time="0.001">
+        <testcase name="Given an events client" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry">
         </testcase>
         <testcase name="When 3 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry">
         </testcase>
-        <testcase name="Then the pending summary should contain 1 entries" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry">
+        <testcase name="Then the pending summary should contain 1 entries" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry" time="0.001">
         </testcase>
         <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 3 impressions" classname="event-sending-behaviour;evaluations-of-the-same-feature-and-variant-are-summarised-into-one-entry">
         </testcase>
@@ -991,7 +991,7 @@
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;off&quot; user &quot;u2&quot;" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
-        <testcase name="Then the pending summary should contain 2 entries" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately" time="0.001">
+        <testcase name="Then the pending summary should contain 2 entries" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
         <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 1 impressions" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
@@ -1017,7 +1017,7 @@
         </properties>
         <testcase name="Given an events client with a summary capacity of 1" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
-        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity" time="0.001">
+        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f2&quot; variant &quot;on&quot; user &quot;u2&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
@@ -1025,7 +1025,7 @@
         </testcase>
         <testcase name="Then the pending summary should contain 1 entries" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
-        <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 2 impressions" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
+        <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 2 impressions" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-user-is-attached-to-at-most-one-summary-entry-per-flush-interval" tests="5" failures="0" skipped="0">
@@ -1057,15 +1057,15 @@
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u2&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
-        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.001">
+        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.003">
         </testcase>
-        <testcase name="Then the local endpoint should have received a batch of 2 events" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.02">
+        <testcase name="Then the local endpoint should have received a batch of 2 events" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.022">
         </testcase>
         <testcase name="And the batch should total 3 impressions for feature &quot;f1&quot; variant &quot;on&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
         <testcase name="And the batch should include users &quot;u1&quot; and &quot;u2&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
-        <testcase name="And the batch events should not include an expectedVariant" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
+        <testcase name="And the batch events should not include an expectedVariant" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval" tests="6" failures="0" skipped="0">
@@ -1079,11 +1079,11 @@
         </testcase>
         <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
-        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval" time="0.001">
+        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
-        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
+        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-401-response-permanently-disables-event-sending" tests="7" failures="0" skipped="0">
@@ -1091,7 +1091,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 401" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending" time="0.001">
+        <testcase name="Given a local events endpoint that responds with status 401" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending">
         </testcase>
@@ -1099,7 +1099,7 @@
         </testcase>
         <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending">
         </testcase>
-        <testcase name="Then the events client should become disabled" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending" time="0.021">
+        <testcase name="Then the events client should become disabled" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending" time="0.022">
         </testcase>
         <testcase name="And the pending summary should contain 0 entries" classname="event-sending-behaviour;a-401-response-permanently-disables-event-sending">
         </testcase>
@@ -1111,7 +1111,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 403" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending">
+        <testcase name="Given a local events endpoint that responds with status 403" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending" time="0.001">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending">
         </testcase>
@@ -1119,7 +1119,7 @@
         </testcase>
         <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending">
         </testcase>
-        <testcase name="Then the events client should become disabled" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending" time="0.02">
+        <testcase name="Then the events client should become disabled" classname="event-sending-behaviour;a-403-response-permanently-disables-event-sending" time="0.021">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" tests="8" failures="0" skipped="0">
@@ -1127,13 +1127,13 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.001">
+        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
         <testcase name="When 2 evaluate events are queued" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
-        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
+        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.001">
         </testcase>
         <testcase name="Then the events client should be backing off" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.021">
         </testcase>
@@ -1141,7 +1141,7 @@
         </testcase>
         <testcase name="When the event queue is flushed" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
-        <testcase name="Then the local endpoint should have received 1 request" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.15">
+        <testcase name="Then the local endpoint should have received 1 request" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.151">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-429-response-merges-the-rejected-batch-back-into-the-pending-summary" tests="7" failures="0" skipped="0">
@@ -1149,7 +1149,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-merges-the-rejected-batch-back-into-the-pending-summary">
+        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-merges-the-rejected-batch-back-into-the-pending-summary" time="0.001">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-429-response-merges-the-rejected-batch-back-into-the-pending-summary">
         </testcase>
@@ -1169,7 +1169,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 429" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff">
+        <testcase name="Given a local events endpoint that responds with status 429" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff" time="0.001">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff">
         </testcase>
@@ -1177,7 +1177,7 @@
         </testcase>
         <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff">
         </testcase>
-        <testcase name="Then the events client should be backing off" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff" time="0.021">
+        <testcase name="Then the events client should be backing off" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff" time="0.02">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;evaluateall-does-not-record-evaluation-events" tests="4" failures="0" skipped="0">
@@ -1185,7 +1185,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a Featureflow client with the stored features" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
+        <testcase name="Given a Featureflow client with the stored features" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events" time="0.001">
         </testcase>
         <testcase name="When evaluateAll is called for user &quot;user-1&quot;" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
         </testcase>
@@ -1201,7 +1201,7 @@
         </properties>
         <testcase name="Given a Featureflow client with the stored features" classname="event-sending-behaviour;evaluate-still-records-an-evaluation-event">
         </testcase>
-        <testcase name="When evaluate &quot;f1&quot; is called for user &quot;user-1&quot; and isOn is checked" classname="event-sending-behaviour;evaluate-still-records-an-evaluation-event">
+        <testcase name="When evaluate &quot;f1&quot; is called for user &quot;user-1&quot; and isOn is checked" classname="event-sending-behaviour;evaluate-still-records-an-evaluation-event" time="0.001">
         </testcase>
         <testcase name="Then 1 evaluate event should have been recorded" classname="event-sending-behaviour;evaluate-still-records-an-evaluation-event">
         </testcase>
@@ -1230,6 +1230,114 @@
         <testcase name="Then the evaluated variant should be &quot;on&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
         </testcase>
     </testsuite>
+    <testsuite name="goal-tracking-events;track-queues-a-goal-event-carrying-the-user" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="goal-tracking-events;track-queues-a-goal-event-carrying-the-user">
+        </testcase>
+        <testcase name="When goal &quot;signup&quot; is tracked for user &quot;u1&quot;" classname="goal-tracking-events;track-queues-a-goal-event-carrying-the-user">
+        </testcase>
+        <testcase name="Then the pending goals should contain 1 events" classname="goal-tracking-events;track-queues-a-goal-event-carrying-the-user">
+        </testcase>
+        <testcase name="And the pending goal &quot;signup&quot; should have user &quot;u1&quot;" classname="goal-tracking-events;track-queues-a-goal-event-carrying-the-user">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;track-with-a-numeric-value" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="goal-tracking-events;track-with-a-numeric-value">
+        </testcase>
+        <testcase name="When goal &quot;checkout-value&quot; is tracked for user &quot;u1&quot; with value 129.9" classname="goal-tracking-events;track-with-a-numeric-value">
+        </testcase>
+        <testcase name="Then the pending goal &quot;checkout-value&quot; should have value 129.9" classname="goal-tracking-events;track-with-a-numeric-value">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;track-with-a-details-object-records-value-and-custom-data" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="goal-tracking-events;track-with-a-details-object-records-value-and-custom-data">
+        </testcase>
+        <testcase name="When goal &quot;purchase&quot; is tracked for user &quot;u1&quot; with details" classname="goal-tracking-events;track-with-a-details-object-records-value-and-custom-data">
+        </testcase>
+        <testcase name="Then the pending goal &quot;purchase&quot; should have value 5" classname="goal-tracking-events;track-with-a-details-object-records-value-and-custom-data">
+        </testcase>
+        <testcase name="And the pending goal &quot;purchase&quot; should have data" classname="goal-tracking-events;track-with-a-details-object-records-value-and-custom-data">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events" tests="7" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local events endpoint that responds with status 200" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events">
+        </testcase>
+        <testcase name="And an events client pointed at the local endpoint" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events">
+        </testcase>
+        <testcase name="And goal &quot;signup&quot; is tracked for user &quot;u1&quot;" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events">
+        </testcase>
+        <testcase name="And the event queue is flushed" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events" time="0.001">
+        </testcase>
+        <testcase name="Then the local endpoint should have received a batch of 2 events" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events" time="0.021">
+        </testcase>
+        <testcase name="And the batch should include a goal event &quot;signup&quot; with type &quot;goal&quot; and no featureKey" classname="goal-tracking-events;goals-are-flushed-in-the-same-batch-as-evaluate-events">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local events endpoint that responds with status 200" classname="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending">
+        </testcase>
+        <testcase name="And an events client pointed at the local endpoint" classname="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending">
+        </testcase>
+        <testcase name="When goal &quot;signup&quot; is tracked for user &quot;u1&quot;" classname="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending">
+        </testcase>
+        <testcase name="And the event queue is flushed" classname="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending">
+        </testcase>
+        <testcase name="Then the local endpoint should have received a batch of 1 events" classname="goal-tracking-events;goals-alone-are-flushed-even-with-no-evaluate-events-pending" time="0.021">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;goals-are-dropped-while-suspended" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="goal-tracking-events;goals-are-dropped-while-suspended">
+        </testcase>
+        <testcase name="When the server config is applied" classname="goal-tracking-events;goals-are-dropped-while-suspended">
+        </testcase>
+        <testcase name="And goal &quot;signup&quot; is tracked for user &quot;u1&quot;" classname="goal-tracking-events;goals-are-dropped-while-suspended">
+        </testcase>
+        <testcase name="Then the pending goals should contain 0 events" classname="goal-tracking-events;goals-are-dropped-while-suspended">
+        </testcase>
+    </testsuite>
+    <testsuite name="goal-tracking-events;a-429-response-requeues-goals-with-backoff" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/goals.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff" time="0.001">
+        </testcase>
+        <testcase name="And an events client pointed at the local endpoint" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff">
+        </testcase>
+        <testcase name="When goal &quot;signup&quot; is tracked for user &quot;u1&quot;" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff">
+        </testcase>
+        <testcase name="And the event queue is flushed" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff">
+        </testcase>
+        <testcase name="Then the events client should be backing off" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff" time="0.021">
+        </testcase>
+        <testcase name="And the pending goals should contain 1 events" classname="goal-tracking-events;a-429-response-requeues-goals-with-backoff">
+        </testcase>
+    </testsuite>
     <testsuite name="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant" tests="3" failures="0" skipped="0">
         <properties>
             <property name="@json-value" value="true">
@@ -1237,11 +1345,11 @@
             <property name="URI" value="testbed/gherkin/json_value.feature">
             </property>
         </properties>
-        <testcase name="Given the feature &quot;my-feature&quot; evaluates to variant &quot;on&quot; with variants" classname="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant">
+        <testcase name="Given the feature &quot;my-feature&quot; evaluates to variant &quot;on&quot; with variants" classname="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant" time="0.001">
         </testcase>
         <testcase name="When jsonValue is called" classname="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant">
         </testcase>
-        <testcase name="Then the json value should equal" classname="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant">
+        <testcase name="Then the json value should equal" classname="json-value-resolution;jsonvalue-returns-the-json-config-value-for-the-evaluated-variant" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="json-value-resolution;jsonvalue-returns-undefined-when-the-evaluated-variant-has-no-value" tests="3" failures="0" skipped="0">
@@ -1321,7 +1429,7 @@
         </properties>
         <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
         </testcase>
-        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)" time="0.001">
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
         </testcase>
         <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
         </testcase>
@@ -1407,7 +1515,7 @@
         </testcase>
         <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-multiple-conditions-all-passing-will-return-true">
         </testcase>
-        <testcase name="When the rule is matched against the user" classname="rules;test-multiple-conditions-all-passing-will-return-true">
+        <testcase name="When the rule is matched against the user" classname="rules;test-multiple-conditions-all-passing-will-return-true" time="0.001">
         </testcase>
         <testcase name="Then the result from the match should be true" classname="rules;test-multiple-conditions-all-passing-will-return-true">
         </testcase>
@@ -1431,7 +1539,7 @@
             <property name="URI" value="testbed/gherkin/rules.feature">
             </property>
         </properties>
-        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)" time="0.001">
+        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
         </testcase>
         <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
         </testcase>
@@ -1461,7 +1569,7 @@
         </properties>
         <testcase name="Given the variant value of 11" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
         </testcase>
-        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)" time="0.001">
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
         </testcase>
         <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
         </testcase>
@@ -1507,7 +1615,7 @@
         </testcase>
         <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
         </testcase>
-        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)" time="0.001">
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
         </testcase>
     </testsuite>
     <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)" tests="4" failures="0" skipped="0">
@@ -1561,7 +1669,7 @@
         </testcase>
         <testcase name="When 2 evaluate events are queued" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
         </testcase>
-        <testcase name="And the server config is applied" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events" time="0.001">
+        <testcase name="And the server config is applied" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
         </testcase>
         <testcase name="Then the pending summary should contain 0 entries" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
         </testcase>
@@ -1627,7 +1735,7 @@
         </testcase>
         <testcase name="When the server config is applied" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer">
         </testcase>
-        <testcase name="Then the events client send interval should be 30 seconds" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer" time="0.001">
+        <testcase name="Then the events client send interval should be 30 seconds" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer">
         </testcase>
     </testsuite>
     <testsuite name="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field" tests="6" failures="0" skipped="0">
@@ -1639,13 +1747,13 @@
         </testcase>
         <testcase name="When the server config is applied" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
         </testcase>
-        <testcase name="Then the events client send interval should be 60 seconds" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        <testcase name="Then the events client send interval should be 60 seconds" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field" time="0.001">
         </testcase>
         <testcase name="And the events client should not be suspended" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
         </testcase>
         <testcase name="When 1 evaluate events are queued" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
         </testcase>
-        <testcase name="Then the pending summary should contain 1 entries" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        <testcase name="Then the pending summary should contain 1 entries" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client" tests="4" failures="0" skipped="0">
@@ -1653,7 +1761,7 @@
             <property name="URI" value="testbed/gherkin/sdk_config.feature">
             </property>
         </properties>
-        <testcase name="Given a disabled events client" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client" time="0.001">
+        <testcase name="Given a disabled events client" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client">
         </testcase>
         <testcase name="When the server config is applied" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client">
         </testcase>
@@ -1675,9 +1783,9 @@
         </testcase>
         <testcase name="And the event queue is flushed" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
         </testcase>
-        <testcase name="Then the events client should become suspended" classname="server-driven-sdk-config;the-events-response-body-applies-server-config" time="0.021">
+        <testcase name="Then the events client should become suspended" classname="server-driven-sdk-config;the-events-response-body-applies-server-config" time="0.02">
         </testcase>
-        <testcase name="And the events client send interval should be 120 seconds" classname="server-driven-sdk-config;the-events-response-body-applies-server-config" time="0.001">
+        <testcase name="And the events client send interval should be 120 seconds" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
         </testcase>
     </testsuite>
     <testsuite name="server-driven-sdk-config;the-features-response-config-header-applies-server-config" tests="4" failures="0" skipped="0">
@@ -1687,11 +1795,113 @@
         </properties>
         <testcase name="Given a local features endpoint with config header" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config" time="0.001">
         </testcase>
-        <testcase name="And a Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config">
+        <testcase name="And a Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config" time="0.001">
         </testcase>
         <testcase name="Then the events client should become suspended" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config" time="0.02">
         </testcase>
         <testcase name="And the events client send interval should be 300 seconds" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;pollintervalseconds-retunes-the-features-polling-timer" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local features endpoint with config header" classname="server-driven-sdk-config;pollintervalseconds-retunes-the-features-polling-timer" time="0.001">
+        </testcase>
+        <testcase name="And a polling Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;pollintervalseconds-retunes-the-features-polling-timer">
+        </testcase>
+        <testcase name="Then the polling interval should become 60 seconds" classname="server-driven-sdk-config;pollintervalseconds-retunes-the-features-polling-timer" time="0.021">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;server-config-never-re-enables-locally-disabled-polling" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local features endpoint with config header" classname="server-driven-sdk-config;server-config-never-re-enables-locally-disabled-polling">
+        </testcase>
+        <testcase name="And a Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;server-config-never-re-enables-locally-disabled-polling" time="0.001">
+        </testcase>
+        <testcase name="Then the polling interval should remain 0" classname="server-driven-sdk-config;server-config-never-re-enables-locally-disabled-polling">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;the-client-emits-updated-when-a-poll-observes-changed-features" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local features endpoint whose features change on every request" classname="server-driven-sdk-config;the-client-emits-updated-when-a-poll-observes-changed-features">
+        </testcase>
+        <testcase name="And a polling Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;the-client-emits-updated-when-a-poll-observes-changed-features">
+        </testcase>
+        <testcase name="When the features are refreshed" classname="server-driven-sdk-config;the-client-emits-updated-when-a-poll-observes-changed-features">
+        </testcase>
+        <testcase name="Then the client should have emitted 1 updated event" classname="server-driven-sdk-config;the-client-emits-updated-when-a-poll-observes-changed-features" time="0.021">
+        </testcase>
+    </testsuite>
+    <testsuite name="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval" tests="7" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/tracked_exposures.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued for tracked feature &quot;exp1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued for tracked feature &quot;exp1&quot; variant &quot;on&quot; user &quot;u2&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued for tracked feature &quot;exp1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="Then the pending summary for feature &quot;exp1&quot; variant &quot;on&quot; should have 3 impressions" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="And the pending summary entry for feature &quot;exp1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval">
+        </testcase>
+        <testcase name="And the pending summary entry for feature &quot;exp1&quot; variant &quot;on&quot; should include user &quot;u2&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-attaches-every-distinct-user-each-interval" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-records-a-user-already-sent-for-another-flag-this-interval" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/tracked_exposures.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-records-a-user-already-sent-for-another-flag-this-interval">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-records-a-user-already-sent-for-another-flag-this-interval">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued for tracked feature &quot;exp1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-records-a-user-already-sent-for-another-flag-this-interval">
+        </testcase>
+        <testcase name="Then the pending summary entry for feature &quot;exp1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-records-a-user-already-sent-for-another-flag-this-interval">
+        </testcase>
+    </testsuite>
+    <testsuite name="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-still-dedupes-repeat-exposures-of-the-same-user-and-flag" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/tracked_exposures.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-still-dedupes-repeat-exposures-of-the-same-user-and-flag">
+        </testcase>
+        <testcase name="When 2 evaluate events are queued for tracked feature &quot;exp1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-still-dedupes-repeat-exposures-of-the-same-user-and-flag">
+        </testcase>
+        <testcase name="Then the pending summary for feature &quot;exp1&quot; variant &quot;on&quot; should have 2 impressions" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-still-dedupes-repeat-exposures-of-the-same-user-and-flag">
+        </testcase>
+        <testcase name="And the pending summary entry for feature &quot;exp1&quot; variant &quot;on&quot; should include only user &quot;u1&quot;" classname="per-flag-exposure-fidelity-(trackevents);a-tracked-flag-still-dedupes-repeat-exposures-of-the-same-user-and-flag">
+        </testcase>
+    </testsuite>
+    <testsuite name="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/tracked_exposures.feature">
+            </property>
+        </properties>
+        <testcase name="Given a Featureflow client with the stored features" classname="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event">
+        </testcase>
+        <testcase name="When evaluate &quot;exp1&quot; is called for user &quot;user-1&quot; and isOn is checked" classname="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event">
+        </testcase>
+        <testcase name="And evaluate &quot;f1&quot; is called for user &quot;user-1&quot; and isOn is checked" classname="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event">
+        </testcase>
+        <testcase name="Then the recorded evaluate event for &quot;exp1&quot; should have trackEvents true" classname="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event">
+        </testcase>
+        <testcase name="And the recorded evaluate event for &quot;f1&quot; should have trackEvents false" classname="per-flag-exposure-fidelity-(trackevents);evaluate-passes-a-feature&apos;s-trackevents-flag-through-to-the-recorded-event">
         </testcase>
     </testsuite>
     <testsuite name="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" tests="5" failures="0" skipped="0">
@@ -1719,7 +1929,7 @@
         </testcase>
         <testcase name="When the builder is initialised with the id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-attributes">
         </testcase>
-        <testcase name="And the builder is given the following attributes" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-attributes">
+        <testcase name="And the builder is given the following attributes" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-attributes" time="0.001">
         </testcase>
         <testcase name="And the user is built using the builder" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-attributes">
         </testcase>
@@ -1747,7 +1957,7 @@
         </testcase>
         <testcase name="Then the result user should have a attribute with key &quot;featureflow.user.id&quot; and value &quot;user&quot;" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time">
         </testcase>
-        <testcase name="And the result user should have a attribute with key &quot;featureflow.date&quot; and current datetime in iso8601" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time" time="0.002">
+        <testcase name="And the result user should have a attribute with key &quot;featureflow.date&quot; and current datetime in iso8601" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided" tests="3" failures="0" skipped="0">

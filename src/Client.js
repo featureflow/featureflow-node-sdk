@@ -68,7 +68,13 @@ export default class Featureflow extends EventEmitter {
 
         // Server-driven SDK config arrives on features responses; events responses feed
         // eventsClient.applyServerConfig directly.
-        this.config.onSdkConfig = (sdkConfig) => this.eventsClient.applyServerConfig(sdkConfig);
+        this.config.onSdkConfig = (sdkConfig) => {
+            this.eventsClient.applyServerConfig(sdkConfig);
+            if (this.pollingClient) {
+                this.pollingClient.applyServerConfig(sdkConfig);
+            }
+        };
+        this.config.onUpdate = () => this.emit('updated');
 
         this.pollingClient = new PollingClient(this.config.baseUrl + '/api/sdk/v1/features', this.config, () => {
             debug("client initialized");
@@ -116,8 +122,20 @@ export default class Featureflow extends EventEmitter {
             evaluatedVariant,
             user,
             this.eventsClient,
-            feature ? feature.variants : undefined
+            feature ? feature.variants : undefined,
+            feature ? feature.trackEvents === true : false
         );
+    }
+
+    /**
+     * Record a goal (track) event for experimentation and metric-gated rollouts.
+     * `details` may be a number (the metric value) or an object with an optional numeric
+     * `value` plus custom fields — the same shape as the OpenFeature tracking API, so an
+     * OpenFeature provider can forward its track() calls here unchanged.
+     */
+    track(goalKey, user, details) {
+        this.eventsClient.trackEvent(goalKey, user, details);
+        return this;
     }
 
     _evaluateVariant(key, user) {
