@@ -1,5 +1,8 @@
 # Change log
 ## [Unreleased]
+### Added
+- Server-driven SDK config: the client now honours `{ eventsEnabled, mode, flushIntervalSeconds }` delivered via the `X-Featureflow-Sdk-Config` response header on `/features` (200 and 304) and via the `/events` POST response body. `eventsEnabled: false` suspends event recording (reversibly, unlike a 401/403); `mode` selects `summary` (default), `full` (one event per evaluation), or `off`; `flushIntervalSeconds` (1–3600) restarts the flush timer. Absent fields keep their current value, invalid fields are ignored, and server config can never re-enable locally disabled events. Contract: `featureflow-sdk-testbed/SDK-CONFIG.md`.
+
 ### Changed
 - Evaluate events are now summarised client-side before sending: the SDK keeps one pending entry per `(featureKey, variant)` pair with an impression count instead of queueing a raw event per evaluation, and flushes summed impressions every interval. High-traffic evaluation payloads shrink from one row per call to one row per feature/variant.
 - Each distinct user is sent at most once per flush interval (LRU of the last 1,000 user ids); the server still receives every distinct user's attributes, without the payload repeating the user on every evaluation.

@@ -13,6 +13,10 @@ export default class PollingClient {
         this.url = url;
         this.apiKey = config.apiKey;
         this.featureStore = config.featureStore;
+        // Called with the parsed X-Featureflow-Sdk-Config header (server-driven SDK config)
+        // whenever a features response carries one — on 304s too, which is what a polling
+        // client mostly sees.
+        this.onSdkConfig = config.onSdkConfig;
         this.pollingInterval = this.DEFAULT_INTERVAL;
         if (config.interval && config.interval > 5 || config.interval == 0) {
             this.pollingInterval = config.interval * 1000
@@ -46,6 +50,7 @@ export default class PollingClient {
         }, (error, response, body) => {
             this.refreshInProgress = false;
             if (response) {
+                this.handleSdkConfigHeader(response.headers);
                 if (response.statusCode === 200) {
                     this.etag = response.headers['etag'];
                     debug("updating features");
@@ -63,6 +68,21 @@ export default class PollingClient {
             }
 
         })
+    }
+
+    handleSdkConfigHeader(headers) {
+        if (!this.onSdkConfig || !headers) {
+            return;
+        }
+        const raw = headers['x-featureflow-sdk-config'];
+        if (!raw) {
+            return;
+        }
+        try {
+            this.onSdkConfig(JSON.parse(raw));
+        } catch (e) {
+            debug('ignoring malformed X-Featureflow-Sdk-Config header: %s', raw);
+        }
     }
 
     maybeRefresh() {

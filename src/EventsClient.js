@@ -8,6 +8,8 @@ const KEY_SEPARATOR = '\x1f';
 
 export default class EventsClient {
     SEND_INTERVAL = 60;
+    MIN_SEND_INTERVAL = 1;
+    MAX_SEND_INTERVAL = 3600;
     SUMMARY_CAPACITY = 10000;
     USER_CACHE_CAPACITY = 1000;
     DEFAULT_RETRY_AFTER = 60;
@@ -19,6 +21,12 @@ export default class EventsClient {
     seenUserIds = new Map();
     overLimit = false;
     backoffUntil = 0;
+    // Server-driven state (X-Featureflow-Sdk-Config header / events response body).
+    // `suspended` is reversible, unlike `disabled` which is permanent for the client's life.
+    mode = 'summary';
+    suspended = false;
+    // Unique map keys for full-mode entries, where events must not merge.
+    fullModeCounter = 0;
 
     constructor(apiKey, eventsUrl = "https://events.featureflow.io", disabled = false) {
         this.apiKey = apiKey;
@@ -28,6 +36,53 @@ export default class EventsClient {
         this.interval = setInterval(() => {
             this.sendQueue();
 
+        }, this.sendInterval * 1000);
+    }
+
+    /**
+     * Apply server-driven config: `{ eventsEnabled, mode, flushIntervalSeconds }`, delivered
+     * via the X-Featureflow-Sdk-Config response header on /features and as the /events
+     * response body. Absent fields keep their current value; invalid values are ignored, so
+     * a malformed response can never turn events on where they were locally disabled or
+     * break the flush timer.
+     */
+    applyServerConfig(config) {
+        if (this.disabled || config == null || typeof config !== 'object') {
+            return;
+        }
+        if (typeof config.eventsEnabled === 'boolean') {
+            this.setSuspended(!config.eventsEnabled);
+        }
+        if (config.mode === 'summary' || config.mode === 'full' || config.mode === 'off') {
+            this.mode = config.mode;
+        }
+        const seconds = config.flushIntervalSeconds;
+        if (typeof seconds === 'number' && seconds >= this.MIN_SEND_INTERVAL && seconds <= this.MAX_SEND_INTERVAL) {
+            this.setSendInterval(seconds);
+        }
+    }
+
+    setSuspended(suspended) {
+        if (suspended && !this.suspended) {
+            debug('Event sending suspended by server config.');
+            this.summaries = new Map();
+            this.seenUserIds.clear();
+        }
+        if (!suspended && this.suspended) {
+            debug('Event sending re-enabled by server config.');
+        }
+        this.suspended = suspended;
+    }
+
+    setSendInterval(seconds) {
+        if (seconds === this.sendInterval) {
+            return;
+        }
+        debug('Event flush interval changed by server config: %ds -> %ds', this.sendInterval, seconds);
+        this.sendInterval = seconds;
+        clearInterval(this.interval);
+        this.interval = setInterval(() => {
+            this.sendQueue();
         }, this.sendInterval * 1000);
     }
 
@@ -41,10 +96,14 @@ export default class EventsClient {
     }
 
     evaluateEvent(featureKey, evaluatedVariant, user) {
-        if (this.disabled) {
+        if (this.disabled || this.suspended || this.mode === 'off') {
             return;
         }
-        const key = featureKey + KEY_SEPARATOR + evaluatedVariant;
+        // In full mode every evaluation is its own entry (unique key, one impression, its
+        // own user) — the raw pre-summarisation wire shape, selectable by server config.
+        const key = this.mode === 'full'
+            ? String(this.fullModeCounter++)
+            : featureKey + KEY_SEPARATOR + evaluatedVariant;
         let entry = this.summaries.get(key);
         if (!entry) {
             if (this.summaries.size >= this.SUMMARY_CAPACITY) {
@@ -64,7 +123,14 @@ export default class EventsClient {
     // server still sees every user's attributes without the payload repeating the user on
     // every evaluation.
     attachUser(entry, user) {
-        if (!user || !user.id || this.seenUserIds.has(user.id)) {
+        if (!user || !user.id) {
+            return;
+        }
+        if (this.mode === 'full') {
+            entry.users.push(user);
+            return;
+        }
+        if (this.seenUserIds.has(user.id)) {
             return;
         }
         if (this.seenUserIds.size >= this.USER_CACHE_CAPACITY) {
@@ -75,7 +141,7 @@ export default class EventsClient {
     }
 
     sendQueue() {
-        if (this.disabled || this.summaries.size === 0) return;
+        if (this.disabled || this.suspended || this.mode === 'off' || this.summaries.size === 0) return;
         if (Date.now() < this.backoffUntil) {
             debug('Event sending is backing off after a 429 response. Retaining %d summarised events.', this.summaries.size);
             return;
@@ -89,10 +155,14 @@ export default class EventsClient {
             'POST',
             this.eventsUrl + '/api/sdk/v1/events',
             this.buildBatch(sendSummaries),
-            (statusCode, headers) => {
+            (statusCode, headers, body) => {
                 if (statusCode === 429) {
                     this.backoffUntil = Date.now() + this.parseRetryAfter(headers) * 1000;
                     this.requeue(sendSummaries);
+                }
+                if (statusCode === 200) {
+                    // The events response body carries the server-driven SDK config.
+                    this.applyServerConfig(body);
                 }
             });
     }
@@ -175,7 +245,7 @@ export default class EventsClient {
                 debug("unable to send event %s to %s. Failed with response status %d", eventType, url, response.statusCode);
             }
             if (onResponse) {
-                onResponse(response.statusCode, response.headers);
+                onResponse(response.statusCode, response.headers, body);
             }
         })
     }

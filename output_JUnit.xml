@@ -21,7 +21,7 @@
         </properties>
         <testcase name="Given the salt is &quot;1&quot;, the feature is &quot;f1&quot; and the id is &quot;bob&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
         </testcase>
-        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
+        <testcase name="When the variant value is calculated" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result" time="0.001">
         </testcase>
         <testcase name="Then the hash value calculated should equal &quot;8ecddc9f392dc35&quot;" classname="hashing-algorithm;testing-that-the-&quot;bob&quot;-id,-&quot;1&quot;-salt-and-&quot;f1&quot;-feature-returns-the-&quot;14&quot;-result">
         </testcase>
@@ -203,7 +203,7 @@
         </properties>
         <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" time="0.003">
         </testcase>
         <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -217,7 +217,7 @@
         </properties>
         <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;-test-v&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)" time="0.001">
         </testcase>
         <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;false&quot;)">
         </testcase>
@@ -233,7 +233,7 @@
         </testcase>
         <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
+        <testcase name="When the operator test &quot;startsWith&quot; is run" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)" time="0.001">
         </testcase>
         <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;startswith&quot;-operator-returns-a-&quot;true&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;startswith&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -371,7 +371,7 @@
         </properties>
         <testcase name="Given the target is a &quot;string&quot; with the value of &quot;my-test-value&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;doesn&apos;t matter&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)" time="0.001">
+        <testcase name="And the attribute is a &quot;string&quot; with the value of &quot;doesn&apos;t matter&quot;" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
         </testcase>
         <testcase name="When the operator test &quot;fakeOperator&quot; is run" classname="conditions;test-the-&quot;fakeoperator&quot;-operator-returns-a-&quot;false&quot;-result-for-a-string-(target:-&quot;my-test-value&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;fakeoperator&quot;,-result:-&quot;false&quot;)">
         </testcase>
@@ -777,7 +777,7 @@
         </properties>
         <testcase name="Given the target is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
+        <testcase name="And the attribute is a &quot;number&quot; with the value of &quot;9000&quot;" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)" time="0.001">
         </testcase>
         <testcase name="When the operator test &quot;lessThanOrEqual&quot; is run" classname="conditions;test-the-&quot;lessthanorequal&quot;-operator-returns-a-&quot;true&quot;-result-for-a-number--(target:-&quot;9000&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;lessthanorequal&quot;,-result:-&quot;true&quot;)">
         </testcase>
@@ -935,7 +935,7 @@
         </testcase>
         <testcase name="When the operator test &quot;before&quot; is run" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
         </testcase>
-        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)">
+        <testcase name="Then the output should equal &quot;true&quot;" classname="conditions;test-the-&quot;before&quot;-operator-returns-a-&quot;true&quot;-result-for-a-date-(target:-&quot;2026-07-21t23:00:00+10:00&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;before&quot;,-result:-&quot;true&quot;)" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="conditions;test-the-&quot;after&quot;-operator-returns-a-&quot;false&quot;-result-for-a-date-(target:-&quot;not-a-date&quot;,-value:-&quot;&lt;value&gt;&quot;,-operator:-&quot;after&quot;,-result:-&quot;false&quot;)" tests="4" failures="0" skipped="0">
@@ -991,9 +991,9 @@
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;off&quot; user &quot;u2&quot;" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
-        <testcase name="Then the pending summary should contain 2 entries" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
+        <testcase name="Then the pending summary should contain 2 entries" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately" time="0.001">
         </testcase>
-        <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 1 impressions" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately" time="0.001">
+        <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;on&quot; should have 1 impressions" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
         <testcase name="And the pending summary for feature &quot;f1&quot; variant &quot;off&quot; should have 1 impressions" classname="event-sending-behaviour;different-variants-of-the-same-feature-are-summarised-separately">
         </testcase>
@@ -1017,7 +1017,7 @@
         </properties>
         <testcase name="Given an events client with a summary capacity of 1" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
-        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
+        <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity" time="0.001">
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f2&quot; variant &quot;on&quot; user &quot;u2&quot;" classname="event-sending-behaviour;impressions-are-still-counted-while-the-summary-is-at-capacity">
         </testcase>
@@ -1039,7 +1039,7 @@
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f2&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-attached-to-at-most-one-summary-entry-per-flush-interval">
         </testcase>
-        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-attached-to-at-most-one-summary-entry-per-flush-interval">
+        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-attached-to-at-most-one-summary-entry-per-flush-interval" time="0.001">
         </testcase>
         <testcase name="And the pending summary entry for feature &quot;f2&quot; variant &quot;on&quot; should include no users" classname="event-sending-behaviour;a-user-is-attached-to-at-most-one-summary-entry-per-flush-interval">
         </testcase>
@@ -1049,7 +1049,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 200" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.004">
+        <testcase name="Given a local events endpoint that responds with status 200" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.003">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
@@ -1057,13 +1057,13 @@
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u2&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
-        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
+        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.001">
         </testcase>
-        <testcase name="Then the local endpoint should have received a batch of 2 events" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.021">
+        <testcase name="Then the local endpoint should have received a batch of 2 events" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.02">
         </testcase>
         <testcase name="And the batch should total 3 impressions for feature &quot;f1&quot; variant &quot;on&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
-        <testcase name="And the batch should include users &quot;u1&quot; and &quot;u2&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once" time="0.001">
+        <testcase name="And the batch should include users &quot;u1&quot; and &quot;u2&quot;" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
         <testcase name="And the batch events should not include an expectedVariant" classname="event-sending-behaviour;the-flushed-batch-reports-summed-impressions-and-each-distinct-user-once">
         </testcase>
@@ -1079,11 +1079,11 @@
         </testcase>
         <testcase name="When 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
-        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
+        <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval" time="0.001">
         </testcase>
         <testcase name="And 1 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
-        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval" time="0.001">
+        <testcase name="Then the pending summary entry for feature &quot;f1&quot; variant &quot;on&quot; should include user &quot;u1&quot;" classname="event-sending-behaviour;a-user-is-sent-again-in-the-next-flush-interval">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-401-response-permanently-disables-event-sending" tests="7" failures="0" skipped="0">
@@ -1127,7 +1127,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
+        <testcase name="Given a local events endpoint that responds with status 429 and Retry-After 60" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.001">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
@@ -1135,13 +1135,13 @@
         </testcase>
         <testcase name="And the event queue is flushed" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
-        <testcase name="Then the events client should be backing off" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.022">
+        <testcase name="Then the events client should be backing off" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.021">
         </testcase>
         <testcase name="And the pending summary should contain 2 entries" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
         <testcase name="When the event queue is flushed" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off">
         </testcase>
-        <testcase name="Then the local endpoint should have received 1 request" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.151">
+        <testcase name="Then the local endpoint should have received 1 request" classname="event-sending-behaviour;a-429-response-requeues-the-batch-and-backs-off" time="0.15">
         </testcase>
     </testsuite>
     <testsuite name="event-sending-behaviour;a-429-response-merges-the-rejected-batch-back-into-the-pending-summary" tests="7" failures="0" skipped="0">
@@ -1169,7 +1169,7 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a local events endpoint that responds with status 429" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff" time="0.001">
+        <testcase name="Given a local events endpoint that responds with status 429" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff">
         </testcase>
         <testcase name="And an events client pointed at the local endpoint" classname="event-sending-behaviour;a-429-response-without-retry-after-uses-the-default-backoff">
         </testcase>
@@ -1185,11 +1185,11 @@
             <property name="URI" value="testbed/gherkin/events.feature">
             </property>
         </properties>
-        <testcase name="Given a Featureflow client with the stored features" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events" time="0.001">
+        <testcase name="Given a Featureflow client with the stored features" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
         </testcase>
         <testcase name="When evaluateAll is called for user &quot;user-1&quot;" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
         </testcase>
-        <testcase name="Then the evaluated features should be" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events" time="0.001">
+        <testcase name="Then the evaluated features should be" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
         </testcase>
         <testcase name="And no evaluate events should have been recorded" classname="event-sending-behaviour;evaluateall-does-not-record-evaluation-events">
         </testcase>
@@ -1225,7 +1225,7 @@
         </properties>
         <testcase name="Given the feature &quot;my-feature&quot; with an offVariantKey &quot;off&quot;, a default key of &quot;on&quot; is enabled" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
         </testcase>
-        <testcase name="When the feature is evaluated with a user &quot;user&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey" time="0.001">
+        <testcase name="When the feature is evaluated with a user &quot;user&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
         </testcase>
         <testcase name="Then the evaluated variant should be &quot;on&quot;" classname="feature-evaluation;test-that-an-enabled-feature-does-not-return-the-offvariantkey">
         </testcase>
@@ -1279,7 +1279,7 @@
             <property name="URI" value="testbed/gherkin/json_value.feature">
             </property>
         </properties>
-        <testcase name="Given the feature &quot;my-feature&quot; evaluates to variant &quot;on&quot; with variants" classname="json-value-resolution;value()-still-returns-the-variant-key-string,-unaffected-by-jsonvalue" time="0.001">
+        <testcase name="Given the feature &quot;my-feature&quot; evaluates to variant &quot;on&quot; with variants" classname="json-value-resolution;value()-still-returns-the-variant-key-string,-unaffected-by-jsonvalue">
         </testcase>
         <testcase name="When value is called" classname="json-value-resolution;value()-still-returns-the-variant-key-string,-unaffected-by-jsonvalue">
         </testcase>
@@ -1321,7 +1321,7 @@
         </properties>
         <testcase name="Given the user attributes are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
         </testcase>
-        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
+        <testcase name="And the rule&apos;s audience conditions are" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)" time="0.001">
         </testcase>
         <testcase name="When the rule is matched against the user" classname="rules;test-that-the-rule-user-matching-works-(user-{role:-&quot;beta&quot;}-with-operator:-equals,-target:-role,-values:-[&quot;beta&quot;],-result:-true)">
         </testcase>
@@ -1431,7 +1431,7 @@
             <property name="URI" value="testbed/gherkin/rules.feature">
             </property>
         </properties>
-        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
+        <testcase name="Given the variant value of 50" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)" time="0.001">
         </testcase>
         <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-50,-on:-0,-off:-100,-result:-off)">
         </testcase>
@@ -1461,7 +1461,7 @@
         </properties>
         <testcase name="Given the variant value of 11" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
         </testcase>
-        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
+        <testcase name="And the variant splits are" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)" time="0.001">
         </testcase>
         <testcase name="When the variant split key is calculated" classname="rules;get-the-variant-split-key-works-for-a-default-case-(value:-11,-on:-90,-off:-10,-result:-on)">
         </testcase>
@@ -1507,7 +1507,7 @@
         </testcase>
         <testcase name="When the variant split key is calculated" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
         </testcase>
-        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)">
+        <testcase name="Then the resulting variant should be &quot;on&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-30,-result:-on)" time="0.001">
         </testcase>
     </testsuite>
     <testsuite name="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-50,-result:-alpha)" tests="4" failures="0" skipped="0">
@@ -1552,6 +1552,148 @@
         <testcase name="Then the resulting variant should be &quot;betav2&quot;" classname="rules;testing-multiple-splits-to-make-sure-the-right-values-work-(value:-100,-result:-betav2)">
         </testcase>
     </testsuite>
+    <testsuite name="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
+        </testcase>
+        <testcase name="When 2 evaluate events are queued" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
+        </testcase>
+        <testcase name="And the server config is applied" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events" time="0.001">
+        </testcase>
+        <testcase name="Then the pending summary should contain 0 entries" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events">
+        </testcase>
+        <testcase name="Then the pending summary should contain 0 entries" classname="server-driven-sdk-config;eventsenabled-false-suspends-event-recording-and-clears-pending-events" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;eventsenabled-true-resumes-event-recording" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+        <testcase name="And the server config is applied" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+        <testcase name="Then the pending summary should contain 1 entries" classname="server-driven-sdk-config;eventsenabled-true-resumes-event-recording">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;mode-off-stops-event-recording" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;mode-off-stops-event-recording">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;mode-off-stops-event-recording">
+        </testcase>
+        <testcase name="And 2 evaluate events are queued" classname="server-driven-sdk-config;mode-off-stops-event-recording">
+        </testcase>
+        <testcase name="Then the pending summary should contain 0 entries" classname="server-driven-sdk-config;mode-off-stops-event-recording">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event">
+        </testcase>
+        <testcase name="And 2 evaluate events are queued for feature &quot;f1&quot; variant &quot;on&quot; user &quot;u1&quot;" classname="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event">
+        </testcase>
+        <testcase name="Then the pending summary should contain 2 entries" classname="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event">
+        </testcase>
+        <testcase name="And every pending entry should have 1 impression and user &quot;u1&quot;" classname="server-driven-sdk-config;mode-full-records-one-event-per-evaluation-with-the-user-on-every-event">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer">
+        </testcase>
+        <testcase name="Then the events client send interval should be 30 seconds" classname="server-driven-sdk-config;flushintervalseconds-restarts-the-flush-timer" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given an events client" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+        <testcase name="Then the events client send interval should be 60 seconds" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+        <testcase name="And the events client should not be suspended" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+        <testcase name="Then the pending summary should contain 1 entries" classname="server-driven-sdk-config;invalid-config-values-are-ignored-field-by-field">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a disabled events client" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client" time="0.001">
+        </testcase>
+        <testcase name="When the server config is applied" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client">
+        </testcase>
+        <testcase name="And 1 evaluate events are queued" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client">
+        </testcase>
+        <testcase name="Then the pending summary should contain 0 entries" classname="server-driven-sdk-config;server-config-cannot-re-enable-a-locally-disabled-events-client">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;the-events-response-body-applies-server-config" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local events endpoint that responds with status 200 and config body" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
+        </testcase>
+        <testcase name="And an events client pointed at the local endpoint" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
+        </testcase>
+        <testcase name="When 1 evaluate events are queued" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
+        </testcase>
+        <testcase name="And the event queue is flushed" classname="server-driven-sdk-config;the-events-response-body-applies-server-config">
+        </testcase>
+        <testcase name="Then the events client should become suspended" classname="server-driven-sdk-config;the-events-response-body-applies-server-config" time="0.021">
+        </testcase>
+        <testcase name="And the events client send interval should be 120 seconds" classname="server-driven-sdk-config;the-events-response-body-applies-server-config" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="server-driven-sdk-config;the-features-response-config-header-applies-server-config" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="testbed/gherkin/sdk_config.feature">
+            </property>
+        </properties>
+        <testcase name="Given a local features endpoint with config header" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config" time="0.001">
+        </testcase>
+        <testcase name="And a Featureflow client pointed at the local features endpoint" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config">
+        </testcase>
+        <testcase name="Then the events client should become suspended" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config" time="0.02">
+        </testcase>
+        <testcase name="And the events client send interval should be 300 seconds" classname="server-driven-sdk-config;the-features-response-config-header-applies-server-config">
+        </testcase>
+    </testsuite>
     <testsuite name="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" tests="5" failures="0" skipped="0">
         <properties>
             <property name="URI" value="testbed/gherkin/user_builder.feature">
@@ -1559,7 +1701,7 @@
         </properties>
         <testcase name="Given there is access to the User Builder module" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
         </testcase>
-        <testcase name="When the builder is initialised with the id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id" time="0.001">
+        <testcase name="When the builder is initialised with the id &quot;user&quot;" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
         </testcase>
         <testcase name="And the user is built using the builder" classname="userbuilder;test-the-user-builder-can-build-a-valid-user-with-an-id">
         </testcase>
@@ -1603,9 +1745,9 @@
         </testcase>
         <testcase name="And the user is built using the builder" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time">
         </testcase>
-        <testcase name="Then the result user should have a attribute with key &quot;featureflow.user.id&quot; and value &quot;user&quot;" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time" time="0.001">
+        <testcase name="Then the result user should have a attribute with key &quot;featureflow.user.id&quot; and value &quot;user&quot;" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time">
         </testcase>
-        <testcase name="And the result user should have a attribute with key &quot;featureflow.date&quot; and current datetime in iso8601" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time" time="0.001">
+        <testcase name="And the result user should have a attribute with key &quot;featureflow.date&quot; and current datetime in iso8601" classname="userbuilder;test-the-user-builder-injects-implicit-attributes-at-build-time" time="0.002">
         </testcase>
     </testsuite>
     <testsuite name="userbuilder;test-the-user-builder-throws-an-error-when-no-key-is-provided" tests="3" failures="0" skipped="0">

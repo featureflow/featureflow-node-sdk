@@ -66,6 +66,10 @@ export default class Featureflow extends EventEmitter {
             this.eventsClient.registerFeaturesEvent(this.config.withFeatures);
         }
 
+        // Server-driven SDK config arrives on features responses; events responses feed
+        // eventsClient.applyServerConfig directly.
+        this.config.onSdkConfig = (sdkConfig) => this.eventsClient.applyServerConfig(sdkConfig);
+
         this.pollingClient = new PollingClient(this.config.baseUrl + '/api/sdk/v1/features', this.config, () => {
             debug("client initialized");
             this.isReady = true;
