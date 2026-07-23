@@ -8,8 +8,8 @@ import Evaluate from '../../src/Evaluate';
 function fakeEventsClient() {
   return {
     queue: [],
-    evaluateEvent(featureKey, evaluatedVariant, expectedVariant, user) {
-      this.queue.push({ featureKey, evaluatedVariant, expectedVariant, user });
+    evaluateEvent(featureKey, evaluatedVariant, user) {
+      this.queue.push({ featureKey, evaluatedVariant, user });
     }
   };
 }

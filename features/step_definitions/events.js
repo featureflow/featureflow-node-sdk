@@ -28,11 +28,21 @@ function eventually(check, timeoutMs = 2000, intervalMs = 20) {
 function fakeEventsClient() {
   return {
     queue: [],
-    evaluateEvent(featureKey, evaluatedVariant, expectedVariant, user) {
-      this.queue.push({ featureKey, evaluatedVariant, expectedVariant, user });
+    evaluateEvent(featureKey, evaluatedVariant, user) {
+      this.queue.push({ featureKey, evaluatedVariant, user });
     },
     close() {}
   };
+}
+
+function summaryEntry(client, featureKey, variant) {
+  let found = null;
+  client.summaries.forEach((entry) => {
+    if (entry.featureKey === featureKey && entry.evaluatedVariant === variant) {
+      found = entry;
+    }
+  });
+  return found;
 }
 
 defineSupportCode(({ Given, When, Then, After }) => {
@@ -51,13 +61,22 @@ defineSupportCode(({ Given, When, Then, After }) => {
   function startEventsEndpoint(world, status, retryAfter) {
     world.receivedRequests = [];
     world.eventsServer = http.createServer((req, res) => {
-      world.receivedRequests.push({ method: req.method, url: req.url });
-      res.statusCode = status;
-      if (retryAfter) {
-        res.setHeader('Retry-After', String(retryAfter));
-      }
-      res.end();
-      req.resume();
+      const chunks = [];
+      req.on('data', (chunk) => chunks.push(chunk));
+      req.on('end', () => {
+        let body;
+        try {
+          body = JSON.parse(Buffer.concat(chunks).toString());
+        } catch (e) {
+          body = undefined;
+        }
+        world.receivedRequests.push({ method: req.method, url: req.url, body });
+        res.statusCode = status;
+        if (retryAfter) {
+          res.setHeader('Retry-After', String(retryAfter));
+        }
+        res.end();
+      });
     });
     return new Promise((resolve) => {
       world.eventsServer.listen(0, '127.0.0.1', () => {
@@ -75,9 +94,14 @@ defineSupportCode(({ Given, When, Then, After }) => {
     return startEventsEndpoint(this, status, retryAfter);
   });
 
-  Given('an events client with a queue capacity of {int}', function (capacity) {
+  // Port 9 (discard) never answers, so nothing is ever actually sent.
+  Given('an events client', function () {
     this.eventsClient = new EventsClient('test-api-key', 'http://127.0.0.1:9');
-    this.eventsClient.QUEUE_SIZE = capacity;
+  });
+
+  Given('an events client with a summary capacity of {int}', function (capacity) {
+    this.eventsClient = new EventsClient('test-api-key', 'http://127.0.0.1:9');
+    this.eventsClient.SUMMARY_CAPACITY = capacity;
   });
 
   Given('an events client pointed at the local endpoint', function () {
@@ -86,7 +110,13 @@ defineSupportCode(({ Given, When, Then, After }) => {
 
   When('{int} evaluate events are queued', function (count) {
     for (let i = 0; i < count; i++) {
-      this.eventsClient.evaluateEvent('feature-' + i, 'on', null, { id: 'user-' + i });
+      this.eventsClient.evaluateEvent('feature-' + i, 'on', { id: 'user-' + i });
+    }
+  });
+
+  When('{int} evaluate events are queued for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} user {stringInDoubleQuotes}', function (count, featureKey, variant, userId) {
+    for (let i = 0; i < count; i++) {
+      this.eventsClient.evaluateEvent(featureKey, variant, { id: userId });
     }
   });
 
@@ -94,9 +124,33 @@ defineSupportCode(({ Given, When, Then, After }) => {
     this.eventsClient.sendQueue();
   });
 
-  Then('the event queue should contain {int} events', function (count) {
+  Then('the pending summary should contain {int} entries', function (count) {
     const client = this.eventsClient;
-    return eventually(() => expect(client.queue).to.have.lengthOf(count));
+    return eventually(() => expect(client.summaries.size).to.equal(count));
+  });
+
+  Then('the pending summary for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} should have {int} impressions', function (featureKey, variant, impressions) {
+    const client = this.eventsClient;
+    return eventually(() => {
+      const entry = summaryEntry(client, featureKey, variant);
+      expect(entry, `summary entry for ${featureKey}/${variant}`).to.not.equal(null);
+      expect(entry.impressions).to.equal(impressions);
+    });
+  });
+
+  Then('the pending summary entry for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} should include user {stringInDoubleQuotes}', function (featureKey, variant, userId) {
+    const client = this.eventsClient;
+    return eventually(() => {
+      const entry = summaryEntry(client, featureKey, variant);
+      expect(entry, `summary entry for ${featureKey}/${variant}`).to.not.equal(null);
+      expect(entry.users.map((u) => u.id)).to.include(userId);
+    });
+  });
+
+  Then('the pending summary entry for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes} should include no users', function (featureKey, variant) {
+    const entry = summaryEntry(this.eventsClient, featureKey, variant);
+    expect(entry, `summary entry for ${featureKey}/${variant}`).to.not.equal(null);
+    expect(entry.users).to.have.lengthOf(0);
   });
 
   Then('the events client should become disabled', function () {
@@ -104,9 +158,9 @@ defineSupportCode(({ Given, When, Then, After }) => {
     return eventually(() => expect(client.disabled).to.equal(true));
   });
 
-  Then('queueing another evaluate event should leave the queue empty', function () {
-    this.eventsClient.evaluateEvent('another-feature', 'on', null, { id: 'user-x' });
-    expect(this.eventsClient.queue).to.have.lengthOf(0);
+  Then('queueing another evaluate event should leave the summary empty', function () {
+    this.eventsClient.evaluateEvent('another-feature', 'on', { id: 'user-x' });
+    expect(this.eventsClient.summaries.size).to.equal(0);
   });
 
   Then('the events client should be backing off', function () {
@@ -119,6 +173,36 @@ defineSupportCode(({ Given, When, Then, After }) => {
     // Give a would-be second request time to arrive before asserting it did not.
     return new Promise((resolve) => setTimeout(resolve, 150))
       .then(() => expect(world.receivedRequests).to.have.lengthOf(count));
+  });
+
+  Then('the local endpoint should have received a batch of {int} events', function (count) {
+    const world = this;
+    return eventually(() => {
+      expect(world.receivedRequests).to.have.lengthOf(1);
+      expect(world.receivedRequests[0].body).to.have.lengthOf(count);
+    });
+  });
+
+  Then('the batch should total {int} impressions for feature {stringInDoubleQuotes} variant {stringInDoubleQuotes}', function (impressions, featureKey, variant) {
+    const total = this.receivedRequests[0].body
+      .filter((e) => e.featureKey === featureKey && e.evaluatedVariant === variant)
+      .reduce((sum, e) => sum + e.impressions, 0);
+    expect(total).to.equal(impressions);
+  });
+
+  Then('the batch should include users {stringInDoubleQuotes} and {stringInDoubleQuotes}', function (userA, userB) {
+    const userIds = this.receivedRequests[0].body
+      .filter((e) => e.user)
+      .map((e) => e.user.id);
+    expect(userIds).to.include(userA);
+    expect(userIds).to.include(userB);
+    expect(userIds).to.have.lengthOf(new Set(userIds).size);
+  });
+
+  Then('the batch events should not include an expectedVariant', function () {
+    this.receivedRequests[0].body.forEach((e) => {
+      expect(e).to.not.have.property('expectedVariant');
+    });
   });
 
   Given('a Featureflow client with the stored features', function (table) {

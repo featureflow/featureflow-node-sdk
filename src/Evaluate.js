@@ -8,7 +8,7 @@ export default class Evaluate{
   }
 
   is(value){
-    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, value, this.user);
+    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, this.user);
     return value === this.evaluatedVariant;
   }
 
@@ -21,7 +21,7 @@ export default class Evaluate{
   }
 
   value(){
-    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, null, this.user);
+    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, this.user);
     return this.evaluatedVariant;
   }
 
@@ -31,7 +31,7 @@ export default class Evaluate{
    * events, never this payload.
    */
   jsonValue(){
-    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, null, this.user);
+    this.eventsClient.evaluateEvent(this.featureKey, this.evaluatedVariant, this.user);
     const variant = this.variants.find(v => v.key === this.evaluatedVariant);
     return variant ? variant.value : undefined;
   }
