@@ -1,5 +1,5 @@
 # Change log
-## [Unreleased]
+## [0.7.0] - 2026-07-26
 ### Added
 - `client.track(goalKey, user, details?)` records goal (conversion/metric) events for experimentation and metric-gated rollouts. `details` is a number (the metric value) or an object with optional numeric `value` plus custom fields — the OpenFeature tracking API shape, so an OpenFeature provider can forward `track()` calls unchanged. Goals are sent raw in the same batch as evaluate events; servers without experimentation ignore them.
 - Per-flag exposure fidelity: a feature carrying `trackEvents: true` in the features payload has each distinct user attached once per (user, flag) per flush interval instead of the global once-per-user dedupe, so every (user, flag, variant) assignment reaches the server for experiment analysis. Dormant until the server starts sending the field.
