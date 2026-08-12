@@ -1,4 +1,11 @@
 # Change log
+## [0.8.0] - 2026-08-12
+### Added
+- `application` config option (or `FEATUREFLOW_APPLICATION` env var): name this workload (e.g. `checkout-api`) and the SDK sends it as the `X-Featureflow-Application` header on every request — features polls, event posts and feature registration — so the Featureflow dashboard can attribute SDK usage and flag evaluations per application (Admin → SDKs, and the "Evaluated by" panel on a feature's statistics tab). The value is a slug (lowercase `[a-z0-9._-]`, max 64 chars); case is forgiven, anything else invalid is dropped with a warning and no header is sent.
+
+### Fixed
+- The `matches` targeting operator now evaluates to no-match when given a regex pattern the runtime cannot compile, instead of throwing from evaluation. Operators fail closed; evaluation never takes the host process down.
+
 ## [0.7.0] - 2026-07-26
 ### Added
 - `client.track(goalKey, user, details?)` records goal (conversion/metric) events for experimentation and metric-gated rollouts. `details` is a number (the metric value) or an object with optional numeric `value` plus custom fields — the OpenFeature tracking API shape, so an OpenFeature provider can forward `track()` calls unchanged. Goals are sent raw in the same batch as evaluate events; servers without experimentation ignore them.
