@@ -35,10 +35,12 @@ export default class EventsClient {
     // Unique map keys for full-mode entries, where events must not merge.
     fullModeCounter = 0;
 
-    constructor(apiKey, eventsUrl = "https://events.featureflow.io", disabled = false) {
+    constructor(apiKey, eventsUrl = "https://events.featureflow.io", disabled = false, application = undefined) {
         this.apiKey = apiKey;
         this.eventsUrl = eventsUrl;
         this.disabled = disabled;
+        // Already sanitised by the Client (see src/application.js).
+        this.application = application;
         this.sendInterval = this.SEND_INTERVAL;
         this.interval = setInterval(() => {
             this.sendQueue();
@@ -293,14 +295,18 @@ export default class EventsClient {
         if (this.disabled) {
             return;
         }
+        const headers = {
+            'Authorization': 'Bearer ' + this.apiKey,
+            'X-Featureflow-Client': this.clientVersion
+        };
+        if (this.application) {
+            headers['X-Featureflow-Application'] = this.application;
+        }
         request({
             method,
             uri: url,
             json,
-            headers: {
-                'Authorization': 'Bearer ' + this.apiKey,
-                'X-Featureflow-Client': this.clientVersion
-            }
+            headers
         }, (error, response, body) => {
             if (error) {
                 debug('error %s to "%s". message:', method, url, error.message);

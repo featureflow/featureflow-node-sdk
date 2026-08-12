@@ -8,6 +8,7 @@ import Evaluate from './Evaluate';
 import debug from './debug';
 
 import { ruleMatches, getVariantSplitKey, calculateHash, featureEvaluation } from './EvaluateHelpers';
+import { sanitiseApplication } from './application';
 
 function trimTrailingSlashes(url) {
     if (typeof url !== 'string' || !url.length) {
@@ -56,7 +57,13 @@ export default class Featureflow extends EventEmitter {
         this.config.featureStore = new InMemoryFeatureStore();
         this.config.disableEvents = this.config.disableEvents || false;
 
-        this.eventsClient = new EventsClient(this.config.apiKey, this.config.eventsUrl, this.config.disableEvents)
+        // Optional workload name sent as X-Featureflow-Application on every request so
+        // usage and flag evaluations are attributable per application in the dashboard.
+        this.config.application = sanitiseApplication(
+            typeof this.config.application !== 'undefined' ? this.config.application : process.env.FEATUREFLOW_APPLICATION
+        );
+
+        this.eventsClient = new EventsClient(this.config.apiKey, this.config.eventsUrl, this.config.disableEvents, this.config.application)
 
         if (this.config.withFeatures) {
             this.config.withFeatures.forEach(feature => {

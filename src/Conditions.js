@@ -12,8 +12,17 @@ const operators = {
     return typeof a === 'string' && a.endsWith(b);
   },
   matches: (a, b) => {
-    return typeof a === 'string' && typeof b === 'string'
-      && (new RegExp(b)).test(a);
+    if (typeof a !== 'string' || typeof b !== 'string') {
+      return false;
+    }
+    // An invalid pattern evaluates false rather than throwing — the server validates
+    // targeting regexes against the portable subset, but a pattern this runtime cannot
+    // compile must never crash evaluation (testbed conditions.feature invalid-regex rows).
+    try {
+      return (new RegExp(b)).test(a);
+    } catch (e) {
+      return false;
+    }
   },
   in: (a, b) => {
     return typeof a === 'string' && Array.isArray(b)

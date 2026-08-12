@@ -14,6 +14,7 @@ export default class PollingClient {
     constructor(url, config, callback) {
         this.url = url;
         this.apiKey = config.apiKey;
+        this.application = config.application;
         this.featureStore = config.featureStore;
         // Called with the parsed X-Featureflow-Sdk-Config header (server-driven SDK config)
         // whenever a features response carries one — on 304s too, which is what a polling
@@ -43,15 +44,20 @@ export default class PollingClient {
     getFeatures(callback = () => { }) {
         this.refreshInProgress = true;
         this.lastRefreshTime = Date.now();
+        const headers = {
+            'Authorization': 'Bearer ' + this.apiKey,
+            'If-None-Match': this.etag,
+            'X-Featureflow-Client': this.clientVersion
+        };
+        if (this.application) {
+            // Write-only telemetry: never affects the response, so it cannot fragment the CDN cache.
+            headers['X-Featureflow-Application'] = this.application;
+        }
         request({
             method: 'get',
             uri: this.url,
             timeout: this.timeout,
-            headers: {
-                'Authorization': 'Bearer ' + this.apiKey,
-                'If-None-Match': this.etag,
-                'X-Featureflow-Client': this.clientVersion
-            }
+            headers
         }, (error, response, body) => {
             this.refreshInProgress = false;
             if (response) {
