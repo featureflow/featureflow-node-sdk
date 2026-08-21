@@ -130,8 +130,36 @@ export default class Featureflow extends EventEmitter {
             user,
             this.eventsClient,
             feature ? feature.variants : undefined,
-            feature ? feature.trackEvents === true : false
+            feature ? feature.trackEvents === true : false,
+            () => this._emitEvaluation(key, evaluatedVariant, user, feature)
         );
+    }
+
+    /**
+     * Fires the 'evaluation' event with { key, variant, value, user } — the hook for
+     * forwarding flag exposures to an external analytics or experimentation tool.
+     *
+     * Fires whenever an evaluation is recorded, i.e. each time a variant is read via
+     * value()/is()/isOn()/isOff()/jsonValue() — the same moments an impression is
+     * counted, so the hook and Featureflow's own statistics always agree. Listener
+     * errors are swallowed: a broken analytics hook must never break flag evaluation.
+     */
+    _emitEvaluation(key, evaluatedVariant, user, feature) {
+        if (this.listenerCount('evaluation') === 0) {
+            return;
+        }
+        try {
+            const variants = feature ? feature.variants : undefined;
+            const variant = variants ? variants.find(v => v.key === evaluatedVariant) : undefined;
+            this.emit('evaluation', {
+                key,
+                variant: evaluatedVariant,
+                value: variant ? variant.value : undefined,
+                user
+            });
+        } catch (e) {
+            debug(`An 'evaluation' listener threw: ${e && e.message}`);
+        }
     }
 
     /**

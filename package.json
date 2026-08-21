@@ -1,6 +1,6 @@
 {
   "name": "featureflow-node-sdk",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Featureflow sdk for Node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,8 +16,8 @@
     "build": "babel src -d dist --source-maps && tsc",
     "watch": "babel --watch src -d dist --source-maps",
     "prepublish": "yarn build",
-    "test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
-    "ci-test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
+    "test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin features/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > output_JUnit.xml",
+    "ci-test": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support --format=json:cucumber-report.json -t \"not @ignore and not @integration and not @builder-defers-implicit-attributes\" testbed/gherkin features/gherkin && node_modules/.bin/cucumber-junit < cucumber-report.json > ~/junit.xml",
     "test:integration": "node_modules/.bin/cucumber-js --require-module @babel/register -r features/step_definitions -r features/support -t \"@integration\" features/integration.feature",
     "preexample:server": "yarn build",
     "example:server": "node examples/harness/server.js"

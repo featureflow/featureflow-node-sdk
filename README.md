@@ -169,6 +169,33 @@ featureflow.on('updated', function(){
 });
 ```
 
+#### Forwarding Evaluations to Analytics Tools
+
+The client emits `evaluation` whenever a flag evaluation is recorded — each time a
+variant is read via `value()`, `is()`, `isOn()`, `isOff()` or `jsonValue()`, the same
+moments an impression is counted in Featureflow's own statistics. The event carries
+`{ key, variant, value, user }` (`value` is the variant's JSON payload, if any).
+
+Use it to forward exposures to any analytics or experimentation tool — the shape your
+tool expects is a few lines of your own code, with your own identity decision made
+explicitly (server-side, you know which of your ids is the analytics user id):
+
+```javascript
+featureflow.on('evaluation', function({ key, variant, user }){
+  // e.g. Amplitude's HTTP API, Segment, PostHog, Mixpanel, or your event bus:
+  analytics.track({ event: '$exposure', user_id: user, properties: { flag_key: key, variant } });
+});
+```
+
+Notes:
+
+- The event fires once per recorded read, not once per flag — a server process
+  evaluating for many users will fire it often. Batch or dedupe in your listener to
+  suit your tool's billing (e.g. keep a small `Set` of `user:key:variant`).
+- A listener that throws is logged and swallowed; it can never break flag evaluation.
+- Building an `evaluate()` result without reading it fires nothing, matching
+  impression semantics.
+
 #### Pre-registering Features
 
 Featureflow allows you to pre-register features that may not be defined in your Featureflow project to ensure that those 
