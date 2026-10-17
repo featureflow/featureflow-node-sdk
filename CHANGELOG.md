@@ -1,4 +1,7 @@
 # Change log
+## [0.9.1] - 2026-10-17
+### Changed
+- README rewritten: links point to featureflow.com and the [Node.js SDK docs](https://docs.featureflow.io/nodejs-sdk) (the old `docs.featureflow.io/docs` links were dead), and every feature is now documented — JSON configuration values (`jsonValue()`), `evaluateAll()`, the full configuration table and environment variables, built-in user attributes, `ExpressClient` middleware, `Feature.addVariant()`, `close()`, debug logging and an API reference. No code changes.
 ## [0.9.0] - 2026-08-21
 ### Added
 - `evaluation` emitter event: fires with `{ key, variant, value, user }` whenever an evaluation is recorded — each time a variant is read via `value()`/`is()`/`isOn()`/`isOff()`/`jsonValue()`, in step with impression counting. The hook for forwarding flag exposures to any analytics or experimentation tool; a listener that throws is logged and swallowed and can never break flag evaluation
