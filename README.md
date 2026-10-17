@@ -182,7 +182,7 @@ or whatever you [pre-registered](#pre-registering-features-and-failover-variants
 
 _Requires `featureflow-node-sdk` 0.7.0 or later._
 
-A variant can carry a
+A variant can contain a
 [JSON configuration value](https://docs.featureflow.io/manage-feature-variants#json-configuration-values)
 set in the dashboard, so a flag can deliver settings as well as an on/off decision. Read it with
 `jsonValue()`:
