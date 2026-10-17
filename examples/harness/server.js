@@ -2,8 +2,8 @@
  * Local harness: Express app using the built SDK in ../../dist
  *
  *   yarn example:server
- *   FEATUREFLOW_SERVER_KEY=ff.srv.xxx yarn example:server
- *   FEATUREFLOW_BASE_URL=https://beta.featureflow-staging.com FEATUREFLOW_SERVER_KEY=ff.srv.xxx yarn example:server
+ *   FEATUREFLOW_SERVER_KEY=sdk-srv-env-xxx yarn example:server
+ *   FEATUREFLOW_BASE_URL=https://app.featureflow-staging.com FEATUREFLOW_SERVER_KEY=sdk-srv-env-xxx yarn example:server
  *
  * Open http://127.0.0.1:3456/ — or use the JSON API below.
  */
@@ -27,7 +27,7 @@ if (!apiKey) {
   console.error(
     'Set FEATUREFLOW_SERVER_KEY to your Featureflow server API key.\n' +
       'Example:\n' +
-      '  FEATUREFLOW_SERVER_KEY=ff.srv.xxxxxxxxx yarn example:server\n'
+      '  FEATUREFLOW_SERVER_KEY=sdk-srv-env-xxxxxxxxx yarn example:server\n'
   );
   process.exit(1);
 }
@@ -176,7 +176,7 @@ const INDEX_HTML = `<!DOCTYPE html>
 </head>
 <body>
   <h1>Featureflow node SDK harness</h1>
-  <p>Uses the SDK from this repo (run <code>yarn build</code> first). Set <code>FEATUREFLOW_SERVER_KEY</code>; use <code>FEATUREFLOW_BASE_URL</code> for staging (e.g. <code>https://beta.featureflow-staging.com</code>).</p>
+  <p>Uses the SDK from this repo (run <code>yarn build</code> first). Set <code>FEATUREFLOW_SERVER_KEY</code>; use <code>FEATUREFLOW_BASE_URL</code> for staging (e.g. <code>https://app.featureflow-staging.com</code>).</p>
   <p>SDK baseUrl: <strong id="baseUrl">…</strong></p>
   <p>Ready: <strong id="ready">…</strong></p>
   <label>Feature key <input id="feature" type="text" value="harness-demo" placeholder="my-feature-key" /></label>
