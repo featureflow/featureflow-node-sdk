@@ -256,10 +256,10 @@ featureflow.on('updated', () => {
 
 _Requires 0.9.0 or later._
 
-The client emits `evaluation` each time an evaluation is recorded, that is whenever a variant is
-read via `value()`, `is()`, `isOn()`, `isOff()` or `jsonValue()`. These are the same moments an
-impression is counted in Featureflow, so your tool and Featureflow agree. The event carries
-`{ key, variant, value, user }`, where `value` is the variant's JSON value, if any.
+The client emits `evaluation` each time you read a variant with `value()`, `is()`, `isOn()`,
+`isOff()` or `jsonValue()`. Featureflow counts an impression on exactly the same calls, so the
+number of events your tool receives matches the impression count in Featureflow. The event
+contains `{ key, variant, value, user }`, where `value` is the variant's JSON value, if any.
 
 Use it to send exposures to any analytics or experimentation tool. Server-side you know which of
 your ids is the analytics user id, so map it explicitly:
